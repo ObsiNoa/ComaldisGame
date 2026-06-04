@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_choixBureau
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - "Voici ou toute la paperasse se fait. Bien qu'eles soient intimidantes vos collegues
+    stationn\xE9es ici se feront un plaisir de vous assister en cas de problemes."
+  - "Si jamais vous avez une r\xE9cclamation ou une question que vous jugez urgentes
+    vous pouvez donc aller les voir ou les appeler sans craintes."
+  - "N\xE9anmoins, nous n'avons pas besoin d'etre ici pour le moment. Retournons
+    donc dehors "
+  choices:
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: e4e2e07efcf617f42954084cb8cef68e, type: 2}
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 942a578c35eca204e9c47f6daa25e23c, type: 2}
+  - texte: 
+    nextDialogue: {fileID: 11400000}

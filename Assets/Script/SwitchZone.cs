@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
+
 public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
@@ -78,42 +80,11 @@ public class BoutonRetourUI : MonoBehaviour
     }
 }
 
-public class DialogueManager : MonoBehaviour
-{
-    public static DialogueManager Instance;
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
-    public void StartDialogue()
-    {
-        InputVN.Instance.modeActuel = VNMode.Dialogue;
-    }
-
-    public void NextLine()
-    {
-        Debug.Log("Ligne suivante");
-    }
-
-    public void StopDialogue()
-    {
-        InputVN.Instance.modeActuel = VNMode.Zone;
-    }
-}
-
-public enum VNState
-{
-    Dialogue,
-    Choix,
-    Transition
-}
-
 public enum VNMode
 {
     Zone,
-    Dialogue
+    Dialogue,
+    Choix
 }
 
 public class InputVN : MonoBehaviour
@@ -125,13 +96,6 @@ public class InputVN : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-
-    void Start()
-    {
-        if (InputVN.Instance != null)
-            InputVN.Instance.modeActuel = VNMode.Zone;
-
     }
 
     void Update()
@@ -148,4 +112,3 @@ public class InputVN : MonoBehaviour
         }
     }
 }
-

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_choixQuai
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - Ici, certains de vos collegues travaillent a vider et remplir a nouveau les camions.
+  - Le votre, est deja plein ce matin, allons donc le voir.
+  choices:
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: e4e2e07efcf617f42954084cb8cef68e, type: 2}
+  - texte: 
+    nextDialogue: {fileID: 11400000}
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 3c161f64ba47995438c82ea39ccc8fb7, type: 2}
