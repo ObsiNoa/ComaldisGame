@@ -80,35 +80,4 @@ public class BoutonRetourUI : MonoBehaviour
     }
 }
 
-public enum VNMode
-{
-    Zone,
-    Dialogue,
-    Choix
-}
 
-public class InputVN : MonoBehaviour
-{
-    public static InputVN Instance;
-
-    public VNMode modeActuel;
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
-    void Update()
-    {
-        if (modeActuel != VNMode.Dialogue)
-            return;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
-
-            DialogueManager.Instance.NextLine();
-        }
-    }
-}

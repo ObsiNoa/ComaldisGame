@@ -1,19 +1,29 @@
 using UnityEngine;
 using System.Collections;
+
 public class GameStart : MonoBehaviour
 {
     public DialogueData dialogueInitial;
 
     IEnumerator Start()
     {
-        while (DialogueManager.Instance == null)
-            yield return null;
+        Debug.Log("GameStart : Attente...");
 
-        if (dialogueInitial == null)
-            {
-                Debug.LogError("dialogueInitial is null! Assign a DialogueData asset in the Inspector.");
-                yield break;
-            }
+        // On attend un frame pour laisser le temps aux Awake() de se lancer
+        yield return null;
+
+        if (DialogueManager.Instance == null)
+            Debug.LogError("Erreur : DialogueManager.Instance est toujours null !");
+
+        if (InputVN.Instance == null)
+            Debug.LogError("Erreur : InputVN.Instance est toujours null !");
+
+        while (DialogueManager.Instance == null || InputVN.Instance == null)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Lancement OK");
         DialogueManager.Instance.StartDialogue(dialogueInitial);
     }
- }
+}
