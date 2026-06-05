@@ -1,18 +1,24 @@
-using System;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(menuName = "VN/Dialogue")]
 public class DialogueData : ScriptableObject
 {
-    [TextArea(3, 10)]
+    [TextArea]
     public string[] lignes;
 
-    public Choice[] choices;
+    public DialogueChoice[] choices;
+
+    [Header("Background à appliquer après ce dialogue")]
+    public Sprite nextBackground;
 }
 
 [Serializable]
-public class Choice
+public class DialogueChoice
 {
     public string texte;
     public DialogueData nextDialogue;
+
+    [Header("Fond après ce choix")]
+    public Sprite backgroundAfterChoice;
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
-
+    public Image backgroundImage;
     public DialogueData dialogueActuel;
     public TMP_Text dialogueText;
 
@@ -55,6 +55,14 @@ public class DialogueManager : MonoBehaviour
         ShowLine();
     }
 
+    void ChangeBackground(Sprite newBackground)
+    {
+        if (newBackground != null)
+        {
+            backgroundImage.sprite = newBackground;
+        }
+    }
+
     void ShowChoicesOrEnd()
     {
         if (dialogueActuel.choices != null && dialogueActuel.choices.Length > 0)
@@ -99,6 +107,7 @@ public class DialogueManager : MonoBehaviour
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(() =>
             {
+                ChangeBackground(choice.backgroundAfterChoice);
                 StartDialogue(choice.nextDialogue);
             });
         }
@@ -106,8 +115,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StopDialogue()
     {
+        ChangeBackground(dialogueActuel.nextBackground);
+
         choicePanel.SetActive(false);
+
         if (InputVN.Instance != null)
             InputVN.Instance.modeActuel = VNMode.Zone;
     }
 }
+
