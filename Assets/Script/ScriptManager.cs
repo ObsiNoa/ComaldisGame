@@ -10,19 +10,12 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
 
     [Header("Choices UI (Pre-placed Buttons)")]
-    public GameObject choicePanel;
-    public Transform choiceContainer; // Ton panel qui contient directement tes boutons physiques
-
-    private Button[] boutonsPrePlaces;
+    private GameObject currentChoicePanel;
     private int index;
 
     void Awake()
     {
-            Instance = this;
-            boutonsPrePlaces = choiceContainer.GetComponentsInChildren<Button>(true);
-
-            // Ligne de sécurité à ajouter :
-            Debug.Log("Nombre de boutons trouvés dans le container : " + boutonsPrePlaces.Length);
+        Instance = this;
     }
 
     public void StartDialogue(DialogueData dialogue)
@@ -30,7 +23,11 @@ public class DialogueManager : MonoBehaviour
         dialogueActuel = dialogue;
         index = 0;
 
-        choicePanel.SetActive(false);
+        if (currentChoicePanel != null)
+        {
+            Destroy(currentChoicePanel);
+            currentChoicePanel = null;
+        }
         if (InputVN.Instance != null)
             InputVN.Instance.modeActuel = VNMode.Dialogue;
 
@@ -39,6 +36,15 @@ public class DialogueManager : MonoBehaviour
 
     void ShowLine()
     {
+        if (dialogueActuel == null ||
+            dialogueActuel.lignes == null ||
+            dialogueActuel.lignes.Length == 0)
+        {
+            Debug.LogWarning("Dialogue vide.");
+            StopDialogue();
+            return;
+        }
+
         dialogueText.text = dialogueActuel.lignes[index];
     }
 
@@ -78,49 +84,73 @@ public class DialogueManager : MonoBehaviour
     void ShowChoices()
     {
         InputVN.Instance.modeActuel = VNMode.Choix;
-        choicePanel.SetActive(true);
 
-        // On commence par désactiver TOUS les boutons pré-placés
-        foreach (Button btn in boutonsPrePlaces)
+        GameObject panelPrefab = dialogueActuel.customChoicePanelPrefab;
+
+        if (panelPrefab == null)
         {
-            btn.gameObject.SetActive(false);
+            Debug.LogError($"Aucun Choice Panel assigné dans {dialogueActuel.name}");
+            return;
         }
 
-        // On configure uniquement les boutons nécessaires pour ce choix précis
+        if (currentChoicePanel != null)
+        {
+            Destroy(currentChoicePanel);
+        }
+
+        Canvas parentCanvas = FindFirstObjectByType<Canvas>();
+        Transform parent = parentCanvas != null ? parentCanvas.transform : transform;
+
+        currentChoicePanel = Instantiate(panelPrefab, parent);
+
+        Button[] buttons = currentChoicePanel.GetComponentsInChildren<Button>(true);
+
         for (int i = 0; i < dialogueActuel.choices.Length; i++)
         {
-            // Sécurité : si tu as plus de choix dans ton scriptable object que de boutons dans la scène
-            if (i >= boutonsPrePlaces.Length)
+            if (i >= buttons.Length)
             {
-                Debug.LogWarning("Attention: Pas assez de boutons pré-placés pour afficher tous les choix !");
+                Debug.LogWarning("Pas assez de boutons dans le panel !");
                 break;
             }
 
-            Button btn = boutonsPrePlaces[i];
-            var choice = dialogueActuel.choices[i]; // Copie locale pour éviter le bug de capture de variable
+            var choice = dialogueActuel.choices[i];
+            Button btn = buttons[i];
 
-            // On active le bouton et on change son texte
             btn.gameObject.SetActive(true);
-            btn.GetComponentInChildren<TMP_Text>().text = choice.texte;
 
-            // On nettoie les anciens événements et on ajoute le nouveau
+            TMP_Text text = btn.GetComponentInChildren<TMP_Text>();
+            if (text != null)
+                text.text = choice.texte;
+
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(() =>
             {
+                Destroy(currentChoicePanel);
+                currentChoicePanel = null;
+
                 ChangeBackground(choice.backgroundAfterChoice);
-                StartDialogue(choice.nextDialogue);
+
+                if (choice.nextDialogue != null)
+                    StartDialogue(choice.nextDialogue);
+                else
+                    StopDialogue();
             });
         }
     }
 
     public void StopDialogue()
     {
-        ChangeBackground(dialogueActuel.nextBackground);
+        if (currentChoicePanel != null)
+        {
+            Destroy(currentChoicePanel);
+            currentChoicePanel = null;
+        }
 
-        choicePanel.SetActive(false);
+        if (dialogueActuel.nextBackground != null)
+            ChangeBackground(dialogueActuel.nextBackground);
 
-        if (InputVN.Instance != null)
-            InputVN.Instance.modeActuel = VNMode.Zone;
+        InputVN.Instance.modeActuel = VNMode.Zone;
     }
+
 }
 

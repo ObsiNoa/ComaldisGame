@@ -26,11 +26,10 @@ public class InputVN : MonoBehaviour
                 GameObject overObj = EventSystem.current.currentSelectedGameObject;
                 if (overObj != null && (overObj.GetComponent<Button>() != null || overObj.GetComponentInParent<Button>() != null))
                 {
-                    return; // C'est un vrai bouton, on bloque le clic de dialogue
+                    return; 
                 }
             }
 
-            // Si on arrive ici, c'est un clic normal dans le vide ou sur le texte : on passe à la ligne suivante
             DialogueManager.Instance.NextLine();
         }
     }

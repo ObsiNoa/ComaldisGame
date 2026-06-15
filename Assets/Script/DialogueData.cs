@@ -1,7 +1,10 @@
 using UnityEngine;
 using System;
+using UnityEngine.UIElements;
+
 
 [CreateAssetMenu(menuName = "VN/Dialogue")]
+
 public class DialogueData : ScriptableObject
 {
     [TextArea]
@@ -9,8 +12,10 @@ public class DialogueData : ScriptableObject
 
     public DialogueChoice[] choices;
 
-    [Header("Background à appliquer après ce dialogue")]
     public Sprite nextBackground;
+
+    [Header("Prefab UI (Canvas Panel)")]
+    public GameObject customChoicePanelPrefab;
 }
 
 [Serializable]

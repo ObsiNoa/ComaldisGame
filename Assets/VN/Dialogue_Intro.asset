@@ -22,7 +22,12 @@ MonoBehaviour:
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000, guid: e4e2e07efcf617f42954084cb8cef68e, type: 2}
+    backgroundAfterChoice: {fileID: 0}
   - texte: 
     nextDialogue: {fileID: 11400000, guid: 942a578c35eca204e9c47f6daa25e23c, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 10fce0db71b875143b85e4635826779e, type: 3}
   - texte: 
     nextDialogue: {fileID: 11400000, guid: 3c161f64ba47995438c82ea39ccc8fb7, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 3abcd055de982d5459866ae6b3ca1b4a, type: 3}
+  nextBackground: {fileID: 21300000, guid: 32ff92121fc48b046a56f31ee2f571ce, type: 3}
+  customChoicePanelPrefab: {fileID: 3724794371817868004, guid: 7d85a48f87133be4580a0b511b439777, type: 3}
