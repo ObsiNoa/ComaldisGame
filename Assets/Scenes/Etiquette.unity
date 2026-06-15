@@ -149,17 +149,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!108 &266451774
 Light:
   m_ObjectHideFlags: 0
@@ -376,269 +382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1296067542
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 323307824418810448, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 323307824418810448, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FermerUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 413331209002451689, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_text
-      value: "Infos : \n\nJuste des informations de bases sur votre vehicule affect\xE9e
-        cette journ\xE9e."
-      objectReference: {fileID: 0}
-    - target: {fileID: 494316659306198187, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 494316659306198187, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FermerUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1585414362955607741, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_Name
-      value: Planning
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900688317916326370, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 1900688317916326370, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FermerUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978491677938118495, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 196
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2492961131266329822, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 2492961131266329822, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OuvrirUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202738563870032759, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 3202738563870032759, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OuvrirUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3326748302313079626, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_text
-      value: "Infos : \n\nInfos compl\xE9mentaires sur la livraison. \nPeut contenir
-        des demandes sp\xE9ciales sur la livraison tel que: la r\xE9cup\xE9ration
-        des palettes Europe."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3527400395135851766, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 3527400395135851766, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OuvrirUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816726155975786293, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4122059301295326541, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_text
-      value: "Infos : \n\nInfo sur la tourn\xE9e, l'heure ou vous devez arriv\xE9s
-        \xE0 Comaldis.\nEt informations sp\xE9cifiques relative \xE0 la tourn\xE9e
-        : \nex : le vehicule affect\xE9 n'est pas celui du bordereau de groupage
-        mais le KP1 avec une remorque bach\xE9e.\nVous pouvez avoir des commentaires
-        \xE9galement mais \xE7a ne sera pas toujours le cas.\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4122059301295326541, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_fontSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4122059301295326541, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458943631998387212, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4617670994382997083, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4962245010577671875, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 4962245010577671875, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OuvrirUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5538545037093704726, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758756893359901133, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5964534615936576924, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -270
-      objectReference: {fileID: 0}
-    - target: {fileID: 6268600450133477532, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -217
-      objectReference: {fileID: 0}
-    - target: {fileID: 6634590357651477411, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_text
-      value: "Infos : \n\nSi la ligne est gris\xE9, il s'agit d'une ramasse.\nLa
-        colone livraison sert donc \xE0 indiqu\xE9 o\xF9 vous aller pour faire la
-        ramasse."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451059853860643814, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_text
-      value: "Infos : \n\nLes livraisons de la journ\xE9e sont dans l'ordre de passage,
-        votre destination est dans la colone livraison."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7494708158365661745, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565923616114267953, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7614776118290917781, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7984883587560810115, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8045567853606285870, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 8045567853606285870, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FermerUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8171893122238594463, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 8171893122238594463, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OuvrirUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 9049683773707653882, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 726551488}
-    - target: {fileID: 9049683773707653882, guid: 761789d94491d2041a0ea2720442c017, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FermerUnPanel
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 761789d94491d2041a0ea2720442c017, type: 3}
 --- !u!1 &1820215155
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +475,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 881908680406190331, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999760046391538066, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 3999760046391538066, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OuvrirUnPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378610091607128784, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 4378610091607128784, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OuvrirUnPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773035608837971453, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 4773035608837971453, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OuvrirUnPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879245058024110265, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 5879245058024110265, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FermerUnPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471465618579756099, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 6471465618579756099, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FermerUnPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840612716423210788, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 6840612716423210788, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FermerUnPanel
       objectReference: {fileID: 0}
     - target: {fileID: 7767486596812673257, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_Pivot.x
@@ -814,6 +605,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7928025195427234675, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 7928025195427234675, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FermerUnPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229660981198913591, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 726551488}
+    - target: {fileID: 8229660981198913591, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OuvrirUnPanel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -828,4 +635,3 @@ SceneRoots:
   - {fileID: 1820215158}
   - {fileID: 726551489}
   - {fileID: 2131389951}
-  - {fileID: 1296067542}
