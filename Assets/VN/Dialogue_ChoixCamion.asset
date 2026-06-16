@@ -15,4 +15,9 @@ MonoBehaviour:
   lignes:
   - Maintenant avant de commencer a travailler deux choses importantes s'impose.
   - Premierement assurons nous que vous avez compris votre tournee
-  choices: []
+  choices:
+  - texte: Voir le planning
+    nextDialogue: {fileID: 0}
+    backgroundAfterChoice: {fileID: 0}
+  nextBackground: {fileID: 0}
+  customChoicePanelPrefab: {fileID: 5940946343983186033, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
