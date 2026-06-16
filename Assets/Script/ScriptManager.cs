@@ -71,6 +71,9 @@ public class DialogueManager : MonoBehaviour
 
     void ShowChoicesOrEnd()
     {
+        if (dialogueActuel.nextBackground != null)
+            ChangeBackground(dialogueActuel.nextBackground);
+
         if (dialogueActuel.choices != null && dialogueActuel.choices.Length > 0)
         {
             ShowChoices();
@@ -145,9 +148,6 @@ public class DialogueManager : MonoBehaviour
             Destroy(currentChoicePanel);
             currentChoicePanel = null;
         }
-
-        if (dialogueActuel.nextBackground != null)
-            ChangeBackground(dialogueActuel.nextBackground);
 
         InputVN.Instance.modeActuel = VNMode.Zone;
     }
