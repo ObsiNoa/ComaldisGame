@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 207}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 437.89377, y: 201.89711}
+  m_SizeDelta: {x: 137.0125, y: 99.7585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &656880831262589085
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 05ef61b612d4ed748847767ac5b203d9, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 5477449698243025667}
   - component: {fileID: 2162269585587898904}
   m_Layer: 5
-  m_Name: ChoicePanel
+  m_Name: ButtonToPlanning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
