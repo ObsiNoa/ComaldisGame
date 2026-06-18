@@ -530,15 +530,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1163811017907392461, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_Color.a
-      value: 0.57254905
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1163811017907392461, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1163811017907392461, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1163811017907392461, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_Color.r
@@ -547,6 +547,10 @@ PrefabInstance:
     - target: {fileID: 1585414362955607741, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_Name
       value: Planning
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585414362955607741, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1900688317916326370, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -559,6 +563,18 @@ PrefabInstance:
     - target: {fileID: 1978491677938118495, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171138296886807352, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171138296886807352, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+      propertyPath: m_ReceivesEvents
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171138296886807352, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2387423563865683351, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_Pivot.x
@@ -780,7 +796,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1585414362955607741, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1764339802}
   m_SourcePrefab: {fileID: 100100000, guid: 761789d94491d2041a0ea2720442c017, type: 3}
 --- !u!1 &1365994817
 GameObject:
@@ -985,6 +1004,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484374587}
   m_CullTransparentMesh: 1
+--- !u!1 &1764339798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1585414362955607741, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+  m_PrefabInstance: {fileID: 1136705366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1764339801 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2171138296886807352, guid: 761789d94491d2041a0ea2720442c017, type: 3}
+  m_PrefabInstance: {fileID: 1136705366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1764339802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764339798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ffe9798639a01649abab06dd01ae3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasSortingController
+  targetCanvas: {fileID: 1764339801}
 --- !u!1 &1930858993
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1039,7 @@ GameObject:
   - component: {fileID: 1930858996}
   - component: {fileID: 1930858995}
   - component: {fileID: 1930858994}
+  - component: {fileID: 1930858998}
   m_Layer: 5
   m_Name: ButtonUI
   m_TagString: Untagged
@@ -1053,14 +1096,14 @@ Canvas:
   m_GameObject: {fileID: 1930858993}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
+  m_SortingBucketNormalizedSize: 1
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
@@ -1087,6 +1130,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1930858998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930858993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ffe9798639a01649abab06dd01ae3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasSortingController
+  targetCanvas: {fileID: 1930858996}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1095,5 +1151,5 @@ SceneRoots:
   - {fileID: 1365994819}
   - {fileID: 146818548}
   - {fileID: 605946745}
-  - {fileID: 1136705366}
   - {fileID: 1930858997}
+  - {fileID: 1136705366}
