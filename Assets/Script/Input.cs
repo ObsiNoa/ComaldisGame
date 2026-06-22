@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UI; // Ne pas oublier pour détecter les Buttons
+using UnityEngine.UI; 
 
 public class InputVN : MonoBehaviour
 {
