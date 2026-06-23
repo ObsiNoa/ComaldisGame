@@ -11,6 +11,11 @@ public class ZoneInteractions : MonoBehaviour
     [Header("Ref UI")]
     public TextMeshProUGUI texteUI;
 
+    [Header("Lien Check-list")]
+    public GestionnaireCheckList checklist; 
+    [Tooltip("Écrire 'pneus' ou 'bache'")]
+    public string idTacheChecklist;
+
     private bool joueurDansLaZone = false;
     private bool verificationFaite = false; 
 
@@ -64,6 +69,10 @@ public class ZoneInteractions : MonoBehaviour
         verificationFaite = true;
         Debug.Log("VÉRIFICATION RÉUSSIE : " + nomDeLaVerification);
 
+        if (checklist != null)
+        {
+            checklist.CocherTache(idTacheChecklist);
+        }
         if (texteUI != null)
         {
             // Optionnel : change le texte pour montrer que c'est validé avant de le cacher
