@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,7 +7,14 @@ public class ZoneInteractions : MonoBehaviour
 {
     [Header("Config")]
     public string nomDeLaVerification;
-    public string messageAffichage = "Appuyer sur E pour vérifier";
+
+    [Header("Ref UI")]
+    public TextMeshProUGUI texteUI;
+
+    [Header("Lien Check-list")]
+    public GestionnaireCheckList checklist; 
+    [Tooltip("Écrire 'pneus' ou 'bache'")]
+    public string idTacheChecklist;
 
     private bool joueurDansLaZone = false;
     private bool verificationFaite = false; 
@@ -28,38 +36,54 @@ public class ZoneInteractions : MonoBehaviour
         }
     }
 
-    // Détection : Le joueur entre dans la zone
     private void OnTriggerEnter(Collider other)
     {
-        // On vérifie que c'est bien le joueur (la capsule) qui entre
-        if (other.gameObject.name == "Player" || other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.gameObject.name == "Player")
         {
             joueurDansLaZone = true;
-            if (!verificationFaite)
+
+            if (!verificationFaite && texteUI != null)
             {
-                // Ici tu pourras plus tard relier ton UI pour afficher le texte à l'écran
-                Debug.Log(messageAffichage + " : " + nomDeLaVerification);
+                // Construit le message : "[E] pour vérifier la bâche"
+                texteUI.text = "[E] " + " " + nomDeLaVerification;
+                texteUI.gameObject.SetActive(true); // Affiche le texte à l'écran
             }
         }
     }
 
-    // Détection : Le joueur sort de la zone
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Player" || other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.gameObject.name == "Player")
         {
             joueurDansLaZone = false;
-            Debug.Log("Vous vous éloignez de : " + nomDeLaVerification);
+
+            if (texteUI != null)
+            {
+                texteUI.gameObject.SetActive(false); // Cache le texte quand le joueur s'éloigne
+            }
         }
     }
 
-    // Action de validation
     void ValiderVerification()
     {
         verificationFaite = true;
         Debug.Log("VÉRIFICATION RÉUSSIE : " + nomDeLaVerification);
 
-        // C'est ici qu'on pourra déclencher un son, changer la couleur d'une icône 
-        // ou ouvrir un dialogue/image comme on l'a fait au tout début !
+        if (checklist != null)
+        {
+            checklist.CocherTache(idTacheChecklist);
+        }
+        if (texteUI != null)
+        {
+            // Optionnel : change le texte pour montrer que c'est validé avant de le cacher
+            texteUI.text = nomDeLaVerification + " Vérifié !";
+            // On cache le texte après 1 seconde pour laisser le joueur voir la validation
+            Invoke("CacherUI", 1f);
+        }
+    }
+
+    void CacherUI()
+    {
+        if (texteUI != null) texteUI.gameObject.SetActive(false);
     }
 }
