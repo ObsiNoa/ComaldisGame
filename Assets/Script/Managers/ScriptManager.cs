@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Choices UI (Pre-placed Buttons)")]
     private GameObject currentChoicePanel;
     private int index;
+    private bool dialogueHasProgressed;
 
     void Awake()
     {
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
         if (InputVN.Instance != null)
             InputVN.Instance.modeActuel = VNMode.Dialogue;
 
+
         ShowLine();
     }
 
@@ -48,9 +50,27 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = dialogueActuel.lignes[index];
     }
 
+    public void PreviousLine()
+    {
+        if (dialogueActuel == null) return;
+
+        if (index <= 0) return;
+
+        index--;
+        ShowLine();
+    }
+
+    public int GetCurrentIndex()
+    {
+        return index;
+    }
+
     public void NextLine()
     {
         index++;
+
+        if (CanvasManager.Instance != null)
+            CanvasManager.Instance.NotifyDialogueProgress();
 
         if (index >= dialogueActuel.lignes.Length)
         {
