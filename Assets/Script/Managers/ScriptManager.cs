@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public Image backgroundImage;
     public DialogueData dialogueActuel;
     public TMP_Text dialogueText;
+    private DialogueData previousDialogue;
+    private int previousIndex;
 
     [Header("Choices UI (Pre-placed Buttons)")]
     private GameObject currentChoicePanel;
@@ -21,6 +23,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueData dialogue)
     {
+        previousDialogue = dialogueActuel;
+        previousIndex = index;
+
         dialogueActuel = dialogue;
         index = 0;
 
@@ -54,10 +59,18 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueActuel == null) return;
 
-        if (index <= 0) return;
-
-        index--;
-        ShowLine();
+        if (index > 0)
+        {
+            index--;
+            ShowLine();
+        }
+        else if (previousDialogue != null)
+        {
+            dialogueActuel = previousDialogue;
+            index = previousIndex;
+            previousDialogue = null;
+            ShowLine();
+        }
     }
 
     public int GetCurrentIndex()

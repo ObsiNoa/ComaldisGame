@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1529819719357705640
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 684817994327747468, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: nomDeLaScene
+      value: Camion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1056.304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940946343983186033, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_Name
+      value: ButtonToTruck Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}

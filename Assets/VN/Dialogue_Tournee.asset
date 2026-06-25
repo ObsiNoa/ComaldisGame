@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_Tournee
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lignes:
+  - "J'\xE9sp\xE8re que vous avez bien retenus votre trajet du jour !"
+  - Si jamais vous avez besoin de vous le rappeler n'hesitez pas a ouvrir a nouveau
+    votre planning sur votre telephone.
+  - 'Pour en savoir plus sur chaque section veuillez cliquer sur les information
+    qui vous interesse, un pannel explicatif apparaitra. '
+  - Il contient de nombreuses informations sur ce que vous aurez a accomplir aujourd'hui,
+    je vous conseille alors de le lire en detail.
+  - "Maintenant, avant de commencer votre tourn\xE9e, ne vous reste plus qu'une derni\xE8re
+    chose \xE0 faire. Inspectons notre camion pour la journ\xE9e."
+  choices:
+  - texte: Aller voir le camion
+    nextDialogue: {fileID: 0}
+    backgroundAfterChoice: {fileID: 0}
+  nextBackground: {fileID: 0}
+  customChoicePanelPrefab: {fileID: 5136770804661497305, guid: e52f01b842b5ad84b9db775f8aa21cb8, type: 3}

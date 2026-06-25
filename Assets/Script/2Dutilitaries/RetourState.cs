@@ -9,6 +9,7 @@ public class RetourButtonController : MonoBehaviour
     {
         if (CanvasManager.Instance == null)
             Debug.LogError("CanvasManager.Instance is NULL");
+        boutonRetour.onClick.AddListener(() => DialogueManager.Instance.PreviousLine());
         UpdateEtat();
     }
 

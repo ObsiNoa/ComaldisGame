@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 799956031}
   - component: {fileID: 799956030}
   m_Layer: 5
-  m_Name: ClosePlanning
+  m_Name: ClosePlanningButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,20 +1295,20 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+    m_PressedColor: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 1}
+    m_SelectedColor: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 86049a3722478374197b92f817434159, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 2f912655b0e7b514e86776d6fadf6ec8, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 86049a3722478374197b92f817434159, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f912655b0e7b514e86776d6fadf6ec8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1515,8 +1515,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 799956029}
   - {fileID: 1275401149}
+  - {fileID: 799956029}
   m_Father: {fileID: 1839818012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   OpenImage: {fileID: 21300000, guid: 05ef61b612d4ed748847767ac5b203d9, type: 3}
   PlanningButton: {fileID: 799956030}
   boutonRetour: {fileID: 1275401150}
-  firstDialogue: {fileID: 11400000, guid: 3c161f64ba47995438c82ea39ccc8fb7, type: 2}
+  firstDialogue: {fileID: 11400000, guid: b6411ba369a39e24d8cd2a7215833d88, type: 2}
 --- !u!4 &1645814935
 Transform:
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,7 @@ SceneRoots:
   - {fileID: 146818548}
   - {fileID: 1839818012}
   - {fileID: 1136705366}
-  - {fileID: 1645814935}
   - {fileID: 774519717}
   - {fileID: 1225959915}
   - {fileID: 1123393612}
+  - {fileID: 1645814935}
