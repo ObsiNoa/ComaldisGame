@@ -16,6 +16,9 @@ public class ZoneInteractions : MonoBehaviour
     [Tooltip("Écrire 'pneus' ou 'bache'")]
     public string idTacheChecklist;
 
+    [Header("Effets Visuels")]
+    public ParticleSystem systemeParticules; 
+
     private bool joueurDansLaZone = false;
     private bool verificationFaite = false; 
 
@@ -68,11 +71,16 @@ public class ZoneInteractions : MonoBehaviour
     {
         verificationFaite = true;
         Debug.Log("VÉRIFICATION RÉUSSIE : " + nomDeLaVerification);
+        if(systemeParticules != null)
+        {
+            systemeParticules.Stop();
+        }
 
         if (checklist != null)
         {
             checklist.CocherTache(idTacheChecklist);
         }
+
         if (texteUI != null)
         {
             // Optionnel : change le texte pour montrer que c'est validé avant de le cacher
