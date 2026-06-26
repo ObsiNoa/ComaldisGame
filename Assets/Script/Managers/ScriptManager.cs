@@ -122,7 +122,6 @@ public class DialogueManager : MonoBehaviour
         InputVN.Instance.modeActuel = VNMode.Choix;
 
         GameObject panelPrefab = dialogueActuel.customChoicePanelPrefab;
-
         if (panelPrefab == null)
         {
             Debug.LogError($"Aucun Choice Panel assigné dans {dialogueActuel.name}");
@@ -130,14 +129,19 @@ public class DialogueManager : MonoBehaviour
         }
 
         if (currentChoicePanel != null)
-        {
             Destroy(currentChoicePanel);
-        }
 
-        Canvas parentCanvas = FindFirstObjectByType<Canvas>();
-        Transform parent = parentCanvas != null ? parentCanvas.transform : transform;
+        // Single instantiation at root, no parent
+        currentChoicePanel = Instantiate(panelPrefab);
 
-        currentChoicePanel = Instantiate(panelPrefab, parent);
+        Canvas panelCanvas = currentChoicePanel.GetComponent<Canvas>();
+        if (panelCanvas == null)
+            panelCanvas = currentChoicePanel.AddComponent<Canvas>();
+        panelCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        panelCanvas.sortingOrder = 999;
+
+        if (currentChoicePanel.GetComponent<UnityEngine.UI.GraphicRaycaster>() == null)
+            currentChoicePanel.AddComponent<UnityEngine.UI.GraphicRaycaster>();
 
         Button[] buttons = currentChoicePanel.GetComponentsInChildren<Button>(true);
 

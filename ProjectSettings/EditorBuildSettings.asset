@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainHub.unity
     guid: d54323bb9370f3e4b823b84b9b951055
+  - enabled: 1
+    path: Assets/Scenes/Camion.unity
+    guid: 0ac6ba8bd24a48f439d441c39b956c45
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

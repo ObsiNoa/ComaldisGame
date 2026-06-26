@@ -27,4 +27,4 @@ MonoBehaviour:
     nextDialogue: {fileID: 0}
     backgroundAfterChoice: {fileID: 0}
   nextBackground: {fileID: 0}
-  customChoicePanelPrefab: {fileID: 5136770804661497305, guid: e52f01b842b5ad84b9db775f8aa21cb8, type: 3}
+  customChoicePanelPrefab: {fileID: 4661649334032528386, guid: 286bb03e5d3b9fc40839aa4c50aaca61, type: 3}
