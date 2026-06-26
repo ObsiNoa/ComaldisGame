@@ -13,7 +13,7 @@ public class ZoneInteractions : MonoBehaviour
 
     [Header("Lien Check-list")]
     public GestionnaireCheckList checklist; 
-    [Tooltip("Écrire 'pneus' ou 'bache'")]
+    [Tooltip("Écrire 'pneus', 'bache', 'porte' ou 'phare'")]
     public string idTacheChecklist;
 
     [Header("Effets Visuels")]
