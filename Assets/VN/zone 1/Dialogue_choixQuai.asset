@@ -26,4 +26,4 @@ MonoBehaviour:
     nextDialogue: {fileID: 11400000, guid: 3c161f64ba47995438c82ea39ccc8fb7, type: 2}
     backgroundAfterChoice: {fileID: 21300000, guid: 3abcd055de982d5459866ae6b3ca1b4a, type: 3}
   nextBackground: {fileID: 21300000, guid: 32ff92121fc48b046a56f31ee2f571ce, type: 3}
-  customChoicePanelPrefab: {fileID: 3724794371817868004, guid: 7d85a48f87133be4580a0b511b439777, type: 3}
+  customChoicePanelPrefab: {fileID: 8374291418714990687, guid: 193e2414f9f2293458421da18775fd6a, type: 3}
