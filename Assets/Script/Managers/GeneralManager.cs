@@ -8,7 +8,6 @@ public class GameStart : MonoBehaviour
     IEnumerator Start()
     {
         Debug.Log("GameStart : Attente...");
-
         // On attend un frame pour laisser le temps aux Awake() de se lancer
         yield return null;
 
@@ -25,5 +24,6 @@ public class GameStart : MonoBehaviour
 
         Debug.Log("Lancement OK");
         DialogueManager.Instance.StartDialogue(dialogueInitial);
+
     }
 }

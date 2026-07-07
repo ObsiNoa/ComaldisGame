@@ -5,7 +5,6 @@ public class GameManager : MonoBehaviour
     // Cette variable va garder en mémoire le panel actuellement ouvert à l'écran
     private GameObject panelActuelOuvert;
 
-    
     public void OuvrirUnPanel(GameObject panelAActiver)
     {
         // 1. Si un panel est déjà ouvert à l'écran, on le ferme d'abord
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
     public void FermerUnPanel(GameObject panelAFermer)
     {
         if (panelAFermer != null)
