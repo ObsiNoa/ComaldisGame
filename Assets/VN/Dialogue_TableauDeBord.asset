@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_TableauDeBord
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lignes:
+  - "Bon, derni\xE8re petite v\xE9rification avant de prendre la route."
+  - "Bien qu'il soit recommand\xE9 d'ouvrir le capot afin de v\xE9rifier les niveaux
+    de votre camion, vous n'aurez pas forcement la place/le temps de le faire."
+  - "Pour cela, faisons confiance \xE0 nos voyants et verifions que tout est en ordre
+    avant de partir."
+  - "Si un niveau et bas ou un voyant est allum\xE9, veuillez contacter un sup\xE9rieur
+    afin que le probl\xE8me soit regl\xE9 au plus vite."
+  - "(Cliquez sur les \xE9l\xE9ments qui ne vous sont pas familier afin d'obtenir
+    des explications dessus. Vous pourrew ensuitecliauer sur ce bouton et passer
+    \xE0 la conduite)"
+  choices: []
+  nextBackground: {fileID: 0}
+  customChoicePanelPrefab: {fileID: 0}

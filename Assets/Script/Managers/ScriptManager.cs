@@ -8,6 +8,10 @@ public class DialogueManager : MonoBehaviour
     public Image backgroundImage;
     public DialogueData dialogueActuel;
     public TMP_Text dialogueText;
+
+    [Header("Dialogue Canvas (auto-hidden when dialogue ends without choices)")]
+    public GameObject dialogueCanvas;
+
     private DialogueData previousDialogue;
     private int previousIndex;
 
@@ -34,9 +38,13 @@ public class DialogueManager : MonoBehaviour
             Destroy(currentChoicePanel);
             currentChoicePanel = null;
         }
+
+        // Make sure the canvas is visible again when a new dialogue starts
+        if (dialogueCanvas != null)
+            dialogueCanvas.SetActive(true);
+
         if (InputVN.Instance != null)
             InputVN.Instance.modeActuel = VNMode.Dialogue;
-
 
         ShowLine();
     }
@@ -119,7 +127,8 @@ public class DialogueManager : MonoBehaviour
 
     void ShowChoices()
     {
-        InputVN.Instance.modeActuel = VNMode.Choix;
+        if (InputVN.Instance != null)
+            InputVN.Instance.modeActuel = VNMode.Choix;
 
         GameObject panelPrefab = dialogueActuel.customChoicePanelPrefab;
         if (panelPrefab == null)
@@ -186,8 +195,14 @@ public class DialogueManager : MonoBehaviour
             currentChoicePanel = null;
         }
 
-        InputVN.Instance.modeActuel = VNMode.Zone;
+        // Destroy the dialogue canvas instead of just disabling it
+        if (dialogueCanvas != null)
+        {
+            Destroy(dialogueCanvas);
+            dialogueCanvas = null;
+        }
+
+        if (InputVN.Instance != null)
+            InputVN.Instance.modeActuel = VNMode.Zone;
     }
-
 }
-
