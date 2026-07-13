@@ -162,7 +162,35 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b2f9adc22d0fa0647880b18b89bf0872, type: 3}
   - {fileID: 2800000, guid: 8583bfb2058e94a48801d7212430d8d1, type: 3}
   - {fileID: 2800000, guid: a734eccac0ad8bc49950dd4fbee58611, type: 3}
-  menuGUIContents: []
+  menuGUIContents:
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: 34aed1010b525bf4c9cfd7da35361a90, type: 3}
+    m_Tooltip: Scene View Status
+    m_TextWithWhitespace: 
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: 32e963efb91d19147842f8bd95d6ac56, type: 3}
+    m_Tooltip: Add Road Object
+    m_TextWithWhitespace: 
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: ffc15be4bded7b34f9f406cde082a4a2, type: 3}
+    m_Tooltip: Add Connection Object
+    m_TextWithWhitespace: 
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: 881f73f964cf5104abc91a5f657615a8, type: 3}
+    m_Tooltip: Update Terrain
+    m_TextWithWhitespace: 
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: b2f9adc22d0fa0647880b18b89bf0872, type: 3}
+    m_Tooltip: General Settings
+    m_TextWithWhitespace: 
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: 8583bfb2058e94a48801d7212430d8d1, type: 3}
+    m_Tooltip: Side Object Manager
+    m_TextWithWhitespace: 
+  - m_Text: 
+    m_Image: {fileID: 2800000, guid: a734eccac0ad8bc49950dd4fbee58611, type: 3}
+    m_Tooltip: Info
+    m_TextWithWhitespace: 
   subMenuTexs: []
   cprefab: {fileID: 0}
   nodeHandleTexture: {fileID: 0}
@@ -250,8 +278,7 @@ MonoBehaviour:
     roadMaterials: []
     roadPhysicsMaterial: {fileID: 0}
     roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7,
-      type: 2}
+    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
     isSideObject: 0
     isCustomRoad: 0
     subSegments: 0
@@ -378,8 +405,7 @@ MonoBehaviour:
   crossingMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
   roundAboutMaterial: {fileID: 2100000, guid: 55e19257e99adea4380d1160ee92af9f, type: 2}
   roundAboutConnectionMaterial: {fileID: 0}
-  roundAboutRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c,
-    type: 2}
+  roundAboutRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
   sidewalkMaterial: {fileID: 0}
   targetMaterial: {fileID: 0}
   sourceTerrain: {fileID: 0}
@@ -458,7 +484,7 @@ MonoBehaviour:
   terrainCheckDone: 1
   terrainMinIndent: 3.6621094
   terrainCellSize: 2.4414062
-  minIndent: 3.662109
+  minIndent: 3.6621094
   minSurrounding: 3
   surroundingHeightFactor: 0.5
   terrainCellAngleThreshold: 90
@@ -473,12 +499,15 @@ MonoBehaviour:
   mirrorCrossings: 1
   terrainNames:
   - All Terrains
+  - TerrainClient
+  - TerrainOrigine
   - Terrain
   terrainObjects:
   - {fileID: 0}
   - {fileID: 0}
-  terrainSplatTextures:
-  - Splat 1 - layer_Grass ER
+  - {fileID: 0}
+  - {fileID: 0}
+  terrainSplatTextures: []
   activeTerrain: {fileID: 0}
   activeTerrainY: 0
   selectedTerrain: 0
@@ -787,7 +816,7 @@ MonoBehaviour:
   SoTestObject: {fileID: 0}
   lockRoadNetwork: 0
   showNotifications: 1
-  multipleTerrainsWarning: 0
+  multipleTerrainsWarning: 1
   OODCQQCCCD: []
   OOCQQQCOCC: []
   textureCounter: 0
