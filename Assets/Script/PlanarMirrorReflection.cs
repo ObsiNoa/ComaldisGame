@@ -12,7 +12,10 @@ public class PlanarMirrorReflection : MonoBehaviour
     public enum MirrorAxis { Forward, Back, Up, Down, Right, Left }
 
     [Header("Reflection setup")]
-    [Tooltip("Axe local du mesh qui pointe vers l'exterieur du miroir (vers ce qu'il doit reflechir)")]
+    [Tooltip("Si coche, la normale est calculee automatiquement a partir de la geometrie du mesh (recommande apres un split). Sinon, utilise l'axe choisi ci-dessous.")]
+    public bool useMeshNormal = true;
+
+    [Tooltip("Axe local du mesh qui pointe vers l'exterieur du miroir (utilise seulement si useMeshNormal est decoche)")]
     public MirrorAxis mirrorNormalAxis = MirrorAxis.Forward;
 
     [Tooltip("Camera principale du joueur (si vide, prend Camera.main)")]
@@ -37,7 +40,9 @@ public class PlanarMirrorReflection : MonoBehaviour
     private Renderer meshRenderer;
     private MaterialPropertyBlock propertyBlock;
     private int frameCounter;
-    private static readonly int MainTexId = Shader.PropertyToID("_BaseMap");
+    private Vector3 cachedLocalMeshNormal = Vector3.forward;
+    private bool hasCachedMeshNormal;
+    private static readonly int MainTexId = Shader.PropertyToID("baseColorTexture");
     private static readonly int UnlitTexId = Shader.PropertyToID("_MainTex");
 
     void OnEnable()
@@ -47,8 +52,28 @@ public class PlanarMirrorReflection : MonoBehaviour
 
         if (playerCamera == null) playerCamera = Camera.main;
 
+        ComputeMeshNormalIfNeeded();
         CreateReflectionCameraAndTexture();
         RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;
+    }
+
+    void ComputeMeshNormalIfNeeded()
+    {
+        hasCachedMeshNormal = false;
+        MeshFilter mf = GetComponent<MeshFilter>();
+        if (mf == null || mf.sharedMesh == null) return;
+
+        Mesh mesh = mf.sharedMesh;
+        Vector3[] normals = mesh.normals;
+        if (normals == null || normals.Length == 0) return;
+
+        Vector3 sum = Vector3.zero;
+        for (int i = 0; i < normals.Length; i++) sum += normals[i];
+
+        if (sum.sqrMagnitude < 0.0001f) return; // normales qui s'annulent, pas fiable
+
+        cachedLocalMeshNormal = sum.normalized;
+        hasCachedMeshNormal = true;
     }
 
     void OnDisable()
@@ -98,16 +123,22 @@ public class PlanarMirrorReflection : MonoBehaviour
 
     void OnBeginCameraRendering(ScriptableRenderContext context, Camera cam)
     {
+        Debug.Log($"[Mirror] Callback reçu pour cam={cam.name}, playerCamera={(playerCamera != null ? playerCamera.name : "NULL")}");
         if (cam != playerCamera) return; // ne reagit qu'au rendu de la camera du joueur
-        if (reflectionCamera == null || reflectionTexture == null) return;
-
+        Debug.Log("[Mirror] Match ! On tente de rendre la réflexion.");
+        if (reflectionCamera == null || reflectionTexture == null)
+        {
+            Debug.LogWarning("[Mirror] reflectionCamera ou reflectionTexture est NULL !");
+            return;
+        }
+            
         frameCounter++;
         if (frameCounter % refreshEveryNFrames != 0) return;
 
         UpdateReflectionCameraTransform(cam);
 
         // clip plane oblique pour ne pas refleter ce qui est derriere le miroir
-        Vector3 pos = transform.position;
+        Vector3 pos = GetMirrorWorldPosition();
         Vector3 normal = GetWorldNormal();
         Vector4 clipPlaneCamSpace = CameraSpacePlane(reflectionCamera, pos, normal, clipPlaneOffset);
         reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlaneCamSpace);
@@ -115,8 +146,22 @@ public class PlanarMirrorReflection : MonoBehaviour
         UniversalRenderPipeline.RenderSingleCamera(context, reflectionCamera);
     }
 
+    Vector3 GetMirrorWorldPosition()
+    {
+        // Apres un split de mesh, transform.position peut correspondre au pivot du
+        // parent d'origine (souvent errone). On utilise donc le centre des bounds
+        // du renderer, qui reflete la vraie position du mesh dans le monde.
+        if (meshRenderer != null) return meshRenderer.bounds.center;
+        return transform.position;
+    }
+
     Vector3 GetWorldNormal()
     {
+        if (useMeshNormal && hasCachedMeshNormal)
+        {
+            return transform.TransformDirection(cachedLocalMeshNormal).normalized;
+        }
+
         switch (mirrorNormalAxis)
         {
             case MirrorAxis.Forward: return transform.forward;
@@ -131,7 +176,7 @@ public class PlanarMirrorReflection : MonoBehaviour
 
     void UpdateReflectionCameraTransform(Camera sourceCam)
     {
-        Vector3 pos = transform.position;
+        Vector3 pos = GetMirrorWorldPosition();
         Vector3 normal = GetWorldNormal();
 
         // matrice de reflexion par rapport au plan du miroir
@@ -183,6 +228,21 @@ public class PlanarMirrorReflection : MonoBehaviour
         Vector3 cpos = m.MultiplyPoint(offsetPos);
         Vector3 cnormal = m.MultiplyVector(normal).normalized;
         return new Vector4(cnormal.x, cnormal.y, cnormal.z, -Vector3.Dot(cpos, cnormal));
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Fleche verte = direction actuelle de la normale du miroir (Mirror Normal Axis).
+        // Cette fleche doit pointer VERS L'EXTERIEUR du miroir, vers ce qu'il doit refleter
+        // (typiquement vers l'arriere/le cote du camion, PAS vers le chassis/la carrosserie).
+        Vector3 normal = GetWorldNormal();
+        Vector3 origin = GetMirrorWorldPosition();
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(origin, origin + normal * 1.5f);
+        Gizmos.DrawSphere(origin + normal * 1.5f, 0.05f);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(origin, 0.04f);
     }
 
     void CleanUp()
