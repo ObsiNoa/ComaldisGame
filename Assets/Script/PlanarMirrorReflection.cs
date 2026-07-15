@@ -101,6 +101,8 @@ public class PlanarMirrorReflection : MonoBehaviour
         reflectionCamera.enabled = false; // on le rend manuellement
         reflectionCamera.targetTexture = reflectionTexture;
         reflectionCamera.cullingMask = reflectLayers;
+        reflectionCamera.clearFlags = CameraClearFlags.Skybox;
+        reflectionCamera.backgroundColor = Color.clear;
 
         var camData = camGO.AddComponent<UniversalAdditionalCameraData>();
         camData.renderShadows = true;
@@ -125,6 +127,7 @@ public class PlanarMirrorReflection : MonoBehaviour
     {
         Debug.Log($"[Mirror] Callback reçu pour cam={cam.name}, playerCamera={(playerCamera != null ? playerCamera.name : "NULL")}");
         if (cam != playerCamera) return; // ne reagit qu'au rendu de la camera du joueur
+        if (gameObject.name != "MirrorIsland_MainL1") return;
         Debug.Log("[Mirror] Match ! On tente de rendre la réflexion.");
         if (reflectionCamera == null || reflectionTexture == null)
         {
@@ -140,10 +143,11 @@ public class PlanarMirrorReflection : MonoBehaviour
         // clip plane oblique pour ne pas refleter ce qui est derriere le miroir
         Vector3 pos = GetMirrorWorldPosition();
         Vector3 normal = GetWorldNormal();
-        Vector4 clipPlaneCamSpace = CameraSpacePlane(reflectionCamera, pos, normal, clipPlaneOffset);
-        reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlaneCamSpace);
+        //Vector4 clipPlaneCamSpace = CameraSpacePlane(reflectionCamera, pos, normal, clipPlaneOffset);
+        //reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlaneCamSpace);
 
         UniversalRenderPipeline.RenderSingleCamera(context, reflectionCamera);
+        Debug.Log("[Mirror] RenderSingleCamera appelé pour de vrai !");
     }
 
     Vector3 GetMirrorWorldPosition()
@@ -197,6 +201,7 @@ public class PlanarMirrorReflection : MonoBehaviour
         Vector3 forward = reflectionMatrix.MultiplyVector(sourceCam.transform.forward);
         Vector3 up = reflectionMatrix.MultiplyVector(sourceCam.transform.up);
         reflectionCamera.transform.rotation = Quaternion.LookRotation(forward, up);
+        Debug.Log($"[Mirror] MirrorPos={pos} Normal={normal} | CamReflPos={reflectionCamera.transform.position} CamReflFwd={reflectionCamera.transform.forward} | SourceCamPos={sourceCam.transform.position}");
     }
 
     static Matrix4x4 CalculateReflectionMatrix(Vector4 plane)

@@ -475,237 +475,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!21 &292225295
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: mirror_island_2
-  m_Shader: {fileID: -6465566751694194690, guid: b9d29dfa1474148e792ac720cbd45122, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    MotionVector: User
-    RenderType: Opaque
-  disabledShaderPasses:
-  - MOTIONVECTORS
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - baseColorTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - emissiveTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - metallicRoughnessTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - normalTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - occlusionTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - transmissionTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
-    - _BUILTIN_AlphaClip: 0
-    - _BUILTIN_Blend: 0
-    - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 0
-    - _BUILTIN_QueueControl: -1
-    - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 1
-    - _BUILTIN_Surface: 0
-    - _BUILTIN_ZTest: 4
-    - _BUILTIN_ZWrite: 1
-    - _BUILTIN_ZWriteControl: 0
-    - _Blend: 0
-    - _BlendModePreserveSpecular: 0
-    - _CastShadows: 1
-    - _Cull: 0
-    - _DstBlend: 0
-    - _QueueControl: 1
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZTest: 4
-    - _ZWrite: 1
-    - _ZWriteControl: 0
-    - alphaCutoff: 0
-    - baseColorTexture_texCoord: 0
-    - emissiveExposureWeight: 0
-    - emissiveTexture_texCoord: 0
-    - metallicFactor: 1
-    - metallicRoughnessTexture_texCoord: 0
-    - normalTexture_scale: 1
-    - normalTexture_texCoord: 0
-    - occlusionTexture_strength: 1
-    - occlusionTexture_texCoord: 0
-    - roughnessFactor: 0
-    - transmissionFactor: 0
-    m_Colors:
-    - baseColorFactor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - baseColorTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - emissiveFactor: {r: 0, g: 0, b: 0, a: 1}
-    - emissiveTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - metallicRoughnessTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - normalTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - occlusionTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!20 &316557707 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5422271973167032124, guid: 2f41d41c70a7fa042ba24d6faa386835, type: 3}
   m_PrefabInstance: {fileID: 8542082930667955725}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &338776486
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: mirror_island_3
-  m_Shader: {fileID: -6465566751694194690, guid: b9d29dfa1474148e792ac720cbd45122, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    MotionVector: User
-    RenderType: Opaque
-  disabledShaderPasses:
-  - MOTIONVECTORS
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - baseColorTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - emissiveTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - metallicRoughnessTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - normalTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - occlusionTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - transmissionTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
-    - _BUILTIN_AlphaClip: 0
-    - _BUILTIN_Blend: 0
-    - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 0
-    - _BUILTIN_QueueControl: -1
-    - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 1
-    - _BUILTIN_Surface: 0
-    - _BUILTIN_ZTest: 4
-    - _BUILTIN_ZWrite: 1
-    - _BUILTIN_ZWriteControl: 0
-    - _Blend: 0
-    - _BlendModePreserveSpecular: 0
-    - _CastShadows: 1
-    - _Cull: 0
-    - _DstBlend: 0
-    - _QueueControl: 1
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZTest: 4
-    - _ZWrite: 1
-    - _ZWriteControl: 0
-    - alphaCutoff: 0
-    - baseColorTexture_texCoord: 0
-    - emissiveExposureWeight: 0
-    - emissiveTexture_texCoord: 0
-    - metallicFactor: 1
-    - metallicRoughnessTexture_texCoord: 0
-    - normalTexture_scale: 1
-    - normalTexture_texCoord: 0
-    - occlusionTexture_strength: 1
-    - occlusionTexture_texCoord: 0
-    - roughnessFactor: 0
-    - transmissionFactor: 0
-    m_Colors:
-    - baseColorFactor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - baseColorTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - emissiveFactor: {r: 0, g: 0, b: 0, a: 1}
-    - emissiveTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - metallicRoughnessTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - normalTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - occlusionTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &556044219
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanarMirrorReflection
   useMeshNormal: 0
-  mirrorNormalAxis: 1
+  mirrorNormalAxis: 0
   playerCamera: {fileID: 316557707}
   reflectLayers:
     serializedVersion: 2
@@ -786,7 +560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 726442087}
+  - {fileID: 2100000, guid: 668f66085b712e34f9db8248f866a23d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -858,13 +632,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597261095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4e2fe0f85c82d348bdc3ad9cce2dc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanarMirrorReflection
   useMeshNormal: 0
-  mirrorNormalAxis: 1
+  mirrorNormalAxis: 0
   playerCamera: {fileID: 316557707}
   reflectLayers:
     serializedVersion: 2
@@ -897,7 +671,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1381409423661103541, guid: 1eb41666391d4574e896939926814a87, type: 3}
+  - {fileID: 2100000, guid: 668f66085b712e34f9db8248f866a23d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -928,119 +702,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597261095}
   m_Mesh: {fileID: 1757717151}
---- !u!21 &726442087
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: mirror_island_1
-  m_Shader: {fileID: -6465566751694194690, guid: b9d29dfa1474148e792ac720cbd45122, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    MotionVector: User
-    RenderType: Opaque
-  disabledShaderPasses:
-  - MOTIONVECTORS
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - baseColorTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - emissiveTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - metallicRoughnessTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - normalTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - occlusionTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - transmissionTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
-    - _BUILTIN_AlphaClip: 0
-    - _BUILTIN_Blend: 0
-    - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 0
-    - _BUILTIN_QueueControl: -1
-    - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 1
-    - _BUILTIN_Surface: 0
-    - _BUILTIN_ZTest: 4
-    - _BUILTIN_ZWrite: 1
-    - _BUILTIN_ZWriteControl: 0
-    - _Blend: 0
-    - _BlendModePreserveSpecular: 0
-    - _CastShadows: 1
-    - _Cull: 0
-    - _DstBlend: 0
-    - _QueueControl: 1
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZTest: 4
-    - _ZWrite: 1
-    - _ZWriteControl: 0
-    - alphaCutoff: 0
-    - baseColorTexture_texCoord: 0
-    - emissiveExposureWeight: 0
-    - emissiveTexture_texCoord: 0
-    - metallicFactor: 1
-    - metallicRoughnessTexture_texCoord: 0
-    - normalTexture_scale: 1
-    - normalTexture_texCoord: 0
-    - occlusionTexture_strength: 1
-    - occlusionTexture_texCoord: 0
-    - roughnessFactor: 0
-    - transmissionFactor: 0
-    m_Colors:
-    - baseColorFactor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - baseColorTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - emissiveFactor: {r: 0, g: 0, b: 0, a: 1}
-    - emissiveTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - metallicRoughnessTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - normalTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - occlusionTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &731500316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanarMirrorReflection
   useMeshNormal: 0
-  mirrorNormalAxis: 1
+  mirrorNormalAxis: 0
   playerCamera: {fileID: 316557707}
   reflectLayers:
     serializedVersion: 2
@@ -1121,7 +782,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 338776486}
+  - {fileID: 2100000, guid: 668f66085b712e34f9db8248f866a23d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2488,7 +2149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanarMirrorReflection
   useMeshNormal: 0
-  mirrorNormalAxis: 1
+  mirrorNormalAxis: 0
   playerCamera: {fileID: 316557707}
   reflectLayers:
     serializedVersion: 2
@@ -2521,7 +2182,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 292225295}
+  - {fileID: 2100000, guid: 668f66085b712e34f9db8248f866a23d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
