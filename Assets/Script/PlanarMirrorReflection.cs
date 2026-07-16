@@ -3,9 +3,8 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 // A mettre sur CHAQUE objet retroviseur (le mesh qui affiche le reflet).
-// Le mesh doit etre a peu plat (un quad/plan) et orienter sa normale
+// Le mesh doit etre a peu pres plat (un quad/plan) et orienter sa normale
 // selon l'axe choisi ci-dessous (verifie dans la Scene view avec Gizmos).
-[ExecuteAlways]
 [DisallowMultipleComponent]
 public class PlanarMirrorReflection : MonoBehaviour
 {
@@ -134,7 +133,7 @@ public class PlanarMirrorReflection : MonoBehaviour
             Debug.LogWarning("[Mirror] reflectionCamera ou reflectionTexture est NULL !");
             return;
         }
-            
+
         frameCounter++;
         if (frameCounter % refreshEveryNFrames != 0) return;
 
@@ -143,8 +142,8 @@ public class PlanarMirrorReflection : MonoBehaviour
         // clip plane oblique pour ne pas refleter ce qui est derriere le miroir
         Vector3 pos = GetMirrorWorldPosition();
         Vector3 normal = GetWorldNormal();
-        //Vector4 clipPlaneCamSpace = CameraSpacePlane(reflectionCamera, pos, normal, clipPlaneOffset);
-        //reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlaneCamSpace);
+        Vector4 clipPlaneCamSpace = CameraSpacePlane(reflectionCamera, pos, normal, clipPlaneOffset);
+        reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlaneCamSpace);
 
         UniversalRenderPipeline.RenderSingleCamera(context, reflectionCamera);
         Debug.Log("[Mirror] RenderSingleCamera appelé pour de vrai !");
@@ -152,15 +151,24 @@ public class PlanarMirrorReflection : MonoBehaviour
 
     Vector3 GetMirrorWorldPosition()
     {
-        // Apres un split de mesh, transform.position peut correspondre au pivot du
-        // parent d'origine (souvent errone). On utilise donc le centre des bounds
-        // du renderer, qui reflete la vraie position du mesh dans le monde.
+        // Récupération dynamique dans l'éditeur (hors mode Play)
+        if (meshRenderer == null) meshRenderer = GetComponent<Renderer>();
+
+        // On utilise le centre des bounds du Renderer pour cibler le centre de la vitre.
+        // Si le renderer n'est pas dispo, on se rabat sur le transform.position.
         if (meshRenderer != null) return meshRenderer.bounds.center;
         return transform.position;
     }
 
     Vector3 GetWorldNormal()
     {
+        // Si on est dans l'éditeur, on recalcule la normale du mesh à la volée 
+        // pour que le Gizmo vert s'oriente immédiatement et correctement.
+        if (useMeshNormal && !hasCachedMeshNormal)
+        {
+            ComputeMeshNormalIfNeeded();
+        }
+
         if (useMeshNormal && hasCachedMeshNormal)
         {
             return transform.TransformDirection(cachedLocalMeshNormal).normalized;
@@ -252,6 +260,11 @@ public class PlanarMirrorReflection : MonoBehaviour
 
     void CleanUp()
     {
+        if (meshRenderer != null)
+        {
+            meshRenderer.SetPropertyBlock(null); // efface le property block existant
+        }
+
         if (reflectionCamera != null)
         {
             if (Application.isPlaying) Destroy(reflectionCamera.gameObject);
