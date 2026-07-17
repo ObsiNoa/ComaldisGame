@@ -22,14 +22,20 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Mud
   m_Shader: {fileID: -6465566751694194690, guid: a448380e30550304fb17e67c9c4031c0, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -130,30 +136,31 @@ Material:
     - Vector1_A4C19241: -0.02
     - Vector1_D87711D5: 1.84
     - Vector1_FD71C679: 0.03
+    - _AddPrecomputedVelocity: 0
     - _AlphaClip: 1
+    - _AlphaToMask: 1
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _Blend: 0
+    - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _Depth: -0.13
-    - _Depth2: -0.54
+    - _ClearCoatMask: 0
+    - _Depth2: 0
     - _Displacement: 0.04
     - _Displacement2: 0.05
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
+    - _Glossiness: 1
+    - _GlossyReflections: 1
     - _Metallic: 0.353
     - _Metallic2: 0
     - _NormalStrengh: 2.17
     - _NormalStrengh2: 1
     - _Normal_Strenght: -1.14
-    - _OcclusionStrength: 1
+    - _OcclusionStrength: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _Smoothness: 0.272
     - _Smoothness2: 0.254
     - _SmoothnessTextureChannel: 0
@@ -172,7 +179,7 @@ Material:
     - Color_4036F87A: {r: 0.31817374, g: 0.37574536, b: 0.4716981, a: 0}
     - Color_89B8B254: {r: 0.17021182, g: 0.31034538, b: 0.4245283, a: 0}
     - Color_C54C3F2A: {r: 0.11120496, g: 0.2447063, b: 0.462264, a: 0.21176471}
-    - _BaseColor: {r: 0, g: 0.22306585, b: 1, a: 1}
+    - _BaseColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FistColor: {r: 0.34905648, g: 0.16866982, b: 0.07738509, a: 0.7882353}
@@ -186,3 +193,17 @@ Material:
     - _Water_Color_1: {r: 0.2504449, g: 0.42415485, b: 0.7924528, a: 0.2784314}
     - _Water_Color_2: {r: 0.21176457, g: 0.48646343, b: 0.6901961, a: 0.33333334}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &3457564733415743176
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
