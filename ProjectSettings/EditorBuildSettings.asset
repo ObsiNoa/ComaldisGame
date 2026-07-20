@@ -6,23 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Etiquette.unity
+    path: Assets/Scenes/2DScene/Etiquette.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: "Assets/Scenes/Tourn\xE9e.unity"
+    path: "Assets/Scenes/2DScene/Tourn\xE9e.unity"
     guid: 891fac553ba1f874494227c0aa8eb695
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/2DScene/MainMenu.unity
     guid: 22794645b461ac6419ab7d01deacff87
   - enabled: 1
-    path: Assets/Scenes/MainHub.unity
+    path: Assets/Scenes/2DScene/MainHub.unity
     guid: d54323bb9370f3e4b823b84b9b951055
   - enabled: 1
     path: Assets/Scenes/Camion.unity
     guid: 0ac6ba8bd24a48f439d441c39b956c45
   - enabled: 1
-    path: Assets/Scenes/TableauDeBord.unity
+    path: Assets/Scenes/2DScene/TableauDeBord.unity
     guid: 88497b2ec875dc34c8cd7f8efd39d7ce
+  - enabled: 1
+    path: Assets/Scenes/Conduite_Final.unity
+    guid: ff4e1e9c747eee44a8d44a679237a34a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

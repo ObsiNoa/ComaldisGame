@@ -60,6 +60,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 1
+    - _QueueControl: 1
     - baseColorTexture_texCoord: 0
     - metallicFactor: 0
     - occlusionTexture_texCoord: 0
