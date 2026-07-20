@@ -1,282 +1,277 @@
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 
-// A mettre sur CHAQUE objet retroviseur (le mesh qui affiche le reflet).
-// Le mesh doit etre a peu pres plat (un quad/plan) et orienter sa normale
-// selon l'axe choisi ci-dessous (verifie dans la Scene view avec Gizmos).
-[DisallowMultipleComponent]
+[ExecuteInEditMode]
 public class PlanarMirrorReflection : MonoBehaviour
 {
-    public enum MirrorAxis { Forward, Back, Up, Down, Right, Left }
+    public enum Axis
+    {
+        Forward,
+        Back,
+        Left,
+        Right,
+        Up,
+        Down
+    }
 
     [Header("Reflection setup")]
-    [Tooltip("Si coche, la normale est calculee automatiquement a partir de la geometrie du mesh (recommande apres un split). Sinon, utilise l'axe choisi ci-dessous.")]
-    public bool useMeshNormal = true;
-
-    [Tooltip("Axe local du mesh qui pointe vers l'exterieur du miroir (utilise seulement si useMeshNormal est decoche)")]
-    public MirrorAxis mirrorNormalAxis = MirrorAxis.Forward;
-
-    [Tooltip("Camera principale du joueur (si vide, prend Camera.main)")]
+    public bool useMeshNormal = false;
+    public bool invertNormal = false;
+    public Axis mirrorNormalAxis = Axis.Forward;
     public Camera playerCamera;
+    public LayerMask reflectLayers = -1;
 
-    [Tooltip("Layers a inclure dans le reflet (exclure le layer du miroir lui-meme !)")]
-    public LayerMask reflectLayers = ~0;
-
-    [Header("Qualite / perfs")]
-    [Tooltip("Resolution de la texture de reflet. 512 pour les retros principaux, 256 pour les grands-angles")]
+    [Header("Qualité / Perfs")]
     public int textureSize = 512;
-
-    [Tooltip("Ne recalculer le reflet qu'une frame sur N (1 = chaque frame)")]
-    [Range(1, 6)]
-    public int refreshEveryNFrames = 2;
-
-    [Tooltip("Decalage du plan de clip pour eviter les artefacts au bord du miroir")]
+    [Range(1, 10)]
+    public int refreshEveryNFrames = 1;
     public float clipPlaneOffset = 0.02f;
 
-    private Camera reflectionCamera;
-    private RenderTexture reflectionTexture;
-    private Renderer meshRenderer;
-    private MaterialPropertyBlock propertyBlock;
-    private int frameCounter;
-    private Vector3 cachedLocalMeshNormal = Vector3.forward;
-    private bool hasCachedMeshNormal;
-    private static readonly int MainTexId = Shader.PropertyToID("baseColorTexture");
-    private static readonly int UnlitTexId = Shader.PropertyToID("_MainTex");
+    private RenderTexture m_ReflectionTexture;
+    private Camera m_ReflectionCamera;
+    private MaterialPropertyBlock m_PropertyBlock;
+    private int m_FrameCounter = 0;
+    private static bool s_InsideRendering = false;
 
-    void OnEnable()
+    private void OnDisable()
     {
-        meshRenderer = GetComponent<Renderer>();
-        propertyBlock = new MaterialPropertyBlock();
-
-        if (playerCamera == null) playerCamera = Camera.main;
-
-        ComputeMeshNormalIfNeeded();
-        CreateReflectionCameraAndTexture();
-        RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;
+        CleanupResources();
     }
 
-    void ComputeMeshNormalIfNeeded()
+    private void OnDestroy()
     {
-        hasCachedMeshNormal = false;
-        MeshFilter mf = GetComponent<MeshFilter>();
-        if (mf == null || mf.sharedMesh == null) return;
-
-        Mesh mesh = mf.sharedMesh;
-        Vector3[] normals = mesh.normals;
-        if (normals == null || normals.Length == 0) return;
-
-        Vector3 sum = Vector3.zero;
-        for (int i = 0; i < normals.Length; i++) sum += normals[i];
-
-        if (sum.sqrMagnitude < 0.0001f) return; // normales qui s'annulent, pas fiable
-
-        cachedLocalMeshNormal = sum.normalized;
-        hasCachedMeshNormal = true;
+        CleanupResources();
     }
 
-    void OnDisable()
+    private void CleanupResources()
     {
-        RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
-        CleanUp();
-    }
-
-    void CreateReflectionCameraAndTexture()
-    {
-        CleanUp();
-
-        reflectionTexture = new RenderTexture(textureSize, textureSize, 16, RenderTextureFormat.Default)
+        if (m_ReflectionTexture != null)
         {
-            name = $"ReflectionRT_{gameObject.name}",
-            antiAliasing = 1,
-            useMipMap = false
-        };
-
-        GameObject camGO = new GameObject($"ReflectionCam_{gameObject.name}")
-        {
-            hideFlags = HideFlags.HideAndDontSave
-        };
-        reflectionCamera = camGO.AddComponent<Camera>();
-        reflectionCamera.enabled = false; // on le rend manuellement
-        reflectionCamera.targetTexture = reflectionTexture;
-        reflectionCamera.cullingMask = reflectLayers;
-        reflectionCamera.clearFlags = CameraClearFlags.Skybox;
-        reflectionCamera.backgroundColor = Color.clear;
-
-        var camData = camGO.AddComponent<UniversalAdditionalCameraData>();
-        camData.renderShadows = true;
-        camData.requiresColorOption = CameraOverrideOption.Off;
-        camData.requiresDepthOption = CameraOverrideOption.Off;
-        camData.renderType = CameraRenderType.Base;
-
-        ApplyTextureToMaterial();
-    }
-
-    void ApplyTextureToMaterial()
-    {
-        if (meshRenderer == null) return;
-        meshRenderer.GetPropertyBlock(propertyBlock);
-        // fonctionne pour Universal Render Pipeline/Unlit (_BaseMap) et Unlit/Texture classique (_MainTex)
-        propertyBlock.SetTexture(MainTexId, reflectionTexture);
-        propertyBlock.SetTexture(UnlitTexId, reflectionTexture);
-        meshRenderer.SetPropertyBlock(propertyBlock);
-    }
-
-    void OnBeginCameraRendering(ScriptableRenderContext context, Camera cam)
-    {
-        Debug.Log($"[Mirror] Callback reçu pour cam={cam.name}, playerCamera={(playerCamera != null ? playerCamera.name : "NULL")}");
-        if (cam != playerCamera) return; // ne reagit qu'au rendu de la camera du joueur
-        if (gameObject.name != "MirrorIsland_MainL1") return;
-        Debug.Log("[Mirror] Match ! On tente de rendre la réflexion.");
-        if (reflectionCamera == null || reflectionTexture == null)
-        {
-            Debug.LogWarning("[Mirror] reflectionCamera ou reflectionTexture est NULL !");
-            return;
+            if (Application.isPlaying)
+                Destroy(m_ReflectionTexture);
+            else
+                DestroyImmediate(m_ReflectionTexture);
+            m_ReflectionTexture = null;
         }
 
-        frameCounter++;
-        if (frameCounter % refreshEveryNFrames != 0) return;
-
-        UpdateReflectionCameraTransform(cam);
-
-        // clip plane oblique pour ne pas refleter ce qui est derriere le miroir
-        Vector3 pos = GetMirrorWorldPosition();
-        Vector3 normal = GetWorldNormal();
-        Vector4 clipPlaneCamSpace = CameraSpacePlane(reflectionCamera, pos, normal, clipPlaneOffset);
-        reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlaneCamSpace);
-
-        UniversalRenderPipeline.RenderSingleCamera(context, reflectionCamera);
-        Debug.Log("[Mirror] RenderSingleCamera appelé pour de vrai !");
+        if (m_ReflectionCamera != null)
+        {
+            if (Application.isPlaying)
+                Destroy(m_ReflectionCamera.gameObject);
+            else
+                DestroyImmediate(m_ReflectionCamera.gameObject);
+            m_ReflectionCamera = null;
+        }
     }
 
-    Vector3 GetMirrorWorldPosition()
+    /// <summary>
+    /// Calcule le centre géométrique réel de la surface du miroir 
+    /// même si le pivot du modèle 3D est situé au centre du pare-brise.
+    /// </summary>
+    public Vector3 GetMirrorCenter()
     {
-        // Récupération dynamique dans l'éditeur (hors mode Play)
-        if (meshRenderer == null) meshRenderer = GetComponent<Renderer>();
-
-        // On utilise le centre des bounds du Renderer pour cibler le centre de la vitre.
-        // Si le renderer n'est pas dispo, on se rabat sur le transform.position.
-        if (meshRenderer != null) return meshRenderer.bounds.center;
+        Renderer rend = GetComponent<Renderer>();
+        if (rend != null)
+        {
+            return rend.bounds.center;
+        }
         return transform.position;
     }
 
-    Vector3 GetWorldNormal()
+    private void LateUpdate()
     {
-        // Si on est dans l'éditeur, on recalcule la normale du mesh à la volée 
-        // pour que le Gizmo vert s'oriente immédiatement et correctement.
-        if (useMeshNormal && !hasCachedMeshNormal)
-        {
-            ComputeMeshNormalIfNeeded();
-        }
+        if (!enabled || s_InsideRendering)
+            return;
 
-        if (useMeshNormal && hasCachedMeshNormal)
-        {
-            return transform.TransformDirection(cachedLocalMeshNormal).normalized;
-        }
+        if (playerCamera == null)
+            playerCamera = Camera.main;
 
-        switch (mirrorNormalAxis)
-        {
-            case MirrorAxis.Forward: return transform.forward;
-            case MirrorAxis.Back: return -transform.forward;
-            case MirrorAxis.Up: return transform.up;
-            case MirrorAxis.Down: return -transform.up;
-            case MirrorAxis.Right: return transform.right;
-            case MirrorAxis.Left: return -transform.right;
-        }
-        return transform.forward;
+        if (playerCamera == null)
+            return;
+
+        m_FrameCounter++;
+        if (refreshEveryNFrames > 1 && (m_FrameCounter % refreshEveryNFrames != 0))
+            return;
+
+        RenderReflection();
     }
 
-    void UpdateReflectionCameraTransform(Camera sourceCam)
+    private void RenderReflection()
     {
-        Vector3 pos = GetMirrorWorldPosition();
-        Vector3 normal = GetWorldNormal();
+        s_InsideRendering = true;
 
-        // matrice de reflexion par rapport au plan du miroir
+        EnsureResources();
+
+        // Utilisation du centre réel du miroir au lieu du pivot (pare-brise)
+        Vector3 pos = GetMirrorCenter();
+        Vector3 normal = GetNormal();
+
+        // Mise à jour de la caméra de réflexion
+        UpdateCameraProperties(playerCamera, m_ReflectionCamera);
+
+        // Calcul du plan de réflexion
         float d = -Vector3.Dot(normal, pos) - clipPlaneOffset;
         Vector4 reflectionPlane = new Vector4(normal.x, normal.y, normal.z, d);
-        Matrix4x4 reflectionMatrix = CalculateReflectionMatrix(reflectionPlane);
 
-        reflectionCamera.worldToCameraMatrix = sourceCam.worldToCameraMatrix * reflectionMatrix;
-        reflectionCamera.fieldOfView = sourceCam.fieldOfView;
-        reflectionCamera.nearClipPlane = sourceCam.nearClipPlane;
-        reflectionCamera.farClipPlane = sourceCam.farClipPlane;
-        reflectionCamera.aspect = sourceCam.aspect;
+        Matrix4x4 reflectionMatrix = Matrix4x4.zero;
+        CalculateReflectionMatrix(ref reflectionMatrix, reflectionPlane);
 
-        // position/rotation "reelles" (utilisees pour le culling / oblique matrix)
-        Vector3 reflectedPos = reflectionMatrix.MultiplyPoint(sourceCam.transform.position);
-        reflectionCamera.transform.position = reflectedPos;
+        Vector3 oldCamPos = playerCamera.transform.position;
+        Vector3 newCamPos = reflectionMatrix.MultiplyPoint(oldCamPos);
 
-        Vector3 forward = reflectionMatrix.MultiplyVector(sourceCam.transform.forward);
-        Vector3 up = reflectionMatrix.MultiplyVector(sourceCam.transform.up);
-        reflectionCamera.transform.rotation = Quaternion.LookRotation(forward, up);
-        Debug.Log($"[Mirror] MirrorPos={pos} Normal={normal} | CamReflPos={reflectionCamera.transform.position} CamReflFwd={reflectionCamera.transform.forward} | SourceCamPos={sourceCam.transform.position}");
+        m_ReflectionCamera.worldToCameraMatrix = playerCamera.worldToCameraMatrix * reflectionMatrix;
+
+        // Plan de coupe oblique basé sur le centre réel
+        Vector4 clipPlane = CameraSpacePlane(m_ReflectionCamera, pos, normal, 1.0f);
+        m_ReflectionCamera.projectionMatrix = playerCamera.CalculateObliqueMatrix(clipPlane);
+
+        m_ReflectionCamera.cullingMask = reflectLayers.value;
+        m_ReflectionCamera.transform.position = newCamPos;
+
+        // Rendu avec inversion du culling
+        bool oldCull = GL.invertCulling;
+        GL.invertCulling = true;
+
+        m_ReflectionCamera.Render();
+
+        GL.invertCulling = oldCull;
+
+        // Application de la texture sur le matériau d'instance
+        Renderer rend = GetComponent<Renderer>();
+        if (rend != null)
+        {
+            rend.GetPropertyBlock(m_PropertyBlock);
+            m_PropertyBlock.SetTexture("_ReflectionTex", m_ReflectionTexture);
+            m_PropertyBlock.SetTexture("_MainTex", m_ReflectionTexture);
+            rend.SetPropertyBlock(m_PropertyBlock);
+        }
+
+        s_InsideRendering = false;
     }
 
-    static Matrix4x4 CalculateReflectionMatrix(Vector4 plane)
+    public Vector3 GetNormal()
     {
-        Matrix4x4 m = Matrix4x4.identity;
-        m.m00 = 1f - 2f * plane.x * plane.x;
-        m.m01 = -2f * plane.x * plane.y;
-        m.m02 = -2f * plane.x * plane.z;
-        m.m03 = -2f * plane.x * plane.w;
+        Vector3 normal = Vector3.forward;
 
-        m.m10 = -2f * plane.y * plane.x;
-        m.m11 = 1f - 2f * plane.y * plane.y;
-        m.m12 = -2f * plane.y * plane.z;
-        m.m13 = -2f * plane.y * plane.w;
+        if (useMeshNormal)
+        {
+            MeshFilter mf = GetComponent<MeshFilter>();
+            if (mf != null && mf.sharedMesh != null && mf.sharedMesh.normals.Length > 0)
+            {
+                normal = transform.TransformDirection(mf.sharedMesh.normals[0]);
+            }
+            else
+            {
+                normal = transform.forward;
+            }
+        }
+        else
+        {
+            switch (mirrorNormalAxis)
+            {
+                case Axis.Forward: normal = transform.forward; break;
+                case Axis.Back: normal = -transform.forward; break;
+                case Axis.Left: normal = -transform.right; break;
+                case Axis.Right: normal = transform.right; break;
+                case Axis.Up: normal = transform.up; break;
+                case Axis.Down: normal = -transform.up; break;
+            }
+        }
 
-        m.m20 = -2f * plane.z * plane.x;
-        m.m21 = -2f * plane.z * plane.y;
-        m.m22 = 1f - 2f * plane.z * plane.z;
-        m.m23 = -2f * plane.z * plane.w;
+        if (invertNormal)
+        {
+            normal = -normal;
+        }
 
-        m.m30 = 0f; m.m31 = 0f; m.m32 = 0f; m.m33 = 1f;
-        return m;
+        return normal.normalized;
     }
 
-    static Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideOffset)
+    private void EnsureResources()
     {
-        Vector3 offsetPos = pos + normal * sideOffset;
+        if (m_PropertyBlock == null)
+        {
+            m_PropertyBlock = new MaterialPropertyBlock();
+        }
+
+        if (m_ReflectionTexture == null || m_ReflectionTexture.width != textureSize || m_ReflectionTexture.height != textureSize)
+        {
+            if (m_ReflectionTexture != null)
+            {
+                if (Application.isPlaying) Destroy(m_ReflectionTexture);
+                else DestroyImmediate(m_ReflectionTexture);
+            }
+
+            m_ReflectionTexture = new RenderTexture(textureSize, textureSize, 16, RenderTextureFormat.ARGB32)
+            {
+                name = "__MirrorReflection_" + GetInstanceID(),
+                isPowerOfTwo = true,
+                hideFlags = HideFlags.DontSave
+            };
+        }
+
+        if (m_ReflectionCamera == null)
+        {
+            GameObject go = new GameObject("MirrorReflectionCamera_" + GetInstanceID(), typeof(Camera), typeof(Skybox))
+            {
+                hideFlags = HideFlags.HideAndDontSave
+            };
+
+            m_ReflectionCamera = go.GetComponent<Camera>();
+            m_ReflectionCamera.enabled = false;
+        }
+    }
+
+    private void UpdateCameraProperties(Camera src, Camera dest)
+    {
+        dest.clearFlags = src.clearFlags;
+        dest.backgroundColor = src.backgroundColor;
+        dest.farClipPlane = src.farClipPlane;
+        dest.nearClipPlane = src.nearClipPlane;
+        dest.orthographic = src.orthographic;
+        dest.fieldOfView = src.fieldOfView;
+        dest.aspect = src.aspect;
+        dest.orthographicSize = src.orthographicSize;
+        dest.targetTexture = m_ReflectionTexture;
+    }
+
+    private Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
+    {
+        Vector3 offsetPos = pos + normal * clipPlaneOffset;
         Matrix4x4 m = cam.worldToCameraMatrix;
         Vector3 cpos = m.MultiplyPoint(offsetPos);
-        Vector3 cnormal = m.MultiplyVector(normal).normalized;
+        Vector3 cnormal = m.MultiplyVector(normal).normalized * sideSign;
         return new Vector4(cnormal.x, cnormal.y, cnormal.z, -Vector3.Dot(cpos, cnormal));
     }
 
-    void OnDrawGizmosSelected()
+    private static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMatrix, Vector4 plane)
     {
-        // Fleche verte = direction actuelle de la normale du miroir (Mirror Normal Axis).
-        // Cette fleche doit pointer VERS L'EXTERIEUR du miroir, vers ce qu'il doit refleter
-        // (typiquement vers l'arriere/le cote du camion, PAS vers le chassis/la carrosserie).
-        Vector3 normal = GetWorldNormal();
-        Vector3 origin = GetMirrorWorldPosition();
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(origin, origin + normal * 1.5f);
-        Gizmos.DrawSphere(origin + normal * 1.5f, 0.05f);
+        reflectionMatrix.m00 = (1F - 2F * plane[0] * plane[0]);
+        reflectionMatrix.m01 = (-2F * plane[0] * plane[1]);
+        reflectionMatrix.m02 = (-2F * plane[0] * plane[2]);
+        reflectionMatrix.m03 = (-2F * plane[3] * plane[0]);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(origin, 0.04f);
+        reflectionMatrix.m10 = (-2F * plane[1] * plane[0]);
+        reflectionMatrix.m11 = (1F - 2F * plane[1] * plane[1]);
+        reflectionMatrix.m12 = (-2F * plane[1] * plane[2]);
+        reflectionMatrix.m13 = (-2F * plane[3] * plane[1]);
+
+        reflectionMatrix.m20 = (-2F * plane[2] * plane[0]);
+        reflectionMatrix.m21 = (-2F * plane[2] * plane[1]);
+        reflectionMatrix.m22 = (1F - 2F * plane[2] * plane[2]);
+        reflectionMatrix.m23 = (-2F * plane[3] * plane[2]);
+
+        reflectionMatrix.m30 = 0F;
+        reflectionMatrix.m31 = 0F;
+        reflectionMatrix.m32 = 0F;
+        reflectionMatrix.m33 = 1F;
     }
 
-    void CleanUp()
+    private void OnDrawGizmosSelected()
     {
-        if (meshRenderer != null)
-        {
-            meshRenderer.SetPropertyBlock(null); // efface le property block existant
-        }
-
-        if (reflectionCamera != null)
-        {
-            if (Application.isPlaying) Destroy(reflectionCamera.gameObject);
-            else DestroyImmediate(reflectionCamera.gameObject);
-            reflectionCamera = null;
-        }
-        if (reflectionTexture != null)
-        {
-            reflectionTexture.Release();
-            if (Application.isPlaying) Destroy(reflectionTexture);
-            else DestroyImmediate(reflectionTexture);
-            reflectionTexture = null;
-        }
+        // Dessine désormais la ligne verte depuis le centre du miroir
+        Vector3 pos = GetMirrorCenter();
+        Vector3 normal = GetNormal();
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(pos, pos + normal * 1.5f);
+        Gizmos.DrawWireSphere(pos + normal * 1.5f, 0.08f);
     }
 }
