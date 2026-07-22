@@ -418,7 +418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 165.21075, y: -53}
+  m_AnchoredPosition: {x: 165.21075, y: -90}
   m_SizeDelta: {x: 257.5785, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &774519713
@@ -873,6 +873,7 @@ MonoBehaviour:
   backgroundImage: {fileID: 334983941}
   dialogueActuel: {fileID: 0}
   dialogueText: {fileID: 630526094}
+  dialogueCanvas: {fileID: 0}
 --- !u!114 &1123393615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,7 +1708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3abcd055de982d5459866ae6b3ca1b4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3dbf8161ffc81ba45ab3e23d4aea48f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

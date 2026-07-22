@@ -22,7 +22,7 @@ MonoBehaviour:
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000, guid: e4e2e07efcf617f42954084cb8cef68e, type: 2}
-    backgroundAfterChoice: {fileID: 0}
+    backgroundAfterChoice: {fileID: 21300000, guid: 3dbf8161ffc81ba45ab3e23d4aea48f8, type: 3}
   - texte: 
     nextDialogue: {fileID: 11400000, guid: 942a578c35eca204e9c47f6daa25e23c, type: 2}
     backgroundAfterChoice: {fileID: 21300000, guid: 10fce0db71b875143b85e4635826779e, type: 3}

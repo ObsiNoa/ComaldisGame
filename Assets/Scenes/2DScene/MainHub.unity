@@ -840,6 +840,7 @@ MonoBehaviour:
   backgroundImage: {fileID: 2101603631}
   dialogueActuel: {fileID: 0}
   dialogueText: {fileID: 161796227}
+  dialogueCanvas: {fileID: 0}
 --- !u!4 &1111103638
 Transform:
   m_ObjectHideFlags: 0
@@ -1008,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277d30afda4742040a53d9f605d0a1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputVN
-  modeActuel: 0
+  modeActuel: 1
 --- !u!4 &1688318859
 Transform:
   m_ObjectHideFlags: 0
@@ -1208,7 +1209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 32ff92121fc48b046a56f31ee2f571ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5df36f8e2c871d4f885ce556970dea9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
