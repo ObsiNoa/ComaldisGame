@@ -4816,6 +4816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camion
       objectReference: {fileID: 0}
+    - target: {fileID: 3254100198969292482, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3665396094390949873, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4875,6 +4879,10 @@ PrefabInstance:
     - target: {fileID: 4624838998664837630, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_Center.z
       value: -2.8847208
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783604952854022260, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4872060839380266288, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: textureSize
@@ -4962,7 +4970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 204.34
+      value: 474.2
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4970,11 +4978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1408.95
+      value: 1789.3
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9996002
+      value: 0.60780644
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4982,7 +4990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.028274601
+      value: -0.7940853
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4994,7 +5002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 3.24
+      value: -105.138
       objectReference: {fileID: 0}
     - target: {fileID: 7229854123753408323, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -9207,8 +9215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248e755afdccb8445afd700fed9d29e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerMessage
-  messageCanvas: {fileID: 1700770261}
-  duree: 3
+  canvas: {fileID: 1700770261}
+  playerMovement: {fileID: 1568640868}
+  duree: 8
 --- !u!65 &821396575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9224,7 +9233,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -55899,6 +55908,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5003617827504415348, guid: 123c15bdc3d1d484c8e34649090d7b70, type: 3}
   m_PrefabInstance: {fileID: 1566906333}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568640868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4783604952854022260, guid: 4ebb7db5475fde74ea93d830d10b4bf0, type: 3}
+  m_PrefabInstance: {fileID: 468038265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74a92b09d372cb4c9043f6170e88998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Conduite
 --- !u!1001 &1568993704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56605,7 +56625,7 @@ RectTransform:
   m_GameObject: {fileID: 1658468662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61163, y: 0.45977, z: 1}
+  m_LocalScale: {x: 0.7362542, y: 0.51259756, z: 1.1149}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1700770265}

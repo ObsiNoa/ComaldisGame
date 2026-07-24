@@ -1,40 +1,47 @@
 using System.Collections;
 using UnityEngine;
 
-public class TriggerMessage : MonoBehaviour
+public class PauseZone : MonoBehaviour
 {
-    public GameObject messageCanvas;
-    public float duree = 5f;
+    public GameObject canvas;
+    public MonoBehaviour playerMovement; // Ton script de déplacement
+    public float duree = 3f;
 
-    private bool dejaDeclenche = false;
+    private bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (dejaDeclenche)
+        if (triggered)
             return;
 
-        if (other.CompareTag("Player"))
-        {
-            dejaDeclenche = true;
-            StartCoroutine(AfficherMessage());
-        }
+        if (!other.CompareTag("Player"))
+            return;
+
+        triggered = true;
+        StartCoroutine(Pause());
     }
 
-    IEnumerator AfficherMessage()
+    IEnumerator Pause()
     {
-        // Affiche le message
-        messageCanvas.SetActive(true);
+        // Empêche le joueur de bouger
+        if (playerMovement != null)
+            playerMovement.enabled = false;
 
-        // Met le jeu en pause
+        // Affiche le message
+        canvas.SetActive(true);
+
+        // Gèle le jeu
         Time.timeScale = 0f;
 
-        // Attend 5 secondes réelles
+        // Attend 3 secondes réelles
         yield return new WaitForSecondsRealtime(duree);
-
-        // Cache le message
-        messageCanvas.SetActive(false);
 
         // Reprend le jeu
         Time.timeScale = 1f;
+
+        canvas.SetActive(false);
+
+        if (playerMovement != null)
+            playerMovement.enabled = true;
     }
 }
