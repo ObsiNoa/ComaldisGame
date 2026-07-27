@@ -3,16 +3,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class TransitionToDashboard : MonoBehaviour
+public class TransitionToCommand : MonoBehaviour
 {
     [Header("Ref UI")]
     public TextMeshProUGUI txtUI;
 
     [Header("Changement de scène")]
     public string nomDeLaScene;
-
-    [Header("Effets Visuels")]
-    public ParticleSystem Particules;
 
     private bool joueur = false;
 
@@ -29,12 +26,12 @@ public class TransitionToDashboard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.gameObject.name == "Player" && Particules != null)
+        if (other.CompareTag("Player") || other.gameObject.name == "Player")
         {
             joueur = true;
             if (txtUI != null)
             {
-                txtUI.text = "[E] Monter dans le camion";
+                txtUI.text = "[E] Se garer";
                 txtUI.gameObject.SetActive(true);
             }
         }
@@ -42,7 +39,7 @@ public class TransitionToDashboard : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.gameObject.name == "Player" && Particules != null)
+        if (other.CompareTag("Player") || other.gameObject.name == "Player")
         {
             joueur = false;
             if (txtUI != null)
@@ -55,11 +52,6 @@ public class TransitionToDashboard : MonoBehaviour
     void ChangerDeScene()
     {
         Debug.Log("CHANGEMENT DE SCÈNE : " + nomDeLaScene);
-
-        if (Particules != null)
-        {
-            Particules.Stop();
-        }
 
         if (string.IsNullOrEmpty(nomDeLaScene))
         {
