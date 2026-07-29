@@ -9,13 +9,16 @@ public class TransitionToCommand : MonoBehaviour
     public TextMeshProUGUI txtUI;
 
     [Header("Changement de scène")]
-    public string nomDeLaScene;
+    public string nomDeLaScene = "Livraison"; // Nom de la scène cible
 
-    private bool joueur = false;
+    [Header("Effets Visuels")]
+    public ParticleSystem Particules;
+
+    private bool joueurDansLaZone = false;
 
     void Update()
     {
-        if (joueur)
+        if (joueurDansLaZone)
         {
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
@@ -26,9 +29,12 @@ public class TransitionToCommand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.gameObject.name == "Player")
+        // On vérifie si c'est le joueur/camion via le Tag "Player" OU si l'objet contient "Camion" ou "Player" dans son nom
+        if (other.CompareTag("Player") || other.gameObject.name.Contains("Camion") || other.gameObject.name.Contains("Player"))
         {
-            joueur = true;
+            Debug.Log("---> QUELQUE CHOSE A TOUCHÉ LA ZONE : " + other.gameObject.name + " (Tag: " + other.tag + ")");
+            joueurDansLaZone = true;
+
             if (txtUI != null)
             {
                 txtUI.text = "[E] Se garer";
@@ -39,9 +45,10 @@ public class TransitionToCommand : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.gameObject.name == "Player")
+        if (other.CompareTag("Player") || other.gameObject.name.Contains("Camion") || other.gameObject.name.Contains("Player"))
         {
-            joueur = false;
+            joueurDansLaZone = false;
+
             if (txtUI != null)
             {
                 txtUI.gameObject.SetActive(false);
@@ -51,11 +58,16 @@ public class TransitionToCommand : MonoBehaviour
 
     void ChangerDeScene()
     {
-        Debug.Log("CHANGEMENT DE SCÈNE : " + nomDeLaScene);
+        Debug.Log("CHANGEMENT DE SCÈNE VERS : " + nomDeLaScene);
+
+        if (Particules != null)
+        {
+            Particules.Stop();
+        }
 
         if (string.IsNullOrEmpty(nomDeLaScene))
         {
-            Debug.LogWarning("Aucun nom de scène renseigné dans l'inspecteur !");
+            Debug.LogError("Erreur : Aucun nom de scène renseigné dans l'inspecteur !");
             return;
         }
 

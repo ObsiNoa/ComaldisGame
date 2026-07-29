@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class PauseZone : MonoBehaviour
 {
-    public GameObject canvas;
-    public MonoBehaviour playerMovement; // Ton script de déplacement
+    [Header("UI & Timing")]
+    public GameObject panelUI;          // Glisse ton Panel ici
+    public GameObject texteAAfficher;   // Glisse ton texte (ex: Text_1èreZone) ici
     public float duree = 3f;
+
+    [Header("Joueur")]
+    public MonoBehaviour playerMovement; // Ton script de déplacement
 
     private bool triggered = false;
 
@@ -27,20 +31,30 @@ public class PauseZone : MonoBehaviour
         if (playerMovement != null)
             playerMovement.enabled = false;
 
-        // Affiche le message
-        canvas.SetActive(true);
+        // Active le Panel ET le Texte
+        if (panelUI != null)
+            panelUI.SetActive(true);
+
+        if (texteAAfficher != null)
+            texteAAfficher.SetActive(true);
 
         // Gèle le jeu
         Time.timeScale = 0f;
 
-        // Attend 3 secondes réelles
+        // Attend les secondes réelles
         yield return new WaitForSecondsRealtime(duree);
 
         // Reprend le jeu
         Time.timeScale = 1f;
 
-        canvas.SetActive(false);
+        // Désactive le Panel ET le Texte à la fin du temps
+        if (panelUI != null)
+            panelUI.SetActive(false);
 
+        if (texteAAfficher != null)
+            texteAAfficher.SetActive(false);
+
+        // Réactive les mouvements
         if (playerMovement != null)
             playerMovement.enabled = true;
     }
