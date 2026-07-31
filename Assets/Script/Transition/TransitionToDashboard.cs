@@ -67,6 +67,7 @@ public class TransitionToDashboard : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(nomDeLaScene);
+        SceneLoader.SceneToLoad = nomDeLaScene;
+        SceneManager.LoadScene("LoadingScreen");
     }
 }

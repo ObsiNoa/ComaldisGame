@@ -13,7 +13,8 @@ public class BoutonEtiquette : MonoBehaviour
         if (doitChangerDeScene)
         {
             // Mode Changement de scène
-            SceneManager.LoadScene(nomDeLaScene);
+            SceneLoader.SceneToLoad = nomDeLaScene;
+            SceneManager.LoadScene("LoadingScreen");
         }
     }
 }

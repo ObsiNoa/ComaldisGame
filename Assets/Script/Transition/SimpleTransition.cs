@@ -14,6 +14,7 @@ public class LoadSceneOnClick : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(nomDeLaScene);
+        SceneLoader.SceneToLoad = nomDeLaScene;
+        SceneManager.LoadScene("LoadingScreen");
     }
 }
