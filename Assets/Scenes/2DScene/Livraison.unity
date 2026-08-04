@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b736cf686f5c89549a1a457497fbb9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadSceneOnClick
-  nomDeLaScene: Conduite_Final
+  nomDeLaScene: "Conduite_FinDeJourn\xE9e"
 --- !u!114 &235096102
 MonoBehaviour:
   m_ObjectHideFlags: 0
