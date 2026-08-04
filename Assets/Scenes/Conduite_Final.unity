@@ -9752,7 +9752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TriggerMessage
   panelUI: {fileID: 1658468662}
   texteAAfficher: {fileID: 1784650019}
-  duree: 8
+  duree: 3.5
   playerMovement: {fileID: 1568640868}
 --- !u!65 &821396575
 BoxCollider:
