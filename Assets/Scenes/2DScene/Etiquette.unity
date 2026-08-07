@@ -506,7 +506,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2131389951
+--- !u!1001 &1914190368
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -514,34 +514,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 797761334808786237, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_margin.x
-      value: 1.1568222
-      objectReference: {fileID: 0}
     - target: {fileID: 881908680406190331, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_Name
       value: Etiquette
       objectReference: {fileID: 0}
-    - target: {fileID: 881908680406190331, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380053424759599628, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3566374508297594382, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3572127348325039074, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698106603597003405, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -9
-      objectReference: {fileID: 0}
     - target: {fileID: 3999760046391538066, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -549,10 +525,6 @@ PrefabInstance:
     - target: {fileID: 3999760046391538066, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OuvrirUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4316236553221993732, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4378610091607128784, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -570,14 +542,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OuvrirUnPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 4865740180178879592, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393284535632514698, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5879245058024110265, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -585,10 +549,6 @@ PrefabInstance:
     - target: {fileID: 5879245058024110265, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FermerUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6297888706029526472, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6471465618579756099, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -598,10 +558,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FermerUnPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 6791634217656311036, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_margin.x
-      value: -0.7417526
-      objectReference: {fileID: 0}
     - target: {fileID: 6840612716423210788, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -609,25 +565,6 @@ PrefabInstance:
     - target: {fileID: 6840612716423210788, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FermerUnPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7124600717790998030, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_margin.x
-      value: -4.006233
-      objectReference: {fileID: 0}
-    - target: {fileID: 7193037602248035961, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7435589525947827229, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_text
-      value: "Infos : \n\nIci nous avons des informations importantes sur notre cargaison:
-        \n\nLe poids total, le nombre colis isol\xE9s pour savoir si il y a des colis
-        hors palettes, le nombre de palette que l'on doit transporter, le nb d'unit\xE9
-        pour d\xE9placer les palettes."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7435589525947827229, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
-      propertyPath: m_margin.x
-      value: -0.95532227
       objectReference: {fileID: 0}
     - target: {fileID: 7767486596812673257, guid: 0640d124abc7e45498e58ceca8852463, type: 3}
       propertyPath: m_Pivot.x
@@ -738,4 +675,4 @@ SceneRoots:
   - {fileID: 266451775}
   - {fileID: 1820215158}
   - {fileID: 726551489}
-  - {fileID: 2131389951}
+  - {fileID: 1914190368}
