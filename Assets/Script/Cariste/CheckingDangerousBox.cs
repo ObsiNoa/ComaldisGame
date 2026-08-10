@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ZoneNonDangereuse : MonoBehaviour
+public class ZoneDangereuse : MonoBehaviour
 {
     [SerializeField] private GlobalCanvasManager canvasManager;
 
@@ -22,7 +22,7 @@ public class ZoneNonDangereuse : MonoBehaviour
             return;
 
         // Ignore les objets dangereux
-        if (other.CompareTag("Dangereux"))
+        if (!other.CompareTag("Dangereux"))
             return;
 
         canvasManager.AjouterBoite();
@@ -30,7 +30,6 @@ public class ZoneNonDangereuse : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
         bool appartientAuxParents =
             other.transform.IsChildOf(parent1) ||
             other.transform.IsChildOf(parent2) ||
@@ -39,7 +38,7 @@ public class ZoneNonDangereuse : MonoBehaviour
         if (!appartientAuxParents)
             return;
 
-        if (other.CompareTag("Dangereux"))
+        if (!other.CompareTag("Dangereux"))
             return;
 
         canvasManager.RetirerBoite();
