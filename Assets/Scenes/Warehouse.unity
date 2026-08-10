@@ -2063,12 +2063,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61243799}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 77.37899, y: 0.01, z: 123.15566}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.346806, y: 461.84003, z: 1238.7574}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1175837168}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &61243801
 MeshRenderer:
@@ -6817,12 +6817,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196615093}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 120.22198, y: 0.18, z: 158.30771}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -59.53397, y: 89.67296, z: 1339.9419}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 2026892151}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &196615095
 MeshRenderer:
@@ -9259,6 +9259,7 @@ GameObject:
   - component: {fileID: 273538357}
   - component: {fileID: 273538356}
   - component: {fileID: 273538358}
+  - component: {fileID: 273538359}
   m_Layer: 0
   m_Name: Cube.039 (33)
   m_TagString: Untagged
@@ -9275,10 +9276,11 @@ Transform:
   m_GameObject: {fileID: 273538354}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: -2.354454, y: 3.39074, z: -16.121552}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: -3.2055488, y: 3.11, z: -17.158415}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 654826222}
   m_Father: {fileID: 1670611696}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &273538356
@@ -9358,6 +9360,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &273538359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273538354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &283235692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10449,6 +10465,7 @@ GameObject:
   - component: {fileID: 309122573}
   - component: {fileID: 309122572}
   - component: {fileID: 309122574}
+  - component: {fileID: 309122575}
   m_Layer: 0
   m_Name: Cube.039 (27)
   m_TagString: Untagged
@@ -10465,10 +10482,11 @@ Transform:
   m_GameObject: {fileID: 309122570}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4782196, y: -0.4782196, z: 0.52087045, w: 0.52087045}
-  m_LocalPosition: {x: -17.724434, y: 3.35564, z: -15.832428}
-  m_LocalScale: {x: 0.02504482, y: 0.024479073, z: 0.024479073}
+  m_LocalPosition: {x: -18.005548, y: 3.06, z: -16.988415}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1639496011}
   m_Father: {fileID: 1670611696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &309122572
@@ -10548,6 +10566,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: -0.000015258789, y: 0, z: -0.00024414062}
+--- !u!114 &309122575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309122570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &309558020
 GameObject:
   m_ObjectHideFlags: 0
@@ -10778,12 +10810,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326593553}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.014344326, z: -0, w: 0.9998972}
-  m_LocalPosition: {x: 60.81002, y: 0.11, z: 130.58}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.54081625, y: 0.54081625, z: -0.45554116, w: 0.45554116}
+  m_LocalPosition: {x: -59.346775, y: 102.401764, z: 1340.1521}
+  m_LocalScale: {x: 56.110218, y: 44.953026, z: 56.110218}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 619376082}
   m_LocalEulerAnglesHint: {x: 0, y: 1.644, z: 0}
 --- !u!23 &326593555
 MeshRenderer:
@@ -11498,6 +11530,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 492316139}
     m_Modifications:
+    - target: {fileID: 882698102828770857, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7001711
+      objectReference: {fileID: 0}
+    - target: {fileID: 882698102828770857, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7139752
+      objectReference: {fileID: 0}
+    - target: {fileID: 882698102828770857, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 91.119
+      objectReference: {fileID: 0}
     - target: {fileID: 3515197625774829207, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
       propertyPath: m_LODs.Array.data[0].renderers.Array.data[1].renderer
       value: 
@@ -12331,6 +12375,7 @@ GameObject:
   - component: {fileID: 384502877}
   - component: {fileID: 384502876}
   - component: {fileID: 384502878}
+  - component: {fileID: 384502879}
   m_Layer: 0
   m_Name: Cube.039 (23)
   m_TagString: Untagged
@@ -12347,10 +12392,11 @@ Transform:
   m_GameObject: {fileID: 384502874}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4782196, y: -0.4782196, z: 0.52087045, w: 0.52087045}
-  m_LocalPosition: {x: -17.724434, y: 3.35564, z: -0.18338013}
-  m_LocalScale: {x: 0.02504482, y: 0.024479073, z: 0.024479073}
+  m_LocalPosition: {x: -17.724434, y: 2.9099998, z: -0.18338013}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1656965775}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &384502876
@@ -12430,6 +12476,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: -0.000015258789, y: 0, z: 0}
+--- !u!114 &384502879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384502874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &384701071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14097,6 +14157,7 @@ GameObject:
   - component: {fileID: 443600933}
   - component: {fileID: 443600932}
   - component: {fileID: 443600934}
+  - component: {fileID: 443600935}
   m_Layer: 0
   m_Name: Cube.039 (13)
   m_TagString: Untagged
@@ -14112,11 +14173,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443600930}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -54.094444, y: 3.1807399, z: -7.2615967}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalRotation: {x: -0.5342266, y: -0.5342266, z: 0.4632515, w: 0.4632515}
+  m_LocalPosition: {x: -54.094444, y: 2.89, z: -7.2615967}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1678547902}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &443600932
@@ -14196,6 +14258,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0.000015258789, y: 0, z: 0}
+--- !u!114 &443600935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443600930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &444586592
 GameObject:
   m_ObjectHideFlags: 0
@@ -17705,12 +17781,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531379662}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.014344326, z: -0, w: 0.9998972}
-  m_LocalPosition: {x: 31.020012, y: 0.11, z: 130.58}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555412, w: 0.4555412}
+  m_LocalPosition: {x: -59.65327, y: 106.08096, z: 1329.7894}
+  m_LocalScale: {x: 56.11021, y: 44.953033, z: 56.11021}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1740872592}
   m_LocalEulerAnglesHint: {x: 0, y: 1.644, z: 0}
 --- !u!23 &531379664
 MeshRenderer:
@@ -20947,12 +21023,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596114480}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 92.7, y: 0.01, z: 116.12661}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.98336, y: 457.72375, z: 1261.558}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1784394531}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &596114482
 MeshRenderer:
@@ -21792,6 +21868,7 @@ GameObject:
   - component: {fileID: 619376084}
   - component: {fileID: 619376083}
   - component: {fileID: 619376085}
+  - component: {fileID: 619376086}
   m_Layer: 0
   m_Name: Cube.039 (25)
   m_TagString: Untagged
@@ -21808,10 +21885,11 @@ Transform:
   m_GameObject: {fileID: 619376081}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -24.304436, y: 3.3207393, z: -0.23254395}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -24.304436, y: 2.8750992, z: -0.23254395}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 326593554}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &619376083
@@ -21891,6 +21969,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: -0.000015258789, y: 0.00048828125, z: -0.00024414062}
+--- !u!114 &619376086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619376081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &620119234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23409,12 +23501,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644568643}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 75.11096, y: 0.18, z: 158.30771}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -59.53397, y: 92.002525, z: 1340.2212}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1523304598}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &644568645
 MeshRenderer:
@@ -23573,6 +23665,7 @@ GameObject:
   - component: {fileID: 647523036}
   - component: {fileID: 647523035}
   - component: {fileID: 647523037}
+  - component: {fileID: 647523038}
   m_Layer: 0
   m_Name: Cube.039 (17)
   m_TagString: Untagged
@@ -23589,10 +23682,11 @@ Transform:
   m_GameObject: {fileID: 647523033}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -24.824448, y: 3.2056403, z: -7.2615967}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -24.824448, y: 2.84, z: -7.2615967}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 696559171}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &647523035
@@ -23672,6 +23766,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: -0.00048828125}
+--- !u!114 &647523038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647523033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &648422040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24028,12 +24136,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654826221}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 104.90096, y: 0.18, z: 149.68771}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -60.433018, y: 98.23749, z: 1342.3137}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 273538355}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &654826223
 MeshRenderer:
@@ -24627,12 +24735,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669361195}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 120.74198, y: 0.18, z: 165.33676}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -59.346954, y: 102.40111, z: 1340.1497}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1825269458}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &669361197
 MeshRenderer:
@@ -25032,6 +25140,7 @@ GameObject:
   - component: {fileID: 678995610}
   - component: {fileID: 678995609}
   - component: {fileID: 678995611}
+  - component: {fileID: 678995612}
   m_Layer: 0
   m_Name: Cube.039 (18)
   m_TagString: Untagged
@@ -25048,10 +25157,11 @@ Transform:
   m_GameObject: {fileID: 678995607}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: -3.585701, y: 3.39074, z: -7.5015564}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: -3.585701, y: 2.84, z: -7.5015564}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1423784706}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &678995609
@@ -25131,6 +25241,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0.00048828125}
+--- !u!114 &678995612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678995607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &683312532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25381,6 +25505,7 @@ GameObject:
   - component: {fileID: 688182004}
   - component: {fileID: 688182003}
   - component: {fileID: 688182005}
+  - component: {fileID: 688182006}
   m_Layer: 0
   m_Name: Cube.039 (20)
   m_TagString: Untagged
@@ -25397,10 +25522,11 @@ Transform:
   m_GameObject: {fileID: 688182001}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -40.814445, y: 3.2207398, z: -0.23254395}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -40.814445, y: 2.7750998, z: -0.23254395}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 745753710}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &688182003
@@ -25480,6 +25606,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &688182006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688182001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &689445478
 GameObject:
   m_ObjectHideFlags: 0
@@ -25773,12 +25913,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696559170}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.014344326, z: -0, w: 0.9998972}
-  m_LocalPosition: {x: 60.29001, y: -0.0050992966, z: 123.55097}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.54081625, y: 0.54081625, z: -0.45554116, w: 0.45554116}
+  m_LocalPosition: {x: -58.18523, y: 102.40106, z: 1340.152}
+  m_LocalScale: {x: 56.110218, y: 44.953026, z: 56.110218}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 647523034}
   m_LocalEulerAnglesHint: {x: 0, y: 1.644, z: 0}
 --- !u!23 &696559172
 MeshRenderer:
@@ -27463,12 +27603,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740037226}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.00917968, z: -0, w: 0.99995786}
-  m_LocalPosition: {x: 38.43801, y: 0.14490008, z: 129.24905}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341803, y: 0.47341803, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.34698, y: 461.84995, z: 1238.7562}
+  m_LocalScale: {x: 56.110207, y: 44.95303, z: 56.110207}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1382039651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &740037228
 MeshRenderer:
@@ -27821,12 +27961,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745753709}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 47.58898, y: 0.01, z: 123.15566}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.346806, y: 461.84003, z: 1238.7574}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 688182002}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &745753711
 MeshRenderer:
@@ -28445,12 +28585,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759818131}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 120.74198, y: 0.18, z: 149.68771}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.703798, y: 0.703798, z: 0.06832596, w: -0.06832596}
+  m_LocalPosition: {x: -59.084427, y: -1331.9507, z: 82.11813}
+  m_LocalScale: {x: 56.11022, y: 44.953022, z: 56.11022}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1085918462}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &759818133
 MeshRenderer:
@@ -30696,8 +30836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionRangee
   texteUI: {fileID: 1353373818}
   messageInteraction: Prendre un carton
+  messagePlein: "Vous portez d\xE9j\xE0 un carton !"
   etiquettePrefab: {fileID: 571766507}
-  uiCanvasParent: {fileID: 109816488}
   cartons: []
 --- !u!65 &859851751
 BoxCollider:
@@ -33021,12 +33161,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911383282}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.00917968, z: -0, w: 0.99995786}
-  m_LocalPosition: {x: 67.70801, y: 0.004900217, z: 122.22}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341803, y: 0.47341803, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -60.433056, y: 461.84995, z: 1238.7562}
+  m_LocalScale: {x: 56.110207, y: 44.95303, z: 56.110207}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1408888900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &911383284
 MeshRenderer:
@@ -33772,6 +33912,7 @@ GameObject:
   - component: {fileID: 945249431}
   - component: {fileID: 945249430}
   - component: {fileID: 945249432}
+  - component: {fileID: 945249433}
   m_Layer: 0
   m_Name: Cube.039 (12)
   m_TagString: Untagged
@@ -33788,10 +33929,11 @@ Transform:
   m_GameObject: {fileID: 945249428}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -40.814445, y: 3.2207398, z: -7.2615967}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -40.814445, y: 2.88, z: -7.2615967}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2024298516}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &945249430
@@ -33871,6 +34013,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &945249433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945249428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &946715597
 GameObject:
   m_ObjectHideFlags: 0
@@ -35396,7 +35552,7 @@ Transform:
   m_GameObject: {fileID: 986102734}
   serializedVersion: 2
   m_LocalRotation: {x: 0.057862993, y: -0, z: -0, w: 0.9983246}
-  m_LocalPosition: {x: -0.29000106, y: 16.87, z: -12.329992}
+  m_LocalPosition: {x: -0.29000106, y: 17.56, z: -12.25}
   m_LocalScale: {x: 3.5748162, y: 3.5748153, z: 3.5748153}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35570,6 +35726,7 @@ GameObject:
   - component: {fileID: 988323166}
   - component: {fileID: 988323165}
   - component: {fileID: 988323167}
+  - component: {fileID: 988323168}
   m_Layer: 0
   m_Name: Cube.039 (16)
   m_TagString: Untagged
@@ -35586,10 +35743,11 @@ Transform:
   m_GameObject: {fileID: 988323163}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -11.5444565, y: 3.2207398, z: -7.2615967}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -11.5444565, y: 2.93, z: -7.2615967}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1854905860}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &988323165
@@ -35669,6 +35827,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: -0.000015258789, y: 0, z: 0}
+--- !u!114 &988323168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988323163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &991702516
 GameObject:
   m_ObjectHideFlags: 0
@@ -35681,6 +35853,7 @@ GameObject:
   - component: {fileID: 991702519}
   - component: {fileID: 991702518}
   - component: {fileID: 991702520}
+  - component: {fileID: 991702521}
   m_Layer: 0
   m_Name: Cube.039 (36)
   m_TagString: Untagged
@@ -35697,10 +35870,11 @@ Transform:
   m_GameObject: {fileID: 991702516}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: 5.0855484, y: 3.2207398, z: -15.881592}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: 4.8199997, y: 2.95, z: -16.850006}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1800975462}
   m_Father: {fileID: 1670611696}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &991702518
@@ -35780,6 +35954,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &991702521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991702516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &991934724
 GameObject:
   m_ObjectHideFlags: 0
@@ -35806,12 +35994,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991934724}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 93.22001, y: 0.01, z: 123.15566}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.346806, y: 457.41858, z: 1269.67}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1212496447}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &991934726
 MeshRenderer:
@@ -37877,12 +38065,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042194534}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 75.11096, y: 0.18, z: 165.33676}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -59.346954, y: 102.40111, z: 1340.1497}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 2006863988}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &1042194536
 MeshRenderer:
@@ -37957,6 +38145,7 @@ GameObject:
   - component: {fileID: 1050196165}
   - component: {fileID: 1050196164}
   - component: {fileID: 1050196166}
+  - component: {fileID: 1050196167}
   m_Layer: 0
   m_Name: Cube.039 (30)
   m_TagString: Untagged
@@ -37973,10 +38162,11 @@ Transform:
   m_GameObject: {fileID: 1050196162}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: -10.014458, y: 3.39074, z: -16.121552}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: -10.7155485, y: 2.957, z: -17.138414}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1957095078}
   m_Father: {fileID: 1670611696}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &1050196164
@@ -38056,6 +38246,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: 0, z: 0.00048828125}
+--- !u!114 &1050196167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050196162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1054901301
 GameObject:
   m_ObjectHideFlags: 0
@@ -38395,6 +38599,7 @@ GameObject:
   - component: {fileID: 1058949393}
   - component: {fileID: 1058949392}
   - component: {fileID: 1058949394}
+  - component: {fileID: 1058949395}
   m_Layer: 0
   m_Name: Cube.039 (1)
   m_TagString: Untagged
@@ -38412,9 +38617,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.4782196, y: -0.4782196, z: 0.52087045, w: 0.52087045}
   m_LocalPosition: {x: -47.514442, y: 3.21564, z: -7.212433}
-  m_LocalScale: {x: 0.02504482, y: 0.024479073, z: 0.024479073}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1731518487}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1058949392
@@ -38494,6 +38700,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: 0.000015258789, y: 0, z: 0}
+--- !u!114 &1058949395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058949390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1059914038
 GameObject:
   m_ObjectHideFlags: 0
@@ -39245,6 +39465,7 @@ GameObject:
   - component: {fileID: 1085918464}
   - component: {fileID: 1085918463}
   - component: {fileID: 1085918465}
+  - component: {fileID: 1085918466}
   m_Layer: 0
   m_Name: Cube.039 (28)
   m_TagString: Untagged
@@ -39261,10 +39482,11 @@ Transform:
   m_GameObject: {fileID: 1085918461}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: 13.175545, y: 3.2207398, z: -15.881592}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: 12.91, y: 3.08, z: -16.85}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 759818132}
   m_Father: {fileID: 1670611696}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &1085918463
@@ -39344,6 +39566,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: -0.00048828125, z: 0}
+--- !u!114 &1085918466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1086252424
 GameObject:
   m_ObjectHideFlags: 0
@@ -42990,6 +43226,7 @@ GameObject:
   - component: {fileID: 1170660406}
   - component: {fileID: 1170660405}
   - component: {fileID: 1170660407}
+  - component: {fileID: 1170660408}
   m_Layer: 0
   m_Name: Cube.039 (29)
   m_TagString: Untagged
@@ -43006,10 +43243,11 @@ Transform:
   m_GameObject: {fileID: 1170660403}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -24.834457, y: 3.3207393, z: -15.881592}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -24.955553, y: 3.02, z: -16.828413}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1552922110}
   m_Father: {fileID: 1670611696}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &1170660405
@@ -43089,6 +43327,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: -0.00048828125, z: -0.00048828125}
+--- !u!114 &1170660408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170660403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1175837167
 GameObject:
   m_ObjectHideFlags: 0
@@ -43101,6 +43353,7 @@ GameObject:
   - component: {fileID: 1175837170}
   - component: {fileID: 1175837169}
   - component: {fileID: 1175837171}
+  - component: {fileID: 1175837172}
   m_Layer: 0
   m_Name: Cube.039 (24)
   m_TagString: Untagged
@@ -43117,10 +43370,11 @@ Transform:
   m_GameObject: {fileID: 1175837167}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -11.024437, y: 3.2207398, z: -0.23254395}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: -11.024437, y: 2.7750998, z: -0.23254395}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 61243800}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &1175837169
@@ -43200,6 +43454,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1175837172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175837167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1177667227
 GameObject:
   m_ObjectHideFlags: 0
@@ -43975,6 +44243,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 436614, guid: e655f3e9a2337db428013f9166de8906, type: 3}
       insertIndex: -1
       addedObject: {fileID: 986102737}
+    - targetCorrespondingSourceObject: {fileID: 436614, guid: e655f3e9a2337db428013f9166de8906, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2104325161}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 149852, guid: e655f3e9a2337db428013f9166de8906, type: 3}
       insertIndex: -1
@@ -43982,6 +44253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 149852, guid: e655f3e9a2337db428013f9166de8906, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2110419132}
+    - targetCorrespondingSourceObject: {fileID: 149852, guid: e655f3e9a2337db428013f9166de8906, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110419134}
     - targetCorrespondingSourceObject: {fileID: 195560, guid: e655f3e9a2337db428013f9166de8906, type: 3}
       insertIndex: -1
       addedObject: {fileID: 575563950}
@@ -44176,6 +44450,7 @@ GameObject:
   - component: {fileID: 1212496449}
   - component: {fileID: 1212496448}
   - component: {fileID: 1212496450}
+  - component: {fileID: 1212496451}
   m_Layer: 0
   m_Name: Cube.039 (35)
   m_TagString: Untagged
@@ -44192,10 +44467,11 @@ Transform:
   m_GameObject: {fileID: 1212496446}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: 5.495552, y: 3.2207398, z: -0.23254395}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: 5.495552, y: 2.7750998, z: -0.23254395}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 991934725}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &1212496448
@@ -44275,6 +44551,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0.00048828125, z: -0.00048828125}
+--- !u!114 &1212496451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212496446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1216477325
 GameObject:
   m_ObjectHideFlags: 0
@@ -46185,6 +46475,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1673986913}
     m_Modifications:
+    - target: {fileID: 882698102828770857, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70318586
+      objectReference: {fileID: 0}
+    - target: {fileID: 882698102828770857, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.71100616
+      objectReference: {fileID: 0}
+    - target: {fileID: 882698102828770857, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.634
+      objectReference: {fileID: 0}
     - target: {fileID: 3515197625774829207, guid: c1b6887e2f42ada4f96c5c02e795dd26, type: 3}
       propertyPath: m_LODs.Array.data[0].renderers.Array.data[1].renderer
       value: 
@@ -50048,6 +50350,7 @@ GameObject:
   - component: {fileID: 1382039653}
   - component: {fileID: 1382039652}
   - component: {fileID: 1382039654}
+  - component: {fileID: 1382039655}
   m_Layer: 0
   m_Name: Cube.039 (19)
   m_TagString: Untagged
@@ -50064,10 +50367,11 @@ Transform:
   m_GameObject: {fileID: 1382039650}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4782196, y: -0.4782196, z: 0.52087045, w: 0.52087045}
-  m_LocalPosition: {x: -47.514442, y: 3.35564, z: -0.18338013}
-  m_LocalScale: {x: 0.02504482, y: 0.024479073, z: 0.024479073}
+  m_LocalPosition: {x: -47.514442, y: 2.91, z: -0.18338013}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 740037227}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1382039652
@@ -50147,6 +50451,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: -0.000015258789, y: 0, z: 0}
+--- !u!114 &1382039655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382039650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &1382558442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51293,6 +51611,7 @@ GameObject:
   - component: {fileID: 1408888902}
   - component: {fileID: 1408888901}
   - component: {fileID: 1408888903}
+  - component: {fileID: 1408888904}
   m_Layer: 0
   m_Name: Cube.039 (15)
   m_TagString: Untagged
@@ -51309,10 +51628,11 @@ Transform:
   m_GameObject: {fileID: 1408888899}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4782196, y: -0.4782196, z: 0.52087045, w: 0.52087045}
-  m_LocalPosition: {x: -18.244446, y: 3.21564, z: -7.212433}
-  m_LocalScale: {x: 0.02504482, y: 0.024479073, z: 0.024479073}
+  m_LocalPosition: {x: -18.244446, y: 2.89, z: -7.212433}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 911383283}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1408888901
@@ -51392,6 +51712,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: 0.000015258789, y: 0.00048828125, z: 0}
+--- !u!114 &1408888904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408888899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1411549548
 GameObject:
   m_ObjectHideFlags: 0
@@ -52104,12 +52438,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423784705}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 104.38096, y: 0.18, z: 158.30771}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -58.18538, y: 102.40111, z: 1340.1497}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 678995608}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &1423784707
 MeshRenderer:
@@ -53183,6 +53517,7 @@ GameObject:
   - component: {fileID: 1478621926}
   - component: {fileID: 1478621925}
   - component: {fileID: 1478621927}
+  - component: {fileID: 1478621928}
   m_Layer: 0
   m_Name: Cube.039 (26)
   m_TagString: Untagged
@@ -53199,10 +53534,11 @@ Transform:
   m_GameObject: {fileID: 1478621923}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: -3.0656967, y: 3.39074, z: -0.47250366}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: -3.0656967, y: 2.9450998, z: -0.47250366}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1846006635}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &1478621925
@@ -53282,6 +53618,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0}
+--- !u!114 &1478621928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478621923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1485824336
 GameObject:
   m_ObjectHideFlags: 0
@@ -54585,6 +54935,7 @@ GameObject:
   - component: {fileID: 1523304600}
   - component: {fileID: 1523304599}
   - component: {fileID: 1523304601}
+  - component: {fileID: 1523304602}
   m_Layer: 0
   m_Name: Cube.039 (14)
   m_TagString: Untagged
@@ -54601,10 +54952,11 @@ Transform:
   m_GameObject: {fileID: 1523304597}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: -32.855698, y: 3.39074, z: -7.5015564}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: -33.08, y: 2.87, z: -7.53}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 644568644}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &1523304599
@@ -54684,6 +55036,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00024414062, z: 0.00048828125}
+--- !u!114 &1523304602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523304597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &1523304639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55558,12 +55924,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552922109}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.014344326, z: -0, w: 0.9998972}
-  m_LocalPosition: {x: 60.81002, y: 0.11, z: 114.930954}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.54081625, y: 0.54081625, z: -0.45554116, w: 0.45554116}
+  m_LocalPosition: {x: -59.533817, y: 107.76193, z: 1313.2493}
+  m_LocalScale: {x: 56.110218, y: 44.953026, z: 56.110218}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1170660404}
   m_LocalEulerAnglesHint: {x: 0, y: 1.644, z: 0}
 --- !u!23 &1552922111
 MeshRenderer:
@@ -57054,12 +57420,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639496010}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.00917968, z: -0, w: 0.99995786}
-  m_LocalPosition: {x: 68.22802, y: 0.14490008, z: 113.600006}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341803, y: 0.47341803, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.763233, y: 459.0104, z: 1247.4211}
+  m_LocalScale: {x: 56.110207, y: 44.95303, z: 56.110207}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 309122571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1639496012
 MeshRenderer:
@@ -57232,12 +57598,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656965774}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.00917968, z: -0, w: 0.99995786}
-  m_LocalPosition: {x: 68.22802, y: 0.14490008, z: 129.24905}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341803, y: 0.47341803, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.346973, y: 461.84995, z: 1238.7562}
+  m_LocalScale: {x: 56.110207, y: 44.95303, z: 56.110207}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 384502875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1656965776
 MeshRenderer:
@@ -57506,8 +57872,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionRangee
   texteUI: {fileID: 1353373818}
   messageInteraction: Prendre un carton
+  messagePlein: "Vous portez d\xE9j\xE0 un carton !"
   etiquettePrefab: {fileID: 571766507}
-  uiCanvasParent: {fileID: 109816488}
   cartons: []
 --- !u!65 &1670611694
 BoxCollider:
@@ -57558,7 +57924,7 @@ Transform:
   m_GameObject: {fileID: 1670611692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.63006, y: 1.86702, z: 176.5297}
+  m_LocalPosition: {x: 96.63006, y: 1.86702, z: 177.29135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57845,12 +58211,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678547901}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.014344326, z: -0, w: 0.9998972}
-  m_LocalPosition: {x: 31.020012, y: -0.03, z: 123.55097}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.54081625, y: 0.54081625, z: -0.45554116, w: 0.45554116}
+  m_LocalPosition: {x: -60.432888, y: 102.40106, z: 1340.152}
+  m_LocalScale: {x: 56.110218, y: 44.953026, z: 56.110218}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 443600931}
   m_LocalEulerAnglesHint: {x: 0, y: 1.644, z: 0}
 --- !u!23 &1678547903
 MeshRenderer:
@@ -58826,12 +59192,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731518486}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.00917968, z: -0, w: 0.99995786}
-  m_LocalPosition: {x: 38.43801, y: 0.004900217, z: 122.22}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341803, y: 0.47341803, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -75.071556, y: 461.84995, z: 1238.7562}
+  m_LocalScale: {x: 56.110207, y: 44.95303, z: 56.110207}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1058949391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1731518488
 MeshRenderer:
@@ -59168,6 +59534,7 @@ GameObject:
   - component: {fileID: 1740872594}
   - component: {fileID: 1740872593}
   - component: {fileID: 1740872595}
+  - component: {fileID: 1740872596}
   m_Layer: 0
   m_Name: Cube.039 (21)
   m_TagString: Untagged
@@ -59183,11 +59550,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740872591}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: -54.094444, y: 3.3207393, z: -0.23254395}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalRotation: {x: -0.5342266, y: -0.5342266, z: 0.4632515, w: 0.4632515}
+  m_LocalPosition: {x: -54.094444, y: 2.96, z: -0.23254395}
+  m_LocalScale: {x: 0.022245435, y: 0.021742918, z: 0.021742918}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 531379663}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &1740872593
@@ -59267,6 +59635,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1740872596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740872591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1742186186
 GameObject:
   m_ObjectHideFlags: 0
@@ -59657,8 +60039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionRangee
   texteUI: {fileID: 1353373818}
   messageInteraction: Prendre un carton
+  messagePlein: "Vous portez d\xE9j\xE0 un carton !"
   etiquettePrefab: {fileID: 571766507}
-  uiCanvasParent: {fileID: 109816488}
   cartons: []
 --- !u!65 &1757743525
 BoxCollider:
@@ -60579,6 +60961,7 @@ GameObject:
   - component: {fileID: 1784394533}
   - component: {fileID: 1784394532}
   - component: {fileID: 1784394534}
+  - component: {fileID: 1784394535}
   m_Layer: 0
   m_Name: Cube.039 (34)
   m_TagString: Untagged
@@ -60595,10 +60978,11 @@ Transform:
   m_GameObject: {fileID: 1784394530}
   serializedVersion: 2
   m_LocalRotation: {x: -0.53422624, y: -0.53422624, z: 0.46325195, w: 0.46325195}
-  m_LocalPosition: {x: 4.9355545, y: 3.2207398, z: -7.2615967}
-  m_LocalScale: {x: 0.025044829, y: 0.024479074, z: 0.024479074}
+  m_LocalPosition: {x: 4.8, y: 2.88, z: -7.28}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 596114481}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -98.14, z: 90}
 --- !u!23 &1784394532
@@ -60678,6 +61062,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: -0.00048828125}
+--- !u!114 &1784394535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784394530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1001 &1794736973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61097,12 +61495,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800975461}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 93.22001, y: 0.01, z: 107.506615}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -60.88241, y: 461.9547, z: 1241.514}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 991702517}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &1800975463
 MeshRenderer:
@@ -61946,6 +62344,7 @@ GameObject:
   - component: {fileID: 1825269460}
   - component: {fileID: 1825269459}
   - component: {fileID: 1825269461}
+  - component: {fileID: 1825269462}
   m_Layer: 0
   m_Name: Cube.039 (31)
   m_TagString: Untagged
@@ -61962,10 +62361,11 @@ Transform:
   m_GameObject: {fileID: 1825269457}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: 12.775322, y: 3.39074, z: -0.47250366}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: 12.775322, y: 2.9450998, z: -0.47250366}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 669361196}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &1825269459
@@ -62045,6 +62445,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1825269462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825269457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &1825781130
 GameObject:
   m_ObjectHideFlags: 0
@@ -62954,12 +63368,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846006634}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7250746, z: -0, w: 0.6886704}
-  m_LocalPosition: {x: 104.90096, y: 0.18, z: 165.33676}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.5408163, y: 0.5408163, z: -0.4555411, w: 0.4555411}
+  m_LocalPosition: {x: -59.346954, y: 102.40111, z: 1340.1497}
+  m_LocalScale: {x: 56.110237, y: 44.953026, z: 56.110237}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1478621924}
   m_LocalEulerAnglesHint: {x: 0, y: 92.95, z: 0}
 --- !u!23 &1846006636
 MeshRenderer:
@@ -63399,12 +63813,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854905859}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 76.85898, y: 0.01, z: 116.12661}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -62.231007, y: 461.84006, z: 1238.7571}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 988323164}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &1854905861
 MeshRenderer:
@@ -66875,12 +67289,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957095077}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 77.37899, y: 0.01, z: 107.506615}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: -0.044689808, y: -0.044689808, z: -0.7056932, w: 0.7056932}
+  m_LocalPosition: {x: -61.19708, y: 1243.0312, z: -475.29572}
+  m_LocalScale: {x: 56.110203, y: 44.953022, z: 56.110207}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 1050196163}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &1957095079
 MeshRenderer:
@@ -68372,6 +68786,7 @@ GameObject:
   - component: {fileID: 2006863990}
   - component: {fileID: 2006863989}
   - component: {fileID: 2006863991}
+  - component: {fileID: 2006863992}
   m_Layer: 0
   m_Name: Cube.039 (22)
   m_TagString: Untagged
@@ -68388,10 +68803,11 @@ Transform:
   m_GameObject: {fileID: 2006863987}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: -32.855698, y: 3.39074, z: -0.47250366}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: -32.855698, y: 2.9450998, z: -0.47250366}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1042194535}
   m_Father: {fileID: 1757743527}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &2006863989
@@ -68471,6 +68887,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0.00048828125}
+--- !u!114 &2006863992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006863987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &2008623193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8105114876774301634, guid: 2d99ec3953fd4384d8ef41c097bf115e, type: 3}
@@ -69318,12 +69748,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024298515}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.122568525, z: -0, w: 0.9924601}
-  m_LocalPosition: {x: 47.58898, y: 0.01, z: 116.12661}
-  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
+  m_LocalRotation: {x: 0.47341812, y: 0.47341812, z: -0.5252384, w: 0.5252384}
+  m_LocalPosition: {x: -59.98336, y: 461.84003, z: 1238.7574}
+  m_LocalScale: {x: 56.110188, y: 44.953022, z: 56.110195}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652211725528}
+  m_Father: {fileID: 945249429}
   m_LocalEulerAnglesHint: {x: 0, y: -14.081, z: 0}
 --- !u!23 &2024298517
 MeshRenderer:
@@ -69393,6 +69823,7 @@ GameObject:
   - component: {fileID: 2026892153}
   - component: {fileID: 2026892152}
   - component: {fileID: 2026892154}
+  - component: {fileID: 2026892155}
   m_Layer: 0
   m_Name: Cube.039 (32)
   m_TagString: Untagged
@@ -69409,10 +69840,11 @@ Transform:
   m_GameObject: {fileID: 2026892150}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042142924, y: -0.042142924, z: 0.7058499, w: 0.7058499}
-  m_LocalPosition: {x: 12.255318, y: 3.39074, z: -7.5015564}
-  m_LocalScale: {x: 0.025044829, y: 0.02447908, z: 0.024479069}
+  m_LocalPosition: {x: 11.98, y: 2.87, z: -7.53}
+  m_LocalScale: {x: 0.02224544, y: 0.02174292, z: 0.02174292}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 196615094}
   m_Father: {fileID: 859851753}
   m_LocalEulerAnglesHint: {x: 0, y: -6.834, z: 90}
 --- !u!23 &2026892152
@@ -69492,6 +69924,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0.00048828125}
+--- !u!114 &2026892155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026892150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
+  messageRamasser: Ramasser le carton
+  etiquettePrefab: {fileID: 571766507}
 --- !u!1 &2030228710
 GameObject:
   m_ObjectHideFlags: 0
@@ -71454,6 +71900,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104022796}
   m_Mesh: {fileID: 5439737192064214556, guid: ba637d08226dae944bfa23a7389bccfa, type: 3}
+--- !u!1 &2104325160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2104325161}
+  - component: {fileID: 2104325162}
+  m_Layer: 0
+  m_Name: ForkPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2104325161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104325160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.32, y: 9.06, z: 8.56}
+  m_LocalScale: {x: 5.2787323, y: 5.278731, z: 5.278731}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2110419131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2104325162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104325160}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2105955764
 GameObject:
   m_ObjectHideFlags: 0
@@ -71835,6 +72334,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2110419134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110419129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6120896854d24479f61f47201e86a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForkliftInventory
+  pointCarton: {fileID: 2104325161}
+  solLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  cartonActuel: {fileID: 0}
 --- !u!1 &2110602784
 GameObject:
   m_ObjectHideFlags: 0
@@ -74231,32 +74747,6 @@ Transform:
   - {fileID: 2939385266546125665}
   - {fileID: 2170182617966974580}
   - {fileID: 5458739060153265604}
-  - {fileID: 1731518487}
-  - {fileID: 1678547902}
-  - {fileID: 911383283}
-  - {fileID: 696559171}
-  - {fileID: 740037227}
-  - {fileID: 531379663}
-  - {fileID: 1656965775}
-  - {fileID: 1639496011}
-  - {fileID: 1552922110}
-  - {fileID: 654826222}
-  - {fileID: 759818132}
-  - {fileID: 1800975462}
-  - {fileID: 669361196}
-  - {fileID: 991934725}
-  - {fileID: 196615094}
-  - {fileID: 596114481}
-  - {fileID: 1957095078}
-  - {fileID: 326593554}
-  - {fileID: 1846006635}
-  - {fileID: 61243800}
-  - {fileID: 1042194535}
-  - {fileID: 745753710}
-  - {fileID: 1423784706}
-  - {fileID: 1854905860}
-  - {fileID: 644568644}
-  - {fileID: 2024298516}
   - {fileID: 468588211291530741}
   - {fileID: 4461095855326035766}
   - {fileID: 6117648446774785942}

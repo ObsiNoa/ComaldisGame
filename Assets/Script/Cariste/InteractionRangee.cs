@@ -8,20 +8,20 @@ public class InteractionRangee : MonoBehaviour
     [Header("UI Message Interaction")]
     public TextMeshProUGUI texteUI;
     public string messageInteraction = "Prendre un carton";
+    public string messagePlein = "Vous portez déjà un carton !";
 
     [Header("UI Étiquette à afficher")]
     public GameObject etiquettePrefab;
-    public Transform uiCanvasParent; // Le Canvas ou le conteneur où ajouter l'étiquette
 
     [Header("Gestion de la Rangée")]
-    [Tooltip("Dépose ici les cartons de cette rangée, du plus proche au plus éloigné.")]
     public List<GameObject> cartons = new List<GameObject>();
 
     private bool joueurDansLaZone = false;
+    private ForkliftInventory inventaireForklift;
 
     private void Start()
     {
-        // Si la liste est vide dans l'inspecteur, on prend automatiquement tous les enfants
+        // Remplissage automatique des enfants si la liste est vide
         if (cartons.Count == 0)
         {
             foreach (Transform child in transform)
@@ -33,42 +33,54 @@ public class InteractionRangee : MonoBehaviour
 
     void Update()
     {
-        // SÉCURITÉ : Si une étiquette est affichée à l'écran, on bloque l'interaction !
+        // SÉCURITÉ : Si l'étiquette est ouverte, on ne fait rien
         if (FermerEtiquette.estOuverte)
         {
             return;
         }
 
-        // Le reste du code d'interaction habituel :
         if (joueurDansLaZone && cartons.Count > 0)
         {
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                PrendreCarton();
+                // Vérifier si le Forklift porte déjà un carton
+                if (inventaireForklift != null && inventaireForklift.AUnCarton)
+                {
+                    Debug.Log("Impossible : Fourches déjà chargées !");
+                    // On met à jour l'UI pour informer le joueur
+                    if (texteUI != null) texteUI.text = messagePlein;
+                }
+                else
+                {
+                    PrendreCarton();
+                }
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.gameObject.name == "Player")
+        if (other.CompareTag("Player") || other.gameObject.name == "Forklift")
         {
             joueurDansLaZone = true;
 
-            // N'afficher l'invite que s'il reste des cartons
-            if (cartons.Count > 0 && texteUI != null)
+            // Récupère le composant ForkliftInventory présent sur le joueur/forklift
+            inventaireForklift = other.GetComponent<ForkliftInventory>();
+            if (inventaireForklift == null)
             {
-                texteUI.text = "[E] " + messageInteraction;
-                texteUI.gameObject.SetActive(true);
+                inventaireForklift = other.GetComponentInParent<ForkliftInventory>();
             }
+
+            MettreAJourTexteUI();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.gameObject.name == "Player")
+        if (other.CompareTag("Player") || other.gameObject.name == "Forklift")
         {
             joueurDansLaZone = false;
+            inventaireForklift = null;
 
             if (texteUI != null)
             {
@@ -77,35 +89,54 @@ public class InteractionRangee : MonoBehaviour
         }
     }
 
-    void PrendreCarton()
+    void MettreAJourTexteUI()
     {
-        // 1. On récupère le PREMIER carton de la liste (index 0)
-        GameObject cartonAPrendre = cartons[0];
+        if (texteUI == null) return;
 
-        // 2. On le retire de la liste (le 2ème devient automatiquement le 1er pour le prochain appui)
-        cartons.RemoveAt(0);
-
-        // 3. On détruit ou désactive le carton dans la scène 3D
-        Destroy(cartonAPrendre);
-
-        // 4. On affiche le préfab de l'étiquette à l'écran
-        AfficherEtiquette();
-
-        // 5. S'il n'y a plus du tout de cartons dans la rangée, on cache le message
-        if (cartons.Count == 0 && texteUI != null)
+        if (cartons.Count == 0)
         {
             texteUI.gameObject.SetActive(false);
+            return;
         }
+
+        texteUI.gameObject.SetActive(true);
+
+        if (inventaireForklift != null && inventaireForklift.AUnCarton)
+        {
+            texteUI.text = messagePlein;
+        }
+        else
+        {
+            texteUI.text = "[E] " + messageInteraction;
+        }
+    }
+
+    void PrendreCarton()
+    {
+        // 1. Récupérer le premier carton (index 0)
+        GameObject cartonAPrendre = cartons[0];
+
+        // 2. Le retirer de la liste
+        cartons.RemoveAt(0);
+
+        // 3. Attacher le carton au Forklift au lieu de le détruire
+        if (inventaireForklift != null)
+        {
+            inventaireForklift.AttacherCarton(cartonAPrendre);
+        }
+
+        // 4. Afficher l'étiquette
+        AfficherEtiquette();
+
+        // 5. Mettre à jour le texte UI
+        MettreAJourTexteUI();
     }
 
     void AfficherEtiquette()
     {
         if (etiquettePrefab != null)
         {
-            // On instancie la préfab SANS lui donner de parent (elle devient son propre Canvas autonome)
             GameObject nouvelleEtiquette = Instantiate(etiquettePrefab);
-
-            // On s'assure qu'elle est bien active
             nouvelleEtiquette.SetActive(true);
         }
     }
