@@ -6,46 +6,51 @@ public class ForkliftInventory : MonoBehaviour
     [Header("Point d'attache du carton sur les fourches")]
     public Transform pointCarton;
 
+    [Header("Ajustement Modèle Carton")]
+    [Tooltip("Correction de rotation appliquée (ex: Y = 90, Z = 90)")]
+    public Vector3 rotationOffset = new Vector3(0, 90, 90);
+
     [Header("Configuration Dépose")]
     [Tooltip("Layer du sol pour détecter la hauteur exacte de pose.")]
     public LayerMask solLayer;
 
-    // Référence vers le carton actuellement transporté (null si vide)
-    public GameObject cartonActuel = null;
+    [Tooltip("Hauteur supplémentaire pour le poser sur la palette.")]
+    public float hauteurOffsetDepot = 0.65f;
 
-    /// <summary>
-    /// Indique si le transpalette transporte déjà un carton
-    /// </summary>
+    public GameObject cartonActuel = null;
     public bool AUnCarton => cartonActuel != null;
+
+    private bool vientDEtreAttache = false;
 
     void Update()
     {
-        // Sécurité : si une étiquette est ouverte à l'écran, on bloque le lâcher
         if (FermerEtiquette.estOuverte) return;
 
-        // Si on transporte un carton et qu'on appuie sur [E]
+        if (vientDEtreAttache)
+        {
+            vientDEtreAttache = false;
+            return;
+        }
+
+        // Touche [A] (physique sur AZERTY) pour poser au sol
         if (AUnCarton)
         {
-            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+            if (Keyboard.current != null && Keyboard.current.aKey.wasPressedThisFrame)
             {
                 PoserCartonSurLeSol();
             }
         }
     }
 
-    /// <summary>
-    /// Attache un carton sur les fourches du Forklift
-    /// </summary>
     public void AttacherCarton(GameObject carton)
     {
         cartonActuel = carton;
+        vientDEtreAttache = true;
 
-        // Parenter au ForkPoint
         carton.transform.SetParent(pointCarton);
         carton.transform.localPosition = Vector3.zero;
-        carton.transform.localRotation = Quaternion.identity;
+        carton.transform.localRotation = Quaternion.Euler(rotationOffset);
 
-        // Désactiver la physique et le collider pour ne pas bloquer la conduite
         Collider col = carton.GetComponent<Collider>();
         if (col != null) col.enabled = false;
 
@@ -53,54 +58,60 @@ public class ForkliftInventory : MonoBehaviour
         if (rb != null) rb.isKinematic = true;
     }
 
-    /// <summary>
-    /// Dépose le carton n'importe où sur le sol à l'emplacement actuel des fourches
-    /// </summary>
     public void PoserCartonSurLeSol()
     {
         if (cartonActuel == null) return;
 
-        // 1. Calcul de la demi-hauteur
-        float demiHauteur = 0.25f;
-        Collider col = cartonActuel.GetComponent<Collider>();
-        if (col != null)
-        {
-            demiHauteur = col.bounds.extents.y;
-        }
-
-        // 2. Localiser le sol
-        Vector3 positionDepot = pointCarton.position;
-        if (Physics.Raycast(pointCarton.position, Vector3.down, out RaycastHit hit, 3f, solLayer))
-        {
-            positionDepot = hit.point + new Vector3(0, demiHauteur, 0);
-        }
-
-        // 3. Positionner et détacher le carton
         GameObject cartonDepose = cartonActuel;
-        cartonDepose.transform.SetParent(null);
-        cartonDepose.transform.position = positionDepot;
-        cartonDepose.transform.rotation = Quaternion.Euler(0, pointCarton.eulerAngles.y, 0);
+        Quaternion rotationTransport = cartonDepose.transform.rotation;
 
-        // 4. Réactiver physique et collisions
+        Collider col = cartonDepose.GetComponent<Collider>();
+
+        // 1. Réactiver D'ABORD le collider pour que Unity calcule ses vraies dimensions
         if (col != null)
         {
             col.enabled = true;
-            col.isTrigger = false; // S'assurer que la collision physique reste active
+            col.isTrigger = false;
         }
 
+        // 2. Obtenir la vraie demi-hauteur (avec valeur de secours si besoin)
+        float demiHauteur = (col != null && col.bounds.extents.y > 0.05f) ? col.bounds.extents.y : 0.25f;
+
+        // 3. Tirer le Raycast vers le sol depuis un point légèrement plus haut
+        Vector3 origineRaycast = pointCarton.position + Vector3.up * 1.0f;
+        Vector3 positionDepot;
+
+        // Si solLayer n'est pas configuré dans l'Inspector, on prend toutes les collisions
+        int layerMask = (solLayer.value != 0) ? solLayer.value : ~0;
+
+        if (Physics.Raycast(origineRaycast, Vector3.down, out RaycastHit hit, 10f, layerMask))
+        {
+            // Point d'impact au sol + demi-hauteur du carton + offset palette
+            positionDepot = hit.point + new Vector3(0, demiHauteur + hauteurOffsetDepot, 0);
+        }
+        else
+        {
+            // Sécurité si aucun sol n'est détecté
+            positionDepot = pointCarton.position + new Vector3(0, hauteurOffsetDepot, 0);
+        }
+
+        // 4. Déposer le carton à la bonne position et rotation
+        cartonDepose.transform.SetParent(null);
+        cartonDepose.transform.position = positionDepot;
+        cartonDepose.transform.rotation = rotationTransport;
+
+        // 5. Réactiver la physique
         Rigidbody rb = cartonDepose.GetComponent<Rigidbody>();
         if (rb != null) rb.isKinematic = false;
 
-        // 5. AJOUT : Ajouter ou réactiver le script d'interaction individuelle
+        // 6. Réactiver le composant de ramassage au sol
         CartonRamassable ramassable = cartonDepose.GetComponent<CartonRamassable>();
         if (ramassable == null)
         {
             ramassable = cartonDepose.AddComponent<CartonRamassable>();
         }
-        else
-        {
-            ramassable.enabled = true;
-        }
+        ramassable.enabled = true;
+
         cartonActuel = null;
     }
 }

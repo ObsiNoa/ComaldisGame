@@ -10,67 +10,79 @@ public class CartonRamassable : MonoBehaviour
     [Header("UI Étiquette")]
     public GameObject etiquettePrefab;
 
-    private bool joueurDansLaZone = false;
+    [Header("Distance de ramassage")]
+    [Tooltip("Distance en mètres pour pouvoir re-ramasser ce carton au sol")]
+    public float distanceRamassage = 3.5f;
+
     private ForkliftInventory inventaireForklift;
     private TextMeshProUGUI texteUI;
+    private bool joueurProche = false;
+
+    private void OnEnable()
+    {
+        // Réinitialiser proprement l'état dès que le carton est posé par terre
+        joueurProche = false;
+    }
+
+    private void OnDisable()
+    {
+        // Masquer l'UI si le script est désactivé
+        if (texteUI != null && joueurProche)
+        {
+            texteUI.gameObject.SetActive(false);
+        }
+        joueurProche = false;
+    }
 
     void Update()
     {
-        // Ne rien faire si une étiquette est déjà ouverte
         if (FermerEtiquette.estOuverte) return;
 
-        if (joueurDansLaZone)
+        // Récupération automatique des références au besoin
+        if (inventaireForklift == null)
         {
+            inventaireForklift = FindFirstObjectByType<ForkliftInventory>();
+            if (inventaireForklift == null) return;
+        }
+
+        if (texteUI == null)
+        {
+            texteUI = FindFirstObjectByType<TextMeshProUGUI>();
+        }
+
+        // Calcul de la distance entre le carton au sol et le transpalette
+        float distance = Vector3.Distance(transform.position, inventaireForklift.transform.position);
+
+        // Si on est à côté du carton ET que le transpalette n'a pas déjà un carton
+        if (distance <= distanceRamassage && !inventaireForklift.AUnCarton)
+        {
+            if (!joueurProche)
+            {
+                joueurProche = true;
+                AfficherUI(true);
+            }
+
+            // Touche [E] pour ramasser au sol
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                // Vérifier si le transpalette est vide
-                if (inventaireForklift != null && !inventaireForklift.AUnCarton)
-                {
-                    RamasserCeCarton();
-                }
+                RamasserCeCarton();
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") || other.gameObject.name == "Forklift")
+        else
         {
-            joueurDansLaZone = true;
-
-            // Trouver le ForkliftInventory
-            inventaireForklift = other.GetComponent<ForkliftInventory>();
-            if (inventaireForklift == null)
+            if (joueurProche)
             {
-                inventaireForklift = other.GetComponentInParent<ForkliftInventory>();
-            }
-
-            // Récupérer le texte UI depuis la scène s'il existe
-            texteUI = FindFirstObjectByType<TextMeshProUGUI>();
-
-            MettreAJourUI();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") || other.gameObject.name == "Forklift")
-        {
-            joueurDansLaZone = false;
-            inventaireForklift = null;
-
-            if (texteUI != null)
-            {
-                texteUI.gameObject.SetActive(false);
+                joueurProche = false;
+                AfficherUI(false);
             }
         }
     }
 
-    void MettreAJourUI()
+    void AfficherUI(bool afficher)
     {
         if (texteUI == null) return;
 
-        if (inventaireForklift != null && !inventaireForklift.AUnCarton)
+        if (afficher)
         {
             texteUI.text = "[E] " + messageRamasser;
             texteUI.gameObject.SetActive(true);
@@ -83,26 +95,20 @@ public class CartonRamassable : MonoBehaviour
 
     void RamasserCeCarton()
     {
-        // 1. Charger le carton sur le transpalette
-        inventaireForklift.AttacherCarton(gameObject);
+        AfficherUI(false);
 
-        // 2. Afficher l'étiquette
+        if (inventaireForklift != null)
+        {
+            inventaireForklift.AttacherCarton(gameObject);
+        }
+
         if (etiquettePrefab != null)
         {
             GameObject nouvelleEtiquette = Instantiate(etiquettePrefab);
             nouvelleEtiquette.SetActive(true);
         }
 
-        // 3. Masquer le texte d'interaction
-        if (texteUI != null) texteUI.gameObject.SetActive(false);
-
-        // 4. Désactiver ce script pour ne pas qu'il s'active pendant le transport
+        // Désactiver la détection au sol pendant qu'on le porte
         this.enabled = false;
-    }
-
-    private void OnEnable()
-    {
-        // S'assurer que le script s'active quand le carton est au sol
-        joueurDansLaZone = false;
     }
 }
