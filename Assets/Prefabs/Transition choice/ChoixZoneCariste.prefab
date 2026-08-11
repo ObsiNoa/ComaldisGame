@@ -34,10 +34,10 @@ RectTransform:
   - {fileID: 6877493624656110966}
   m_Father: {fileID: 4114969782259085437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 345, y: 154}
-  m_SizeDelta: {x: -1095.3186, y: -580.9231}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 280, y: -92}
+  m_SizeDelta: {x: 60.6814, y: 43.0769}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9705873389073969
 CanvasRenderer:
@@ -291,10 +291,10 @@ RectTransform:
   - {fileID: 2466197719127806219}
   m_Father: {fileID: 4114969782259085437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 264, y: 12}
-  m_SizeDelta: {x: -1058.9136, y: -594}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 250, y: 23}
+  m_SizeDelta: {x: 97.0865, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5794415722788557458
 CanvasRenderer:
@@ -764,10 +764,10 @@ RectTransform:
   - {fileID: 2226211567494031306}
   m_Father: {fileID: 4114969782259085437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -160, y: -93}
-  m_SizeDelta: {x: -1085.123, y: -581.9414}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -167, y: -92}
+  m_SizeDelta: {x: 70.8769, y: 42.0586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8617009856794679394
 CanvasRenderer:
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 468019757136054010}
   - component: {fileID: 7332567079955729394}
   m_Layer: 5
-  m_Name: ChoixZone
+  m_Name: ChoixZoneCariste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

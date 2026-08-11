@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_choixQuaiCariste
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - "Ici, avec l'aide de vos coll\xE8gues, vous allez travailler \xE0 vider et remplir
+    les camions."
+  - "Tout d'abord, passons par le vestiaire \xE0 notre droite afin de mettre notre
+    equipement de s\xE9curit\xE9."
+  - "Une fois vos chaussures de s\xE9curit\xE9 ainsi que votre gilet jaune mis nous
+    pourrons commencer."
+  choices:
+  - texte: "Commencer \xE0 travailler"
+    nextDialogue: {fileID: 0}
+    backgroundAfterChoice: {fileID: 0}
+  nextBackground: {fileID: 0}
+  customChoicePanelPrefab: {fileID: 5136770804661497305, guid: debea4ccdaf46314d9ba32b14d9bf87c, type: 3}

@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
-  m_Name: Dialogue_choixQuai
+  m_Name: Dialogue_ChoixCamionCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - Ici, certains de vos collegues travaillent a vider et remplir a nouveau les camions.
-  - Le votre, est deja plein ce matin, allons donc le voir.
+  - "Ici se trouvent les camions gar\xE9s de l'entreprise."
+  - "Nous devrions les laisser tel qu'elle, ils sont de la responsabilit\xE9 de leurs
+    chauffeurs."
   choices:
   - texte: 
-    nextDialogue: {fileID: 11400000, guid: e4e2e07efcf617f42954084cb8cef68e, type: 2}
+    nextDialogue: {fileID: 11400000}
     backgroundAfterChoice: {fileID: 21300000, guid: 3dbf8161ffc81ba45ab3e23d4aea48f8, type: 3}
   - texte: 
-    nextDialogue: {fileID: 11400000}
+    nextDialogue: {fileID: 11400000, guid: abb404afb3c38c349ad8c4fa60c644ba, type: 2}
     backgroundAfterChoice: {fileID: 21300000, guid: 10fce0db71b875143b85e4635826779e, type: 3}
   - texte: 
-    nextDialogue: {fileID: 11400000, guid: 3c161f64ba47995438c82ea39ccc8fb7, type: 2}
+    nextDialogue: {fileID: 11400000, guid: 3924fb1c7dc08c74f9df2b9de4acb9cc, type: 2}
     backgroundAfterChoice: {fileID: 21300000, guid: 3abcd055de982d5459866ae6b3ca1b4a, type: 3}
   nextBackground: {fileID: 21300000, guid: cc8d20031f93d0740a5878a10c43a2a4, type: 3}
-  customChoicePanelPrefab: {fileID: 8374291418714990687, guid: 193e2414f9f2293458421da18775fd6a, type: 3}
+  customChoicePanelPrefab: {fileID: 8374291418714990687, guid: 3a15b6bb47b688d4783a6c1ee838ca73, type: 3}
