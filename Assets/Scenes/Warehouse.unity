@@ -16833,7 +16833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884b8aeb56f303d4480b30b0000fb1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneDangereuse
-  canvasManager: {fileID: 0}
+  canvasManager: {fileID: 838833664}
   parent1: {fileID: 1757743527}
   parent2: {fileID: 859851753}
   parent3: {fileID: 1670611696}
@@ -58467,7 +58467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedd50af99bb1dc44bb4beb8a4293d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneNonDangereuse
-  canvasManager: {fileID: 0}
+  canvasManager: {fileID: 838833664}
   parent1: {fileID: 1757743527}
   parent2: {fileID: 859851753}
   parent3: {fileID: 1670611696}
