@@ -35,7 +35,7 @@ public class ForkliftInventory : MonoBehaviour
         // Touche [A] (physique sur AZERTY) pour poser au sol
         if (AUnCarton)
         {
-            if (Keyboard.current != null && Keyboard.current.aKey.wasPressedThisFrame)
+            if (Keyboard.current != null && Keyboard.current.qKey.wasPressedThisFrame)
             {
                 PoserCartonSurLeSol();
             }

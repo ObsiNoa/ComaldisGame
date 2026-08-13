@@ -9475,7 +9475,7 @@ GameObject:
   - component: {fileID: 273538358}
   m_Layer: 0
   m_Name: Cube.039 (33)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10666,7 +10666,7 @@ GameObject:
   - component: {fileID: 309122574}
   m_Layer: 0
   m_Name: Cube.039 (27)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12561,7 +12561,7 @@ GameObject:
   - component: {fileID: 384502878}
   m_Layer: 0
   m_Name: Cube.039 (23)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14464,7 +14464,7 @@ GameObject:
   - component: {fileID: 443600934}
   m_Layer: 0
   m_Name: Cube.039 (13)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16774,9 +16774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneDangereuse
   canvasManager: {fileID: 838833664}
-  parent1: {fileID: 1757743527}
-  parent2: {fileID: 859851753}
-  parent3: {fileID: 1670611696}
+  myObject: {fileID: 2110419129}
 --- !u!65 &492316138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22160,7 +22158,7 @@ GameObject:
   - component: {fileID: 619376085}
   m_Layer: 0
   m_Name: Cube.039 (25)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23942,7 +23940,7 @@ GameObject:
   - component: {fileID: 647523037}
   m_Layer: 0
   m_Name: Cube.039 (17)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25402,7 +25400,7 @@ GameObject:
   - component: {fileID: 678995611}
   m_Layer: 0
   m_Name: Cube.039 (18)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25752,7 +25750,7 @@ GameObject:
   - component: {fileID: 688182005}
   m_Layer: 0
   m_Name: Cube.039 (20)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34295,7 +34293,7 @@ GameObject:
   - component: {fileID: 945249432}
   m_Layer: 0
   m_Name: Cube.039 (12)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36094,7 +36092,7 @@ GameObject:
   - component: {fileID: 988323167}
   m_Layer: 0
   m_Name: Cube.039 (16)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36206,7 +36204,7 @@ GameObject:
   - component: {fileID: 991702520}
   m_Layer: 0
   m_Name: Cube.039 (36)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38483,7 +38481,7 @@ GameObject:
   - component: {fileID: 1050196166}
   m_Layer: 0
   m_Name: Cube.039 (30)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38922,7 +38920,7 @@ GameObject:
   - component: {fileID: 1058949394}
   m_Layer: 0
   m_Name: Cube.039 (1)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39773,7 +39771,7 @@ GameObject:
   - component: {fileID: 1085918465}
   m_Layer: 0
   m_Name: Cube.039 (28)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43519,7 +43517,7 @@ GameObject:
   - component: {fileID: 1170660407}
   m_Layer: 0
   m_Name: Cube.039 (29)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43631,7 +43629,7 @@ GameObject:
   - component: {fileID: 1175837171}
   m_Layer: 0
   m_Name: Cube.039 (24)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44713,7 +44711,7 @@ GameObject:
   - component: {fileID: 1212496450}
   m_Layer: 0
   m_Name: Cube.039 (35)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50598,7 +50596,7 @@ GameObject:
   - component: {fileID: 1382039654}
   m_Layer: 0
   m_Name: Cube.039 (19)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51844,7 +51842,7 @@ GameObject:
   - component: {fileID: 1408888903}
   m_Layer: 0
   m_Name: Cube.039 (15)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53735,7 +53733,7 @@ GameObject:
   - component: {fileID: 1478621927}
   m_Layer: 0
   m_Name: Cube.039 (26)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55138,7 +55136,7 @@ GameObject:
   - component: {fileID: 1523304601}
   m_Layer: 0
   m_Name: Cube.039 (14)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58153,9 +58151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneNonDangereuse
   canvasManager: {fileID: 838833664}
-  parent1: {fileID: 1757743527}
-  parent2: {fileID: 859851753}
-  parent3: {fileID: 1670611696}
+  myObject: {fileID: 2110419129}
 --- !u!65 &1673986912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59722,7 +59718,7 @@ GameObject:
   - component: {fileID: 1740872595}
   m_Layer: 0
   m_Name: Cube.039 (21)
-  m_TagString: Untagged
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61134,7 +61130,7 @@ GameObject:
   - component: {fileID: 1784394534}
   m_Layer: 0
   m_Name: Cube.039 (34)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62502,7 +62498,7 @@ GameObject:
   - component: {fileID: 1825269461}
   m_Layer: 0
   m_Name: Cube.039 (31)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68929,7 +68925,7 @@ GameObject:
   - component: {fileID: 2006863991}
   m_Layer: 0
   m_Name: Cube.039 (22)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69951,7 +69947,7 @@ GameObject:
   - component: {fileID: 2026892154}
   m_Layer: 0
   m_Name: Cube.039 (32)
-  m_TagString: Untagged
+  m_TagString: Boites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

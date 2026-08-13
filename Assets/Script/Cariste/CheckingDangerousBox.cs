@@ -6,41 +6,44 @@ public class ZoneDangereuse : MonoBehaviour
 {
     [SerializeField] private GlobalCanvasManager canvasManager;
 
-    [Header("Parents autorisés")]
-    [SerializeField] private Transform parent1;
-    [SerializeField] private Transform parent2;
-    [SerializeField] private Transform parent3;
-
+    public GameObject myObject;
     private void OnTriggerEnter(Collider other)
     {
-        bool appartientAuxParents =
-        other.transform.IsChildOf(parent1) ||
-        other.transform.IsChildOf(parent2) ||
-        other.transform.IsChildOf(parent3);
 
-        if (!appartientAuxParents)
-            return;
+        Transform lastChild = myObject.transform.GetChild(myObject.transform.childCount - 1);
 
-        // Ignore les objets dangereux
-        if (!other.CompareTag("Dangereux"))
-            return;
+        if (lastChild.childCount > 0)
+        {
+            Transform target = lastChild.GetChild(0);
 
-        canvasManager.AjouterBoite();
+            if (target.CompareTag("Dangereux"))
+            {
+                canvasManager.AjouterBoite();
+            }
+            else if (target.CompareTag("Boites"))
+            {
+                return;
+            }
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        bool appartientAuxParents =
-            other.transform.IsChildOf(parent1) ||
-            other.transform.IsChildOf(parent2) ||
-            other.transform.IsChildOf(parent3);
+        Transform lastChild = myObject.transform.GetChild(myObject.transform.childCount - 1);
 
-        if (!appartientAuxParents)
-            return;
+        if (lastChild.childCount > 0)
+        {
+            Transform target = lastChild.GetChild(0);
 
-        if (!other.CompareTag("Dangereux"))
-            return;
-
-        canvasManager.RetirerBoite();
+            if (target.CompareTag("Dangereux"))
+            {
+                canvasManager.RetirerBoite();
+            }
+            else if (target.CompareTag("Boites"))
+            {
+                return;
+            }
+        }
     }
 }
