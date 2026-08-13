@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8304969519016435181}
   - component: {fileID: 3177786836028045676}
   m_Layer: 5
-  m_Name: PlanninChoice
+  m_Name: ComputerChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +110,44 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8183984183368498247}
     m_Modifications:
+    - target: {fileID: 599179974440429019, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 226.6289
+      objectReference: {fileID: 0}
+    - target: {fileID: 599179974440429019, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 173.5002
+      objectReference: {fileID: 0}
+    - target: {fileID: 599179974440429019, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -566
+      objectReference: {fileID: 0}
+    - target: {fileID: 599179974440429019, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -313
+      objectReference: {fileID: 0}
+    - target: {fileID: 684817994327747468, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: nomDeLaScene
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823963198672120692, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_text
+      value: 'Scanner le badge
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823963198672120692, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_fontSize
+      value: 58.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823963198672120692, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661093159449172267, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4688705274874811997, guid: 81164d7d1c2b580439f1f900a1dbb38d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_Ordinateur
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - "Passez juste votre carte ici pour finaliser votre journ\xE9e:"
+  - "Nous esperons que vous avez pass\xE9 un bon moment avec nous et aue vous savez
+    d\xE9sormais mieux \xE0 quoi vous attendre en venant travailler \xE0 nos cot\xE9s."
+  - "Et n'oubliez pas de participer au quiz juste apr\xE9s. Vous aurez \xE9galement
+    acc\xE9s \xE0 une rubrique d'aide afin de pouvoir faire face \xE0 toute les situations
+    possible. "
+  choices:
+  - texte: 'Scanner le badge '
+    nextDialogue: {fileID: 0}
+    backgroundAfterChoice: {fileID: 0}
+  nextBackground: {fileID: 0}
+  customChoicePanelPrefab: {fileID: 8959064813265884520, guid: f5690fe52dd6d594cae14491537546e9, type: 3}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_choixBureauFINCAMION
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - "A votre gauche se trouvent vos responsable, si vous avez des retours ou des
+    probl\xE8mes elles seront l\xE0 pour vous assister."
+  - "Toutefois ce n'est pas ce qui nous amene ici, l'ordinateur se trouve au fond
+    \xE0 gauche."
+  choices:
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 258d84194a9f68e4eb3763a41132996c, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: e5f5a15919f1f9b49868128b302324ff, type: 3}
+  nextBackground: {fileID: 0}
+  customChoicePanelPrefab: {fileID: 7800659199873945621, guid: a80a2cff4d291e14fb4da27720741018, type: 3}
