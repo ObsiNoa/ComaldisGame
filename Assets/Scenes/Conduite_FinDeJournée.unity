@@ -56191,7 +56191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionToCommand
   txtUI: {fileID: 1802958597}
-  nomDeLaScene: Livraison
+  nomDeLaScene: EndDayHub
   Particules: {fileID: 1859198543}
 --- !u!65 &1499393173
 BoxCollider:

@@ -16,9 +16,14 @@ MonoBehaviour:
   - "Nous voila arriv\xE9, les employ\xE9s d'ici devraient venir vider le camion."
   - Parfois ils auront besoin d'un peu d'aide donc pour ne pas perdre de temps vous
     pourez les assister.
-  - "N\xE9anmoins, ce n'est pas le cas aujourd'hui. Une fois au'ils auront ter,in\xE9
+  - "N\xE9anmoins, ce n'est pas le cas aujourd'hui. Une fois au'ils auront termin\xE9
     nous devrions y aller  "
-  - Si l'on en croit notre planning du jour, le prochain arret devrait etre une ramasse
+  - "Une journee typique se construit alors en succession de trajet suivant votre
+    planning avec parfois certaines demande speciale tel que la v\xE9rification des
+    palettes europe et les ramasses indiqu\xE9s."
+  - "Votre planning donne toute les information n\xE9cessaire il est donc important
+    de le v\xE9rifier rigoureusement. "
+  - "Maintenant que vous avez compris vos t\xE2ches retournont \xE0 la base."
   choices: []
   nextBackground: {fileID: 0}
   customChoicePanelPrefab: {fileID: 0}

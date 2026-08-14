@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_Intro_FINCariste
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - "Nous avons vu ensemble la facon dont s\xF9organise votre travail. Un camion
+    va arriver pour une certaine commande."
+  - "Vous allez prendre les cartons relatifs \xE0 cet commande tout en v\xE9rifiant
+    l'etiquette et traiter le carton en accord avec l'etiquette"
+  - "C'est \xE0 dire verifier qu'il s'agisse de la bonne commande en bonne quantit\xE9
+    ainsi que v\xE9rifier si le colis est relatif \xE0 l'ADR ou non."
+  - Maintenant que tout est clair nous devrions aller badger au bureau.
+  choices:
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 199c802c59372c24fbfd915294330435, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 3dbf8161ffc81ba45ab3e23d4aea48f8, type: 3}
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 5d626bc96fae8e3468935f80eb16af62, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 10fce0db71b875143b85e4635826779e, type: 3}
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 2575fb13490fa5647943cb4ba0a2f189, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 3abcd055de982d5459866ae6b3ca1b4a, type: 3}
+  nextBackground: {fileID: 21300000, guid: cc8d20031f93d0740a5878a10c43a2a4, type: 3}
+  customChoicePanelPrefab: {fileID: 8374291418714990687, guid: 193e2414f9f2293458421da18775fd6a, type: 3}
