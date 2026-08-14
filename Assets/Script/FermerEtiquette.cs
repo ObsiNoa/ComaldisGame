@@ -13,7 +13,17 @@ public class FermerEtiquette : MonoBehaviour
     private CursorLockMode previousCursorState;
     private bool previousCursorVisible;
 
-    void Start()
+    private void Awake()
+    {
+        // On attache l'événement du bouton une seule fois au démarrage
+        if (boutonFermer != null)
+        {
+            boutonFermer.onClick.AddListener(FermerLEtiquette);
+        }
+    }
+
+    // S'exécute CHAQUE FOIS que l'étiquette s'affiche (SetActive(true))
+    private void OnEnable()
     {
         // 1. On signale que l'étiquette est ouverte
         estOuverte = true;
@@ -34,15 +44,16 @@ public class FermerEtiquette : MonoBehaviour
 
         // 4. Mettre en pause les animations/physiques
         Time.timeScale = 0f;
-
-        // 5. Écouter le bouton de fermeture
-        if (boutonFermer != null)
-        {
-            boutonFermer.onClick.AddListener(FermerLEtiquette);
-        }
     }
 
     public void FermerLEtiquette()
+    {
+        // Désactiver simplement le GameObject (déclenchera automatiquement OnDisable)
+        gameObject.SetActive(false);
+    }
+
+    // S'exécute CHAQUE FOIS que l'étiquette se ferme (SetActive(false))
+    private void OnDisable()
     {
         // 1. Relancer le temps
         Time.timeScale = 1f;
@@ -59,15 +70,5 @@ public class FermerEtiquette : MonoBehaviour
 
         // 4. On signale que l'étiquette est fermée
         estOuverte = false;
-
-        // 5. Détruire l'étiquette
-        Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        // Sécurité si l'objet est détruit autrement
-        estOuverte = false;
-        Time.timeScale = 1f;
     }
 }

@@ -10,8 +10,9 @@ public class InteractionRangee : MonoBehaviour
     public string messageInteraction = "Prendre un carton";
     public string messagePlein = "Vous portez déjà un carton !";
 
-    [Header("UI Étiquette à afficher")]
-    public GameObject etiquettePrefab;
+    [Header("UI Étiquettes")]
+    public GameObject etiquetteClassiqueUI;
+    public GameObject etiquetteDangereuseUI;
 
     [Header("Gestion de la Rangée")]
     public List<GameObject> cartons = new List<GameObject>();
@@ -21,7 +22,18 @@ public class InteractionRangee : MonoBehaviour
 
     private void Start()
     {
-        // Remplissage automatique des enfants si la liste est vide
+        // 1. Recherche automatique des UI dans la scène si non assignées
+        if (etiquetteClassiqueUI == null)
+        {
+            etiquetteClassiqueUI = GameObject.Find("Etiquette");
+        }
+
+        if (etiquetteDangereuseUI == null)
+        {
+            etiquetteDangereuseUI = GameObject.Find("ADR");
+        }
+
+        // 2. Remplissage automatique des cartons de la rangée
         if (cartons.Count == 0)
         {
             foreach (Transform child in transform)
@@ -33,7 +45,7 @@ public class InteractionRangee : MonoBehaviour
 
     void Update()
     {
-        // SÉCURITÉ : Si l'étiquette est ouverte, on ne fait rien
+        // SÉCURITÉ : Si une étiquette est déjà ouverte à l'écran, on bloque l'interaction
         if (FermerEtiquette.estOuverte)
         {
             return;
@@ -43,11 +55,9 @@ public class InteractionRangee : MonoBehaviour
         {
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                // Vérifier si le Forklift porte déjà un carton
                 if (inventaireForklift != null && inventaireForklift.AUnCarton)
                 {
                     Debug.Log("Impossible : Fourches déjà chargées !");
-                    // On met à jour l'UI pour informer le joueur
                     if (texteUI != null) texteUI.text = messagePlein;
                 }
                 else
@@ -64,7 +74,6 @@ public class InteractionRangee : MonoBehaviour
         {
             joueurDansLaZone = true;
 
-            // Récupère le composant ForkliftInventory présent sur le joueur/forklift
             inventaireForklift = other.GetComponent<ForkliftInventory>();
             if (inventaireForklift == null)
             {
@@ -113,31 +122,59 @@ public class InteractionRangee : MonoBehaviour
 
     void PrendreCarton()
     {
-        // 1. Récupérer le premier carton (index 0)
+        // 1. Récupérer le premier carton
         GameObject cartonAPrendre = cartons[0];
 
-        // 2. Le retirer de la liste
+        // 2. Retirer de la liste
         cartons.RemoveAt(0);
 
-        // 3. Attacher le carton au Forklift au lieu de le détruire
+        // 3. Attacher au Forklift
         if (inventaireForklift != null)
         {
             inventaireForklift.AttacherCarton(cartonAPrendre);
         }
 
-        // 4. Afficher l'étiquette
-        AfficherEtiquette();
+        // 4. Activer l'étiquette déjà présente dans le Canvas
+        OuvrirEtiquetteSelonTag(cartonAPrendre);
 
-        // 5. Mettre à jour le texte UI
+        // 5. Mettre à jour l'UI d'interaction
         MettreAJourTexteUI();
     }
 
-    void AfficherEtiquette()
+    void OuvrirEtiquetteSelonTag(GameObject carton)
     {
-        if (etiquettePrefab != null)
+        Transform target = carton.transform;
+
+        // Si le tag est sur le sous-objet / modèle 3D enfant
+        if (carton.transform.childCount > 0)
         {
-            GameObject nouvelleEtiquette = Instantiate(etiquettePrefab);
-            nouvelleEtiquette.SetActive(true);
+            Transform enfant = carton.transform.GetChild(0);
+            if (enfant.CompareTag("Dangereux") || enfant.CompareTag("Boites"))
+            {
+                target = enfant;
+            }
+        }
+
+        // Récupération automatique de sécurité si perdu
+        if (etiquetteDangereuseUI == null) etiquetteDangereuseUI = GameObject.Find("ADR");
+        if (etiquetteClassiqueUI == null) etiquetteClassiqueUI = GameObject.Find("Etiquette");
+
+        // Activer l'objet existant dans le Canvas
+        if (target.CompareTag("Dangereux"))
+        {
+            if (etiquetteDangereuseUI != null)
+            {
+                etiquetteDangereuseUI.SetActive(true);
+                FermerEtiquette.estOuverte = true;
+            }
+        }
+        else if (target.CompareTag("Boites"))
+        {
+            if (etiquetteClassiqueUI != null)
+            {
+                etiquetteClassiqueUI.SetActive(true);
+                FermerEtiquette.estOuverte = true;
+            }
         }
     }
 }

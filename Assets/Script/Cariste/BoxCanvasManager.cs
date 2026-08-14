@@ -6,7 +6,7 @@ public class GlobalCanvasManager : MonoBehaviour
     [SerializeField] private TMP_Text compteurText;
 
     private int compteur = 0;
-    private const int nombreTotal = 12;
+    private const int nombreTotal = 8;
 
     private void Start()
     {
