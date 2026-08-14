@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28729f34583cad14681d19610352a13b, type: 3}
+  m_Name: Dialogue_choixQuaiFINCariste
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lignes:
+  - "Vos coll\xE8gues devraient avoir finis \xE0 cette heure ci. "
+  - "Mieux vaut ne pas tra\xEEner sur les quais sans raison, allons plut\xF4t badger."
+  choices:
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 199c802c59372c24fbfd915294330435, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 3dbf8161ffc81ba45ab3e23d4aea48f8, type: 3}
+  - texte: 
+    nextDialogue: {fileID: 11400000}
+    backgroundAfterChoice: {fileID: 21300000, guid: 10fce0db71b875143b85e4635826779e, type: 3}
+  - texte: 
+    nextDialogue: {fileID: 11400000, guid: 2575fb13490fa5647943cb4ba0a2f189, type: 2}
+    backgroundAfterChoice: {fileID: 21300000, guid: 3abcd055de982d5459866ae6b3ca1b4a, type: 3}
+  nextBackground: {fileID: 21300000, guid: cc8d20031f93d0740a5878a10c43a2a4, type: 3}
+  customChoicePanelPrefab: {fileID: 8374291418714990687, guid: 193e2414f9f2293458421da18775fd6a, type: 3}
