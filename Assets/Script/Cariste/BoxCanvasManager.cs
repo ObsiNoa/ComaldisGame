@@ -1,5 +1,7 @@
-using UnityEngine;
+using System.Collections;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalCanvasManager : MonoBehaviour
 {
@@ -8,9 +10,30 @@ public class GlobalCanvasManager : MonoBehaviour
     private int compteur = 0;
     private const int nombreTotal = 8;
 
+    private bool quotaAtteint = false;
+
     private void Start()
     {
         ActualiserUI();
+    }
+
+    private void Update()
+    {
+        if (compteur >= nombreTotal && !quotaAtteint)
+        {
+            quotaAtteint = true;
+            StartCoroutine(FinDeJournee());
+        }
+    }
+
+    private IEnumerator FinDeJournee()
+    {
+
+        compteurText.text = "Vous avez rangé votre quota en carton";
+        yield return new WaitForSeconds(0.5f);
+
+        SceneLoader.SceneToLoad = "EndDayHubCariste";
+        SceneManager.LoadScene("LoadingScreen");
     }
 
     public void AjouterBoite()

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class InteractionRangee : MonoBehaviour
 
     private bool joueurDansLaZone = false;
     private ForkliftInventory inventaireForklift;
+
+    private bool interactionEnCours = false;
 
     private void Start()
     {
@@ -45,7 +48,6 @@ public class InteractionRangee : MonoBehaviour
 
     void Update()
     {
-        // SÉCURITÉ : Si une étiquette est déjà ouverte à l'écran, on bloque l'interaction
         if (FermerEtiquette.estOuverte)
         {
             return;
@@ -58,14 +60,32 @@ public class InteractionRangee : MonoBehaviour
                 if (inventaireForklift != null && inventaireForklift.AUnCarton)
                 {
                     Debug.Log("Impossible : Fourches déjà chargées !");
-                    if (texteUI != null) texteUI.text = messagePlein;
+
+                    if (texteUI != null)
+                        texteUI.text = messagePlein;
                 }
-                else
+                else if (!interactionEnCours)
                 {
-                    PrendreCarton();
+                    StartCoroutine(PrendreCartonAvecDelai());
                 }
             }
         }
+    }
+
+    private IEnumerator PrendreCartonAvecDelai()
+    {
+        interactionEnCours = true;
+
+        // Attend 0.5 seconde
+        yield return new WaitForSeconds(0.5f);
+
+        // Vérifie encore que le joueur peut prendre le carton
+        if (joueurDansLaZone && cartons.Count > 0)
+        {
+            PrendreCarton();
+        }
+
+        interactionEnCours = false;
     }
 
     private void OnTriggerEnter(Collider other)
