@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject canvasOptions;
+
     public void Jouer()
     {
         SceneLoader.SceneToLoad = "MainHub";
@@ -12,7 +14,11 @@ public class MainMenu : MonoBehaviour
     public void Quitter()
     {
         Debug.Log("Fermeture du jeu");
-
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        canvasOptions.SetActive(true);
     }
 }
