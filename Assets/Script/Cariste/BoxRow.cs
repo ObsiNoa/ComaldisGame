@@ -8,8 +8,7 @@ public class BoxRow : MonoBehaviour
 
     private void Start()
     {
-        // Si tu n'as pas rempli la liste à la main dans l'Inspecteur, 
-        // on peut automatiquement récupérer les enfants dans l'ordre de la hiérarchie.
+       
         if (boxes.Count == 0)
         {
             foreach (Transform child in transform)
@@ -19,17 +18,17 @@ public class BoxRow : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Vérifie si le carton visé/cliqué est bien le 1er disponible.
-    /// </summary>
+    // <summary>
+    //Vérifie si le carton visé/cliqué est bien le 1er disponible.
+    // </summary>
     public bool IsFrontBox(GameObject targetBox)
     {
         return boxes.Count > 0 && boxes[0] == targetBox;
     }
 
-    /// <summary>
-    /// Retire le premier carton de la liste et le renvoie.
-    /// </summary>
+    // <summary>
+    // Retire le premier carton de la liste et le renvoie.
+    // </summary>
     public GameObject TakeFrontBox()
     {
         if (boxes.Count == 0) return null;

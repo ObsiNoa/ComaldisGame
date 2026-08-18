@@ -7,9 +7,6 @@ public class CartonRamassable : MonoBehaviour
     [Header("UI Message")]
     public string messageRamasser = "Ramasser le carton";
 
-    [Header("UI Étiquette")]
-    public GameObject etiquettePrefab;
-
     [Header("Distance de ramassage")]
     [Tooltip("Distance en mètres pour pouvoir re-ramasser ce carton au sol")]
     public float distanceRamassage = 3.5f;
@@ -47,7 +44,12 @@ public class CartonRamassable : MonoBehaviour
 
         if (texteUI == null)
         {
-            texteUI = FindFirstObjectByType<TextMeshProUGUI>();
+            // On cherche spécifiquement l'objet UI d'interaction au lieu de prendre le premier du jeu
+            GameObject objTexte = GameObject.Find("TextPrendreCarton");
+            if (objTexte != null)
+            {
+                texteUI = objTexte.GetComponent<TextMeshProUGUI>();
+            }
         }
 
         // Calcul de la distance entre le carton au sol et le transpalette
@@ -100,12 +102,6 @@ public class CartonRamassable : MonoBehaviour
         if (inventaireForklift != null)
         {
             inventaireForklift.AttacherCarton(gameObject);
-        }
-
-        if (etiquettePrefab != null)
-        {
-            GameObject nouvelleEtiquette = Instantiate(etiquettePrefab);
-            nouvelleEtiquette.SetActive(true);
         }
 
         // Désactiver la détection au sol pendant qu'on le porte
