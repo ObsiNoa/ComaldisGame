@@ -4,6 +4,7 @@ public class MainSettings : MonoBehaviour
 {
     private bool mouseShowed = false;
     [SerializeField] public GameObject videopanel;
+    [SerializeField] public GameObject musicpanel;
     [SerializeField] public GameObject settingsCanvasRoot;
 
     void Start()
@@ -16,9 +17,15 @@ public class MainSettings : MonoBehaviour
         }
     }
 
+    public void OpenMusic()
+    {
+        //gameObject.SetActive(false);
+        musicpanel.SetActive(true);
+    }
+
     public void OpenVideo()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         videopanel.SetActive(true);
     }
 
