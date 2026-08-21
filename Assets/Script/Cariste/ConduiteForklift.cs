@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class ConduiteForklift : MonoBehaviour
 {
     private CharacterController controller;
     private Transform cameraTransform;
+
     [Header("Paramètres du Poids")]
     public float maxForwardSpeed = 15f;   // Vitesse max en avant
     public float maxReverseSpeed = 5f;    // Vitesse max en arrière (plus lente !)
@@ -20,6 +20,25 @@ public class ConduiteForklift : MonoBehaviour
     private float rotationX = 0f;
     private float rotationY = 0f;
 
+    [Header("Input System")]
+    [SerializeField] private InputActionAsset inputActions;
+    private InputAction moveAction;
+
+    private void Awake()
+    {
+        // Récupération de l'action Move depuis l'asset
+        moveAction = inputActions.FindAction("Move");
+    }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+    }
 
     void Start()
     {
@@ -30,50 +49,47 @@ public class ConduiteForklift : MonoBehaviour
 
     void Update()
     {
-
-
+        // 1. ROTATIONS (Caméra / Souris)
         if (Pointer.current != null)
         {
             Vector2 deltaSouris = Mouse.current.delta.ReadValue();
-            
-            //Yaw (horizontal)
+
+            // Yaw (horizontal)
             rotationY += deltaSouris.x * sensibility;
             rotationY = Mathf.Clamp(rotationY, -60f, 60f);
 
-            //Pitch (vertical) 
+            // Pitch (vertical)
             rotationX -= deltaSouris.y * sensibility;
             rotationX = Mathf.Clamp(rotationX, -15f, 15f);
 
             cameraTransform.localRotation = Quaternion.Euler(rotationX, rotationY, 0f);
         }
 
-        float x = 0f;
+        // 2. DÉPLACEMENTS (Utilise l'action Move rebindable)
+        Vector2 inputVector = moveAction.ReadValue<Vector2>();
+        float x = inputVector.x;
+        float z = inputVector.y;
 
-        if (Keyboard.current != null)
+        bool pressingForward = z > 0.1f;
+        bool pressingBackward = z < -0.1f;
+
+        float targetSpeed = 0f;
+        float currentChangeRate = friction;
+
+        if (pressingForward)
         {
-            bool pressingForward = Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed;
-            bool pressingBackward = Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed;
-
-            if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) x = -1f;
-            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) x = 1f;
-
-            float targetSpeed = 0f;
-            float currentChangeRate = friction;
-
-            if (pressingForward)
-            {
-                if (speed < -0.1f) { targetSpeed = 0f; currentChangeRate = brakeForce; }
-                else { targetSpeed = maxForwardSpeed; currentChangeRate = acceleration; }
-            }
-            else if (pressingBackward)
-            {
-                if (speed > 0.1f) { targetSpeed = 0f; currentChangeRate = brakeForce; }
-                else { targetSpeed = -maxReverseSpeed; currentChangeRate = acceleration; }
-            }
-
-            speed = Mathf.MoveTowards(speed, targetSpeed, currentChangeRate * Time.deltaTime);
+            if (speed < -0.1f) { targetSpeed = 0f; currentChangeRate = brakeForce; }
+            else { targetSpeed = maxForwardSpeed; currentChangeRate = acceleration; }
+        }
+        else if (pressingBackward)
+        {
+            if (speed > 0.1f) { targetSpeed = 0f; currentChangeRate = brakeForce; }
+            else { targetSpeed = -maxReverseSpeed; currentChangeRate = acceleration; }
         }
 
+        speed = Mathf.MoveTowards(speed, targetSpeed, currentChangeRate * Time.deltaTime);
+
+        // Rotation et déplacement du transpalette
         float speedFactor = Mathf.Clamp(speed / maxForwardSpeed, -1f, 1f);
         float turnAmount = x * turnSpeed * speedFactor * Time.deltaTime;
         transform.Rotate(0f, turnAmount, 0f);
@@ -83,4 +99,3 @@ public class ConduiteForklift : MonoBehaviour
         controller.Move((mouvementAvantArriere + Vector3.down * 2f) * Time.deltaTime);
     }
 }
-

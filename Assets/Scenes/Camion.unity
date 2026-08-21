@@ -12012,6 +12012,7 @@ MonoBehaviour:
   speed: 5
   sensibility: 0.5
   rotationX: 0
+  inputActions: {fileID: -944628639613478452, guid: 43db1e83cd6208442bfb1d7ff25c6970, type: 3}
 --- !u!143 &1575933255
 CharacterController:
   m_ObjectHideFlags: 0

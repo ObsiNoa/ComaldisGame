@@ -73912,6 +73912,7 @@ MonoBehaviour:
   friction: 1.5
   turnSpeed: 65
   sensibility: 0.5
+  inputActions: {fileID: -944628639613478452, guid: 43db1e83cd6208442bfb1d7ff25c6970, type: 3}
 --- !u!143 &2110419133
 CharacterController:
   m_ObjectHideFlags: 0
