@@ -17,6 +17,12 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Quiz()
+    {
+        SceneLoader.SceneToLoad = "Quiz";
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
     public void Options()
     {
         canvasOptions.SetActive(true);
