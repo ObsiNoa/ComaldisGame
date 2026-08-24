@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ResetInputBindings : MonoBehaviour
+public class BindingManager: MonoBehaviour
 {
     [Header("Référence à ton Asset d'Input Actions")]
     [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] private GameObject MainPanel;
+    [SerializeField] private GameObject ActualPanel;
 
     public void ResetAllBindings()
     {
@@ -27,5 +29,14 @@ public class ResetInputBindings : MonoBehaviour
                 comp.Invoke("UpdateBindingDisplay", 0f);
             }
         }
+    }
+
+    public void Retour()
+    {
+        if (ActualPanel != null)
+            ActualPanel.SetActive(false);
+
+        if (MainPanel != null)
+            MainPanel.SetActive(true);
     }
 }

@@ -247,7 +247,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             if (action.bindings[bindingIndex].isPartOfComposite)
                 partName = $"Binding '{action.bindings[bindingIndex].name}'. ";
 
-            m_RebindOverlay?.SetActive(true);
+            if (m_RebindOverlay != null)
+                m_RebindOverlay.SetActive(true);
+
             if (m_RebindText != null)
             {
                 var text = !string.IsNullOrEmpty(m_RebindOperation.expectedControlType)
