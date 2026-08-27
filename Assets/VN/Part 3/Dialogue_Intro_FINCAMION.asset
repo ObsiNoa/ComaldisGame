@@ -15,9 +15,10 @@ MonoBehaviour:
   lignes:
   - "Nous avons vu ensemble tout les moments importants d'une journ\xE9e typique
     chez nous."
-  - "Ne vous reste plus qu'\xE0 badger au niveau de l'ordinateur du bureau."
-  - "Une fois cela fait, nous vous invitons a vous essayer \xE0 notre quiz afin d'en
-    apprendre plus sur quelques cas plus technique auxquels vous pourriez faire face."
+  - "Il ne vous reste plus qu'\xE0 badger au niveau de l'ordinateur du bureau."
+  - "Une fois cela fait, nous vous invitons \xE0 vous essayer \xE0 notre quiz afin
+    d'en apprendre plus sur quelques cas plus technique auxquels vous pourriez faire
+    face."
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000, guid: ae10e4464b9fefb4a876120b2f246914, type: 2}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dialogue_Intro
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - Bonjour et bienvenue parmis nous. Vous allez bientot commencer votre premiere
-    journee a nos cotees.
+  - "Bonjour et bienvenue parmis nous. Vous allez bient\xF4t commencer votre premiere
+    journ\xE9e a nos c\xF4t\xE9."
   - C'est pourquoi nous allons ensemble observer de quoi se compose une journee classique
     chez nous.
   - Tout d'abord, dirigeons nous vers notre camions. (Cliquez sur la zone vers laquelle

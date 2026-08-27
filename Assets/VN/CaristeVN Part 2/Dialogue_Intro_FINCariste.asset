@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dialogue_Intro_FINCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "Nous avons vu ensemble la facon dont s\xF9organise votre travail. Un camion
-    va arriver pour une certaine commande."
+  - Nous avons vu ensemble la facon dont s'organise votre travail. Un camion va arriver
+    pour une certaine commande.
   - "Vous allez prendre les cartons relatifs \xE0 cet commande tout en v\xE9rifiant
-    l'etiquette et traiter le carton en accord avec l'etiquette"
+    l'\xE9tiquette et traiter le carton en accord avec l'\xE9tiquette"
   - "C'est \xE0 dire verifier qu'il s'agisse de la bonne commande en bonne quantit\xE9
     ainsi que v\xE9rifier si le colis est relatif \xE0 l'ADR ou non."
   - Maintenant que tout est clair nous devrions aller badger au bureau.

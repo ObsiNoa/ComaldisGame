@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Dialogue_IntroCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - Bonjour et bienvenue parmis nous. Vous allez bientot commencer votre premiere
-    journee a nos cotees.
-  - C'est pourquoi nous allons ensemble observer de quoi se compose une journee classique
-    chez nous.
-  - Tout d'abord, dirigeons nous vers l'entrepot. (Cliquez sur la zone vers laquelle
-    vous souhaitez vous diriger)
+  - "Bonjour et bienvenue parmis nous. Vous allez bient\xF4t commencer votre premiere
+    journ\xE9e a nos c\xF4t\xE9."
+  - "C'est pourquoi nous allons ensemble observer de quoi se compose une journ\xE9e
+    classique chez nous."
+  - "Tout d'abord, dirigeons nous vers l'entrep\xF4t. (Cliquez sur la zone vers laquelle
+    vous souhaitez vous diriger)"
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000, guid: 8af20fb5b603bf24abca4ce0670128f6, type: 2}

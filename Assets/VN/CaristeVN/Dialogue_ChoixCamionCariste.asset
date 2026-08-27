@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
   - "Ici se trouvent les camions gar\xE9s de l'entreprise."
-  - "Nous devrions les laisser tel qu'elle, ils sont de la responsabilit\xE9 de leurs
+  - "Nous devrions les laisser tel quels, ils sont de la responsabilit\xE9 de leurs
     chauffeurs."
   choices:
   - texte: 

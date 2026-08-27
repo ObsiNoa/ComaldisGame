@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue_choixQuaiFINCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "Vos coll\xE8gues devraient avoir finis \xE0 cette heure ci. "
+  - "Vos coll\xE8gues devraient avoir fini \xE0 cette heure-ci. "
   - "Mieux vaut ne pas tra\xEEner sur les quais sans raison, allons plut\xF4t badger."
   choices:
   - texte: 

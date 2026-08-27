@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue_ChoixCamionFINCAMION
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "Notre journ\xE9e est termin\xE9e, ne restons pas la."
+  - "Notre journ\xE9e est termin\xE9e, ne restons pas l\xE0."
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000}

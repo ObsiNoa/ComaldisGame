@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   lignes:
   - "J'\xE9sp\xE8re que vous avez bien retenus votre trajet du jour !"
-  - Si jamais vous avez besoin de vous le rappeler n'hesitez pas a ouvrir a nouveau
-    votre planning sur votre telephone.
-  - 'Pour en savoir plus sur chaque section veuillez cliquer sur les information
-    qui vous interesse, un pannel explicatif apparaitra. '
-  - Il contient de nombreuses informations sur ce que vous aurez a accomplir aujourd'hui,
-    je vous conseille alors de le lire en detail.
-  - "Maintenant, avant de commencer votre tourn\xE9e, ne vous reste plus qu'une derni\xE8re
-    chose \xE0 faire. Inspectons notre camion pour la journ\xE9e."
+  - "Si jamais vous avez besoin de vous le rappeler n'h\xE9sitez pas \xE0 ouvrir
+    de nouveau votre planning sur votre telephone."
+  - "Pour en savoir plus sur chaque section veuillez cliquer sur les information
+    qui vous int\xE9resse, un pannel explicatif apparaitra. "
+  - "Il contient de nombreuses informations sur ce que vous aurez \xE0 accomplir
+    aujourd'hui, je vous conseille alors de le lire en detail."
+  - "Maintenant, avant de commencer votre tourn\xE9e, il ne vous reste plus qu'une
+    derni\xE8re chose \xE0 faire. Inspectons notre camion pour la journ\xE9e."
   choices:
   - texte: Aller voir le camion
     nextDialogue: {fileID: 0}

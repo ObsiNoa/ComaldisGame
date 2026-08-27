@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Dialogue_choixQuai
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - Ici, certains de vos collegues travaillent a vider et remplir a nouveau les camions.
-  - Le votre, est deja plein ce matin, allons donc le voir.
+  - "Ici, certains de vos coll\xE8gues travaillent \xE0 vider et remplir \xE0 nouveau
+    les camions."
+  - "Le votre, est d\xE9j\xE0 plein ce matin, allons donc le voir."
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000, guid: e4e2e07efcf617f42954084cb8cef68e, type: 2}

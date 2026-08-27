@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dialogue_choixBureauFINCAMION
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "A votre gauche se trouvent vos responsable, si vous avez des retours ou des
-    probl\xE8mes elles seront l\xE0 pour vous assister."
+  - "A votre gauche se trouvent vos responsables, si vous avez des retours ou des
+    probl\xE8mes ils seront l\xE0 pour vous assister."
   - "Toutefois ce n'est pas ce qui nous amene ici, l'ordinateur se trouve au fond
     \xE0 gauche."
   choices:

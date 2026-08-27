@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
   - "Passez juste votre carte ici pour finaliser votre journ\xE9e:"
-  - "Nous esperons que vous avez pass\xE9 un bon moment avec nous et aue vous savez
+  - "Nous esperons que vous avez pass\xE9 un bon moment avec nous et que vous savez
     d\xE9sormais mieux \xE0 quoi vous attendre en venant travailler \xE0 nos cot\xE9s."
-  - "Et n'oubliez pas de participer au quiz juste apr\xE9s. Vous aurez \xE9galement
+  - "Et n'oubliez pas de participer au quiz juste apr\xE8s. Vous aurez \xE9galement
     acc\xE9s \xE0 une rubrique d'aide afin de pouvoir faire face \xE0 toute les situations
     possible. "
   choices:

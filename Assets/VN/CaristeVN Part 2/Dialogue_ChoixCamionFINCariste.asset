@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dialogue_ChoixCamionFINCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "Vos coll\xE8gues devraient avoir finis \xE0 cette heure ci. "
-  - En fonctions de vos horaire vous pourriez etre charger de les remplir pour les
-    commandes de demain matin.
+  - "Vos coll\xE8gues devraient avoir fini \xE0 cette heure-ci."
+  - "En fonctions de vos horaires vous pourriez \xEAtre charger de les remplir pour
+    les commandes de demain matin."
   choices:
   - texte: 
     nextDialogue: {fileID: 11400000}
