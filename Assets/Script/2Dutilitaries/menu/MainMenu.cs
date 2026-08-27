@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject canvasOptions;
+    [SerializeField] private GameObject PanelChoix;
 
     public void Jouer()
     {
-        SceneLoader.SceneToLoad = "MainHub";
-        SceneManager.LoadScene("LoadingScreen");
+        PanelChoix.SetActive(true);
+        //SceneLoader.SceneToLoad = "MainHub";
+        //SceneManager.LoadScene("LoadingScreen");
     }
 
     public void Quitter()
@@ -26,5 +28,17 @@ public class MainMenu : MonoBehaviour
     public void Options()
     {
         canvasOptions.SetActive(true);
+    }
+
+    public void LoadChauffeur()
+    {
+        SceneLoader.SceneToLoad = "MainHub";
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
+    public void LoadCariste()
+    {
+        SceneLoader.SceneToLoad = "MainCariste";
+        SceneManager.LoadScene("LoadingScreen");
     }
 }
