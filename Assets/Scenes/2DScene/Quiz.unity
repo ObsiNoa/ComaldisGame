@@ -13041,6 +13041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResetInputBindings
   inputActions: {fileID: -944628639613478452, guid: 43db1e83cd6208442bfb1d7ff25c6970, type: 3}
+  MainPanel: {fileID: 812355296}
+  ActualPanel: {fileID: 1695122071}
 --- !u!114 &1695122074
 MonoBehaviour:
   m_ObjectHideFlags: 0
