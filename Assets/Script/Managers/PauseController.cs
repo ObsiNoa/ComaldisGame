@@ -62,8 +62,8 @@ public class OptionsMenuController : MonoBehaviour
 
     private void TryToggleMenu()
     {
-        if (SceneManager.GetActiveScene().name == mainMenuSceneName)
-            return;
+        //if (SceneManager.GetActiveScene().name == mainMenuSceneName)
+         //   return;
 
         ToggleOptionsMenu();
     }
