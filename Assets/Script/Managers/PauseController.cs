@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PauseManager : MonoBehaviour
+public class OptionsMenuController : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private InputActionReference pauseAction;
@@ -11,14 +11,15 @@ public class PauseManager : MonoBehaviour
     [Header("UI & Panneaux")]
     [SerializeField] private GameObject optionsPanel;
 
-    [Header("Joueur & Caméra")]
-    [Tooltip("Glisse ici le composant Player Input de ton Joueur/Capsule")]
-    [SerializeField] private GameObject playerInput;
-
-    // Si tu utilises un script de caméra de type FirstPersonController sans PlayerInput :
-    // [SerializeField] private MonoBehaviour cameraScript;
+    [Header("Joueur")]
+    [Tooltip("Glisse ici directement ton GameObject Joueur (Capsule)")]
+    [SerializeField] private GameObject playerGameObject;
 
     private bool isOpen = false;
+
+    // Sauvegarde de l'état de la souris avant l'ouverture du menu
+    private CursorLockMode previousLockState;
+    private bool previousCursorVisible;
 
     private void Start()
     {
@@ -71,34 +72,60 @@ public class PauseManager : MonoBehaviour
     {
         isOpen = !isOpen;
 
-        // 1. Affichage du menu
-        if (optionsPanel != null)
+        if (isOpen)
         {
-            optionsPanel.SetActive(isOpen);
+            // --- OUVERTURE DU MENU ---
+            
+            // 1. On sauvegarde l'état actuel du curseur (3D ou 2D)
+            previousLockState = Cursor.lockState;
+            previousCursorVisible = Cursor.visible;
+
+            // 2. On affiche le menu
+            if (optionsPanel != null) optionsPanel.SetActive(true);
+
+            // 3. On libère le curseur pour l'UI
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            // 4. On gère le temps et le joueur
+            Time.timeScale = 0f;
+            SetPlayerInputActive(false);
+        }
+        else
+        {
+            // --- FERMETURE DU MENU ---
+
+            // 1. On masque le menu
+            if (optionsPanel != null) optionsPanel.SetActive(false);
+
+            // 2. On restaure l'état exact du curseur d'AVANT l'ouverture
+            Cursor.lockState = previousLockState;
+            Cursor.visible = previousCursorVisible;
+
+            // 3. On réactive le temps et le joueur
+            Time.timeScale = 1f;
+            SetPlayerInputActive(true);
+        }
+    }
+
+    private void SetPlayerInputActive(bool active)
+    {
+        if (playerGameObject == null) return;
+
+        // Désactive/Active l'Input System du Joueur
+        PlayerInput pi = playerGameObject.GetComponent<PlayerInput>();
+        if (pi != null)
+        {
+            pi.enabled = active;
+            return;
         }
 
-        // 2. Blocage des entrées / scripts du Joueur
-        if (playerInput != null)
+        // Sinon désactive/active le premier contrôleur trouvé
+        MonoBehaviour controller = playerGameObject.GetComponent<MonoBehaviour>();
+        if (controller != null)
         {
-            // Tente de couper le PlayerInput s'il existe
-            PlayerInput pi = playerInput.GetComponent<PlayerInput>();
-            if (pi != null)
-            {
-                pi.enabled = !isOpen;
-            }
-
-            // Tente de couper un script de contrôleur classique s'il y en a un
-            MonoBehaviour controller = playerInput.GetComponent<MonoBehaviour>();
-            if (controller != null && pi == null)
-            {
-                controller.enabled = !isOpen;
-            }
+            controller.enabled = active;
         }
-
-        // 3. Gestion du temps et du curseur
-        Time.timeScale = isOpen ? 0f : 1f;
-        Cursor.lockState = isOpen ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = isOpen;
     }
 
     public void CloseMenu()
