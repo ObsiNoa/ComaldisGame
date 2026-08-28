@@ -162,7 +162,6 @@ public class Conduite : MonoBehaviour
             return;
         }
 
-
         // Marche avant
         if (speed > 0f)
         {
@@ -170,6 +169,10 @@ public class Conduite : MonoBehaviour
             {
                 truckAudioSource.Stop();
                 truckAudioSource.clip = forwardSound;
+            }
+
+            if (!truckAudioSource.isPlaying)
+            {
                 truckAudioSource.Play();
             }
         }
@@ -181,10 +184,13 @@ public class Conduite : MonoBehaviour
             {
                 truckAudioSource.Stop();
                 truckAudioSource.clip = reverseSound;
+            }
+
+            if (!truckAudioSource.isPlaying)
+            {
                 truckAudioSource.Play();
             }
         }
-
 
         float normalizedSpeed;
 
@@ -202,8 +208,9 @@ public class Conduite : MonoBehaviour
         truckAudioSource.volume =
             Mathf.Lerp(0.2f, 1f, normalizedSpeed);
 
-
         truckAudioSource.pitch =
             Mathf.Lerp(0.8f, 1.2f, normalizedSpeed);
     }
+
+
 }
