@@ -25,6 +25,10 @@ public class OptionsMenuController : MonoBehaviour
     {
         if (optionsPanel != null)
         {
+            if (optionsPanel == gameObject || optionsPanel.GetComponent<Canvas>() != null)
+            {
+                Debug.LogWarning($"[OptionsMenuController] '{name}': optionsPanel seems to be the Canvas itself, not a sub-panel. Check the Inspector reference.");
+            }
             optionsPanel.SetActive(false);
         }
     }
@@ -63,7 +67,7 @@ public class OptionsMenuController : MonoBehaviour
     private void TryToggleMenu()
     {
         if (SceneManager.GetActiveScene().name == mainMenuSceneName)
-           return;
+            return;
 
         ToggleOptionsMenu();
     }
