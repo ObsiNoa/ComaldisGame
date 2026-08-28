@@ -124,9 +124,7 @@ public class VideoSettings : MonoBehaviour
         List<string> options = new List<string>
         {
             "30 FPS",
-            "60 FPS",
-            "120 FPS",
-            "Unlimited"
+            "60 FPS"
         };
 
         fpsDropdown.AddOptions(options);
