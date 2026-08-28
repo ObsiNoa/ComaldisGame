@@ -633,6 +633,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167816107}
   m_CullTransparentMesh: 1
+--- !u!1 &331610392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4262925425093921522, guid: 9fa602cd165f20248b0e1667fdf104ec, type: 3}
+  m_PrefabInstance: {fileID: 76658035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &394268714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,11 +1823,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973783126}
   m_CullTransparentMesh: 1
---- !u!1 &1038449655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7114826438115053118, guid: 9fa602cd165f20248b0e1667fdf104ec, type: 3}
-  m_PrefabInstance: {fileID: 76658035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1268506471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,7 +2243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c154ceee1abbb984698c630b0bfa86d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  canvasOptions: {fileID: 1038449655}
+  canvasOptions: {fileID: 331610392}
   PanelChoix: {fileID: 1959896526}
 --- !u!4 &1436396946
 Transform:
