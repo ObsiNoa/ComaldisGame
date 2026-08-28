@@ -8,32 +8,59 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private InputActionReference pauseAction;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
-    [Header("Panneaux à gérer")]
-    [SerializeField] private GameObject optionsPanel; // Ton panneau d'options principal
+    [Header("UI & Panneaux")]
+    [SerializeField] private GameObject optionsPanel;
+
+    [Header("Joueur & Caméra")]
+    [Tooltip("Glisse ici le composant Player Input de ton Joueur/Capsule")]
+    [SerializeField] private GameObject playerInput;
+
+    // Si tu utilises un script de caméra de type FirstPersonController sans PlayerInput :
+    // [SerializeField] private MonoBehaviour cameraScript;
 
     private bool isOpen = false;
 
+    private void Start()
+    {
+        if (optionsPanel != null)
+        {
+            optionsPanel.SetActive(false);
+        }
+    }
+
     private void OnEnable()
     {
-        if (pauseAction != null)
+        if (pauseAction != null && pauseAction.action != null)
         {
-            pauseAction.action.started += OnToggleOptions;
+            pauseAction.action.actionMap.Enable();
             pauseAction.action.Enable();
+            pauseAction.action.started += OnPauseInputTriggered;
         }
     }
 
     private void OnDisable()
     {
-        if (pauseAction != null)
+        if (pauseAction != null && pauseAction.action != null)
         {
-            pauseAction.action.started -= OnToggleOptions;
-            pauseAction.action.Disable();
+            pauseAction.action.started -= OnPauseInputTriggered;
         }
     }
 
-    private void OnToggleOptions(InputAction.CallbackContext context)
+    private void Update()
     {
-        // Interdit l'ouverture/fermeture via Échap sur la scène MainMenu
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            TryToggleMenu();
+        }
+    }
+
+    private void OnPauseInputTriggered(InputAction.CallbackContext context)
+    {
+        TryToggleMenu();
+    }
+
+    private void TryToggleMenu()
+    {
         if (SceneManager.GetActiveScene().name == mainMenuSceneName)
             return;
 
@@ -44,19 +71,36 @@ public class PauseManager : MonoBehaviour
     {
         isOpen = !isOpen;
 
-        // Ouvre ou ferme le panneau d'options
+        // 1. Affichage du menu
         if (optionsPanel != null)
+        {
             optionsPanel.SetActive(isOpen);
+        }
 
-        // Bloque ou débloque le temps de jeu (seul le MainMenu restera en temps réel)
+        // 2. Blocage des entrées / scripts du Joueur
+        if (playerInput != null)
+        {
+            // Tente de couper le PlayerInput s'il existe
+            PlayerInput pi = playerInput.GetComponent<PlayerInput>();
+            if (pi != null)
+            {
+                pi.enabled = !isOpen;
+            }
+
+            // Tente de couper un script de contrôleur classique s'il y en a un
+            MonoBehaviour controller = playerInput.GetComponent<MonoBehaviour>();
+            if (controller != null && pi == null)
+            {
+                controller.enabled = !isOpen;
+            }
+        }
+
+        // 3. Gestion du temps et du curseur
         Time.timeScale = isOpen ? 0f : 1f;
-
-        // Déverrouille la souris si le jeu était en vue 3D
         Cursor.lockState = isOpen ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = isOpen;
     }
 
-    // À associer au bouton "Fermer" ou "Retour" dans ton panneau d'options
     public void CloseMenu()
     {
         if (isOpen)

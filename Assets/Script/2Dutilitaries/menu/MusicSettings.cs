@@ -48,8 +48,6 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        PlayerPrefs.DeleteKey(MASTER_PREF); PlayerPrefs.DeleteKey(MUSIC_PREF); PlayerPrefs.DeleteKey(SFX_PREF);
-
         ChargerReglages();
         InitialiserSliders();
 
