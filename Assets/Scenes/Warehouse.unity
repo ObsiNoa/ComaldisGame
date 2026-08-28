@@ -11618,6 +11618,10 @@ PrefabInstance:
       value: Retour
       objectReference: {fileID: 0}
     - target: {fileID: 7912773880994343246, guid: 9fa602cd165f20248b0e1667fdf104ec, type: 3}
+      propertyPath: pauseAction
+      value: 
+      objectReference: {fileID: 6701495101899486120, guid: 43db1e83cd6208442bfb1d7ff25c6970, type: 3}
+    - target: {fileID: 7912773880994343246, guid: 9fa602cd165f20248b0e1667fdf104ec, type: 3}
       propertyPath: playerGameObject
       value: 
       objectReference: {fileID: 2110419129}
