@@ -90495,7 +90495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainSettingd
   videopanel: {fileID: 320516030}
   musicpanel: {fileID: 51150048}
-  commandpanel: {fileID: 0}
+  commandpanel: {fileID: 758552693}
   settingsCanvasRoot: {fileID: 1950804421}
 --- !u!114 &2092910617
 MonoBehaviour:
