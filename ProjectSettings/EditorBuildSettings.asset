@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2DScene/EndDayHubCariste.unity
     guid: 218c6e66ffaef81439c8e2e21fdb94ca
+  - enabled: 1
+    path: Assets/Scenes/2DScene/Quiz.unity
+    guid: aa19e554622ba7f4eb09cf4fb1ab9f5a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
