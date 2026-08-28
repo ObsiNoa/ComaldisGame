@@ -11940,7 +11940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f847157d9503dee48a2473903c540e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
-  musicClip: {fileID: 8300000, guid: f8665086db1f48a4399d3894de599697, type: 3}
+  musicClip: {fileID: 8300000, guid: b046905d05fbcdc4eabd620fc5537b05, type: 3}
   musicMixerGroup: {fileID: -5308585249054099777, guid: e8826c411954d384db4ecbb4e2b0ced8, type: 2}
 --- !u!114 &1580434984
 MonoBehaviour:
@@ -11976,7 +11976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainSettingd
   videopanel: {fileID: 536209712}
   musicpanel: {fileID: 1148749106}
-  commandpanel: {fileID: 0}
+  commandpanel: {fileID: 455934264}
   settingsCanvasRoot: {fileID: 308515308}
 --- !u!114 &1580434986
 MonoBehaviour:
