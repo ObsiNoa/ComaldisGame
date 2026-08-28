@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f847157d9503dee48a2473903c540e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
-  musicClip: {fileID: 8300000, guid: f8665086db1f48a4399d3894de599697, type: 3}
+  musicClip: {fileID: 8300000, guid: b046905d05fbcdc4eabd620fc5537b05, type: 3}
   musicMixerGroup: {fileID: -5308585249054099777, guid: e8826c411954d384db4ecbb4e2b0ced8, type: 2}
 --- !u!114 &948177
 MonoBehaviour:
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainSettingd
   videopanel: {fileID: 749050380}
   musicpanel: {fileID: 1090605606}
-  commandpanel: {fileID: 0}
+  commandpanel: {fileID: 848695081}
   settingsCanvasRoot: {fileID: 431093154}
 --- !u!114 &948179
 MonoBehaviour:
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A
+  m_text: Q
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -62030,7 +62030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Q
+  m_text: A
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -65688,7 +65688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Z
+  m_text: W
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
