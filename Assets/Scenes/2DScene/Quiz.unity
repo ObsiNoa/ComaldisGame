@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 565.6854, y: -605.44775}
-  m_SizeDelta: {x: 1051.3708, y: 0}
+  m_AnchoredPosition: {x: 580.83014, y: -588.92505}
+  m_SizeDelta: {x: 1081.6603, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14324179
 MonoBehaviour:
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "R\xE9ponse B"
+  m_text: "R\xE9ponse C\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2423,49 +2423,286 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuizManager
   questions:
-  - question: Quels sont les equipements de securites necessaire pour entrer dans
-      l'entrepot?
+  - question: "Quels sont les \xE9quipements de securit\xE9 n\xE9cessaire pour entrer
+      dans l'entrep\xF4t ?"
     reponses:
     - texte: Casque et gilet jaune
       estCorrecte: 0
-      message: 'Le gilet jaune est essentiel afin d''etre vu par vos collegues, de
-        plus, des chaussures de securite sont requise afin d''eviter les accidents
-        de charios.  Le casque et les bouchons d''oreilles, bien qu''utile, ne sont
-        pas obligatoires. '
-    - texte: Gilet jaune et chaussures de securites
+      message: "Le gilet jaune est essentiel afin d'\xEAtre vu par vos coll\xE8gues,
+        de plus, des chaussures de securit\xE9 sont requise afin d'\xE9viter les
+        accidents de chariots.  Le casque et les bouchons d'oreilles, bien qu'utiles,
+        ne sont pas obligatoires"
+    - texte: "Gilet jaune et chaussures de securit\xE9"
       estCorrecte: 1
-      message: 'Le gilet jaune est essentiel afin d''etre vu par vos collegues, de
-        plus, des chaussures de securite sont requise afin d''eviter les accidents
-        de charios.  Le casque et les bouchons d''oreilles, bien qu''utile, ne sont
-        pas obligatoires. '
-    - texte: 'Gants et chaussure de securites '
+      message: "Le gilet jaune est essentiel afin d'\xEAtre vu par vos coll\xE8gues,
+        de plus, des chaussures de securit\xE9 sont requise afin d'\xE9viter les
+        accidents de chariots.  Le casque et les bouchons d'oreilles, bien qu'utiles,
+        ne sont pas obligatoires. "
+    - texte: "Gants et chaussures de securit\xE9"
       estCorrecte: 0
-      message: 'Le gilet jaune est essentiel afin d''etre vu par vos collegues, de
-        plus, des chaussures de securite sont requise afin d''eviter les accidents
-        de charios.  Le casque, les gants de travail et les bouchons d''oreilles,
-        bien qu''utile, ne sont pas obligatoires mais peuvent etre portes. '
+      message: "Le gilet jaune est essentiel afin d'\xEAtre vu par vos coll\xE8gues,
+        de plus, des chaussures de securit\xE9 sont requise afin d'\xE9viter les
+        accidents de chariots.  Le casque et les bouchons d'oreilles, bien qu'utiles,
+        ne sont pas obligatoires"
   - question: Que dois-je verifier avant de charger une palette dans un camion?
     reponses:
-    - texte: Nombres de colis, etat de la palette, si la palette europe est a recuperer,
-        si la palette a une etiquette ADR
+    - texte: "Nombre de colis, \xE9tat de la palette, si la palette europe est \xE0
+        r\xE9cuperer, si la palette a une etiquette ADR"
       estCorrecte: 1
-      message: 'Il est important de verifier le nombre de colis, si en cas de palette
-        Europe celle-ci est a recuperer, si la palette est en assez bon etat pour
-        etre charge et bien sur si elle est note ADR afin de rendre les precautions
-        necessaires. '
-    - texte: Nombres de colis, etat de la palette, si la palette europe est a recuperer,
-        date de livraison
+      message: "Il est important de v\xE9rifier le nombre de colis, en cas de palette
+        Europe celle-ci est \xE0 r\xE9cuperer, si la palette est en assez bon \xE9tat
+        pour \xEAtre charg\xE9e et bien s\xFBr si elle est not\xE9e ADR afin de prendre
+        les pr\xE9cautions n\xE9cessaires. "
+    - texte: "Nombre de colis, \xE9tat de la palette, si la palette europe est \xE0
+        r\xE9cuperer, date de livraison"
       estCorrecte: 0
-      message: Il est important de verifier le nombre de colis, si en cas de palette
-        Europe celle-ci est a recuperer, si la palette est en assez bon etat pour
-        etre charge et bien sur si elle est note ADR afin de rendre les precautions
-        necessaires. Si elles ont ete bien ranger la date devrait deja etre bonne
-    - texte: Nombres de colis, si la palette a une etiquette ADR
+      message: "Il est important de v\xE9rifier le nombre de colis, en cas de palette
+        Europe celle-ci est \xE0 r\xE9cuperer, si la palette est en assez bon \xE9tat
+        pour \xEAtre charg\xE9e et bien s\xFBr si elle est not\xE9e ADR afin de prendre
+        les pr\xE9cautions n\xE9cessaires. "
+    - texte: "Nombre de colis, si la palette a une \xE9tiquette ADR"
       estCorrecte: 0
-      message: 'Il est important de verifier le nombre de colis, si en cas de palette
-        Europe celle-ci est a recuperer, si la palette est en assez bon etat pour
-        etre charge et bien sur si elle est note ADR afin de rendre les precautions
-        necessaires. '
+      message: "Il est important de v\xE9rifier le nombre de colis, en cas de palette
+        Europe celle-ci est \xE0 r\xE9cuperer, si la palette est en assez bon \xE9tat
+        pour \xEAtre charg\xE9e et bien s\xFBr si elle est not\xE9e ADR afin de prendre
+        les pr\xE9cautions n\xE9cessaires. "
+  - question: "Que faire si l'on constate un probl\xE8me ou une anomalie sur son
+      v\xE9hicule/engin ?"
+    reponses:
+    - texte: "La signaler imm\xE9diatement et ne pas utiliser l'\xE9quipement si
+        cela pr\xE9sente un danger"
+      estCorrecte: 1
+      message: "C'est toujours important de pr\xE9venir m\xEAme si il y a qu'un petit
+        probl\xE8me car l'admistration devra pr\xE9venir les m\xE9canisiens. "
+    - texte: "Essayer de r\xE9parer soit meme"
+      estCorrecte: 0
+      message: "C'est toujours important de pr\xE9venir m\xEAme si il y a qu'un petit
+        probl\xE8me car l'admistration devra pr\xE9venir les m\xE9canisiens. "
+    - texte: "Attendre la fin de la journ\xE9e"
+      estCorrecte: 0
+      message: "C'est toujours important de pr\xE9venir m\xEAme si il y a qu'un petit
+        probl\xE8me car l'admistration devra pr\xE9venir les m\xE9canisiens. "
+  - question: "Peut-on utiliser un engin ou un v\xE9hicule lorsqu'on n'est pas autoris\xE9
+      \xE0 le conduire ?"
+    reponses:
+    - texte: "Oui, si un sup\xE9rieur l'a demand\xE9"
+      estCorrecte: 0
+      message: "Il ne faut jamais utilis\xE9 un engin dont vous n'avez pas la capacit\xE9
+        de le conduire. "
+    - texte: Oui, si c'est seulement quelques minutes
+      estCorrecte: 0
+      message: "Il ne faut jamais utilis\xE9 un engin dont vous n'avez pas la capacit\xE9
+        de le conduire. "
+    - texte: Non
+      estCorrecte: 1
+      message: "Il ne faut jamais utilis\xE9 un engin dont vous n'avez pas la capacit\xE9
+        de le conduire. "
+  - question: "\xC0 quoi servent les EPI ?"
+    reponses:
+    - texte: "\xC0 r\xE9duire l'exposition \xE0 certains risques"
+      estCorrecte: 1
+      message: "Les \xE9quipements individuels sont tr\xE8s important pour votre
+        s\xE9curit\xE9, il faut imp\xE9rativement les mettre quand cela est obligatoire
+        ou n\xE9cessaire."
+    - texte: "\xC0 remplacer toutes les r\xE8gles de s\xE9curit\xE9"
+      estCorrecte: 0
+      message: "Les \xE9quipements individuels sont tr\xE8s important pour votre
+        s\xE9curit\xE9, il faut imp\xE9rativement les mettre quand cela est obligatoire
+        ou n\xE9cessaire."
+    - texte: "\xC0 \xE9viter de devoir suivre une formation"
+      estCorrecte: 0
+      message: "Les \xE9quipements individuels sont tr\xE8s important pour votre
+        s\xE9curit\xE9, il faut imp\xE9rativement les mettre quand cela est obligatoire
+        ou n\xE9cessaire."
+  - question: "Avant d'utiliser un chariot \xE9l\xE9vateur, que faut-il v\xE9rifier
+      ?"
+    reponses:
+    - texte: Uniquement les fourches
+      estCorrecte: 0
+      message: "La v\xE9rification compl\xE8te de l'\xE9tat g\xE9n\xE9ral et des
+        s\xE9curit\xE9s est obligatoire avant chaque utilisation pour pr\xE9venir
+        tout accident."
+    - texte: "Son \xE9tat g\xE9n\xE9ral et ses dispositifs de s\xE9curit\xE9"
+      estCorrecte: 1
+      message: "La v\xE9rification compl\xE8te de l'\xE9tat g\xE9n\xE9ral et des
+        s\xE9curit\xE9s est obligatoire avant chaque utilisation pour pr\xE9venir
+        tout accident."
+    - texte: Rien si le chariot fonctionnait la veille
+      estCorrecte: 0
+      message: "La v\xE9rification compl\xE8te de l'\xE9tat g\xE9n\xE9ral et des
+        s\xE9curit\xE9s est obligatoire avant chaque utilisation pour pr\xE9venir
+        tout accident."
+  - question: "O\xF9 doit-on placer les fourches lorsqu'on circule sans charge ?"
+    reponses:
+    - texte: "\xC0 leur hauteur maximale"
+      estCorrecte: 0
+      message: "Rouler avec des fourches basses garantit la stabilit\xE9 du chariot
+        et \xE9vite les collisions."
+    - texte: Directement au sol
+      estCorrecte: 0
+      message: "Rouler avec des fourches basses garantit la stabilit\xE9 du chariot
+        et \xE9vite les collisions."
+    - texte: "\xC0 une faible hauteur adapt\xE9e \xE0 la circulation, conform\xE9ment
+        aux consignes de s\xE9curit\xE9"
+      estCorrecte: 1
+      message: "Rouler avec des fourches basses garantit la stabilit\xE9 du chariot
+        et \xE9vite les collisions."
+  - question: "Avant de quitter l'entreprise, que faut-il v\xE9rifier concernant
+      sa livraison ?"
+    reponses:
+    - texte: "L'adresse, les marchandises et les informations n\xE9cessaires \xE0
+        la livraison"
+      estCorrecte: 1
+      message: "Un contr\xF4le complet au d\xE9part \xE9vite les erreurs de tourn\xE9e
+        et les oublis pr\xE9judiciables."
+    - texte: Uniquement l'adresse
+      estCorrecte: 0
+      message: "Un contr\xF4le complet au d\xE9part \xE9vite les erreurs de tourn\xE9e
+        et les oublis pr\xE9judiciables."
+    - texte: Uniquement le nombre de colis
+      estCorrecte: 0
+      message: "Un contr\xF4le complet au d\xE9part \xE9vite les erreurs de tourn\xE9e
+        et les oublis pr\xE9judiciables."
+  - question: "Pourquoi faut-il v\xE9rifier que la marchandise est correctement charg\xE9e
+      et s\xE9curis\xE9e ?"
+    reponses:
+    - texte: Pour faciliter l'ouverture des portes
+      estCorrecte: 0
+      message: "La s\xE9curisation de la charge pr\xE9serve l'int\xE9grit\xE9 des
+        produits et assure la s\xE9curit\xE9 sur la route."
+    - texte: "Pour \xE9viter qu'elle se d\xE9place ou tombe pendant le transport"
+      estCorrecte: 1
+      message: "La s\xE9curisation de la charge pr\xE9serve l'int\xE9grit\xE9 des
+        produits et assure la s\xE9curit\xE9 sur la route."
+    - texte: "Pour \xE9viter que le client voie les marchandises"
+      estCorrecte: 0
+      message: "La s\xE9curisation de la charge pr\xE9serve l'int\xE9grit\xE9 des
+        produits et assure la s\xE9curit\xE9 sur la route."
+  - question: Un client vous demande de vous garer dans une zone qui semble interdite.
+      Que faites-vous ?
+    reponses:
+    - texte: "Je me gare quand m\xEAme puisque le client l'a demand\xE9"
+      estCorrecte: 0
+      message: "Le respect des r\xE8gles de stationnement et de s\xE9curit\xE9 prime,
+        m\xEAme \xE0 la demande du client."
+    - texte: Je me gare sur le trottoir
+      estCorrecte: 0
+      message: "Le respect des r\xE8gles de stationnement et de s\xE9curit\xE9 prime,
+        m\xEAme \xE0 la demande du client."
+    - texte: "Je v\xE9rifie les consignes et choisis un emplacement autoris\xE9 et
+        s\xFBr"
+      estCorrecte: 1
+      message: "Le respect des r\xE8gles de stationnement et de s\xE9curit\xE9 prime,
+        m\xEAme \xE0 la demande du client."
+  - question: "Lors d'une livraison, le client constate qu'un colis est endommag\xE9.
+      Que devez-vous faire en premier ?"
+    reponses:
+    - texte: "Constater l'\xE9tat du colis avec le client"
+      estCorrecte: 1
+      message: "Un constat contradictoire imm\xE9diat est indispensable pour officialiser
+        l'anomalie."
+    - texte: "Reprendre imm\xE9diatement le colis"
+      estCorrecte: 0
+      message: "Un constat contradictoire imm\xE9diat est indispensable pour officialiser
+        l'anomalie."
+    - texte: "Demander au client de r\xE9gler le probl\xE8me avec son fournisseur"
+      estCorrecte: 0
+      message: "Un constat contradictoire imm\xE9diat est indispensable pour officialiser
+        l'anomalie."
+  - question: "Pourquoi faut-il identifier pr\xE9cis\xE9ment la marchandise concern\xE9e
+      par une anomalie ?"
+    reponses:
+    - texte: Pour pouvoir remplacer toute la livraison
+      estCorrecte: 0
+      message: "La pr\xE9cision permet un traitement rapide et cibl\xE9 du litige
+        par le service concern\xE9."
+    - texte: "Pour savoir exactement quel produit ou colis est concern\xE9 par le
+        probl\xE8me"
+      estCorrecte: 1
+      message: "La pr\xE9cision permet un traitement rapide et cibl\xE9 du litige
+        par le service concern\xE9."
+    - texte: Pour permettre au client de modifier sa commande
+      estCorrecte: 0
+      message: "La pr\xE9cision permet un traitement rapide et cibl\xE9 du litige
+        par le service concern\xE9."
+  - question: "O\xF9 devez-vous enregistrer une anomalie constat\xE9e lors de la
+      livraison ?"
+    reponses:
+    - texte: Sur une feuille personnelle uniquement
+      estCorrecte: 0
+      message: "L'enregistrement officiel sur les supports pr\xE9vus garantit la
+        tra\xE7abilit\xE9 juridique du litige."
+    - texte: "Sur le v\xE9hicule"
+      estCorrecte: 0
+      message: "L'enregistrement officiel sur les supports pr\xE9vus garantit la
+        tra\xE7abilit\xE9 juridique du litige."
+    - texte: "Sur le bon de livraison ou le PDA pr\xE9vu \xE0 cet effet"
+      estCorrecte: 1
+      message: "L'enregistrement officiel sur les supports pr\xE9vus garantit la
+        tra\xE7abilit\xE9 juridique du litige."
+  - question: "Dans quel but peut-on prendre une photo d'une marchandise endommag\xE9e
+      ?"
+    reponses:
+    - texte: "Pour conserver un \xE9l\xE9ment permettant de documenter l'\xE9tat
+        de la marchandise"
+      estCorrecte: 1
+      message: "La photo sert de preuve mat\xE9rielle incontestable pour appuyer
+        le dossier de litige."
+    - texte: "Pour envoyer la photo au client sur son t\xE9l\xE9phone personnel"
+      estCorrecte: 0
+      message: "La photo sert de preuve mat\xE9rielle incontestable pour appuyer
+        le dossier de litige."
+    - texte: Pour publier l'incident sur internet
+      estCorrecte: 0
+      message: "La photo sert de preuve mat\xE9rielle incontestable pour appuyer
+        le dossier de litige."
+  - question: "Le client refuse une partie de la livraison. Quelle est la premi\xE8re
+      chose \xE0 faire ?"
+    reponses:
+    - texte: "Repartir imm\xE9diatement avec toute la livraison"
+      estCorrecte: 0
+      message: "Un refus partiel exige une identification claire et motiv\xE9e pour
+        \xE9viter toute confusion."
+    - texte: "Identifier pr\xE9cis\xE9ment les marchandises refus\xE9es et le motif
+        du refus"
+      estCorrecte: 1
+      message: "Un refus partiel exige une identification claire et motiv\xE9e pour
+        \xE9viter toute confusion."
+    - texte: "Laisser les marchandises refus\xE9es devant l'entreprise"
+      estCorrecte: 0
+      message: "Un refus partiel exige une identification claire et motiv\xE9e pour
+        \xE9viter toute confusion."
+  - question: Le client refuse trois colis mais accepte les autres. Que devez-vous
+      faire ?
+    reponses:
+    - texte: Laisser les trois colis chez le client
+      estCorrecte: 0
+      message: "Seuls les colis refus\xE9s font l'objet d'une proc\xE9dure de retour
+        apr\xE8s constatation formelle."
+    - texte: Reprendre toute la marchandise
+      estCorrecte: 0
+      message: "Seuls les colis refus\xE9s font l'objet d'une proc\xE9dure de retour
+        apr\xE8s constatation formelle."
+    - texte: "Faire constater pr\xE9cis\xE9ment les trois colis refus\xE9s et enregistrer
+        le refus"
+      estCorrecte: 1
+      message: "Seuls les colis refus\xE9s font l'objet d'une proc\xE9dure de retour
+        apr\xE8s constatation formelle."
+  - question: "Que doit faire le chauffeur apr\xE8s avoir enregistr\xE9 un refus
+      de livraison ?"
+    reponses:
+    - texte: Informer son responsable et suivre les instructions concernant la marchandise
+      estCorrecte: 1
+      message: "La gestion de la marchandise refus\xE9e ob\xE9it \xE0 des proc\xE9dures
+        internes strictes valid\xE9es par la hi\xE9rarchie."
+    - texte: "D\xE9cider lui-m\xEAme de jeter la marchandise"
+      estCorrecte: 0
+      message: "La gestion de la marchandise refus\xE9e ob\xE9it \xE0 des proc\xE9dures
+        internes strictes valid\xE9es par la hi\xE9rarchie."
+    - texte: La laisser sur le quai
+      estCorrecte: 0
+      message: "La gestion de la marchandise refus\xE9e ob\xE9it \xE0 des proc\xE9dures
+        internes strictes valid\xE9es par la hi\xE9rarchie."
   questionPanel: {fileID: 928930223}
   compteurQuestionText: {fileID: 174839142}
   questionText: {fileID: 1622637541}
@@ -3169,7 +3406,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.95
+  m_fontSize: 45.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
