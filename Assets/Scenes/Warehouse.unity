@@ -9826,7 +9826,6 @@ GameObject:
   - component: {fileID: 273538356}
   - component: {fileID: 273538358}
   - component: {fileID: 273538360}
-  - component: {fileID: 273538359}
   m_Layer: 0
   m_Name: Cube.039 (33)
   m_TagString: Boites
@@ -9927,20 +9926,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &273538359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273538354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &273538360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11047,7 +11032,6 @@ GameObject:
   - component: {fileID: 309122572}
   - component: {fileID: 309122574}
   - component: {fileID: 309122576}
-  - component: {fileID: 309122575}
   m_Layer: 0
   m_Name: Cube.039 (27)
   m_TagString: Boites
@@ -11148,20 +11132,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: -0.000015258789, y: 0, z: -0.00024414062}
---- !u!114 &309122575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309122570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &309122576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12972,7 +12942,6 @@ GameObject:
   - component: {fileID: 384502876}
   - component: {fileID: 384502878}
   - component: {fileID: 384502880}
-  - component: {fileID: 384502879}
   m_Layer: 0
   m_Name: Cube.039 (23)
   m_TagString: Boites
@@ -13073,20 +13042,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: -0.000015258789, y: 0, z: 0}
---- !u!114 &384502879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384502874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &384502880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14907,7 +14862,6 @@ GameObject:
   - component: {fileID: 443600932}
   - component: {fileID: 443600934}
   - component: {fileID: 443600936}
-  - component: {fileID: 443600935}
   m_Layer: 0
   m_Name: Cube.039 (13)
   m_TagString: Boites
@@ -15008,20 +14962,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0.000015258789, y: 0, z: 0}
---- !u!114 &443600935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443600930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &443600936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23018,7 +22958,6 @@ GameObject:
   - component: {fileID: 619376083}
   - component: {fileID: 619376085}
   - component: {fileID: 619376087}
-  - component: {fileID: 619376086}
   m_Layer: 0
   m_Name: Cube.039 (25)
   m_TagString: Boites
@@ -23119,20 +23058,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: -0.000015258789, y: 0.00048828125, z: -0.00024414062}
---- !u!114 &619376086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619376081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &619376087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24830,7 +24755,6 @@ GameObject:
   - component: {fileID: 647523035}
   - component: {fileID: 647523037}
   - component: {fileID: 647523039}
-  - component: {fileID: 647523038}
   m_Layer: 0
   m_Name: Cube.039 (17)
   m_TagString: Boites
@@ -24931,20 +24855,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: -0.00048828125}
---- !u!114 &647523038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647523033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &647523039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26320,7 +26230,6 @@ GameObject:
   - component: {fileID: 678995609}
   - component: {fileID: 678995611}
   - component: {fileID: 678995613}
-  - component: {fileID: 678995612}
   m_Layer: 0
   m_Name: Cube.039 (18)
   m_TagString: Boites
@@ -26421,20 +26330,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0.00048828125}
---- !u!114 &678995612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678995607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &678995613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26700,7 +26595,6 @@ GameObject:
   - component: {fileID: 688182003}
   - component: {fileID: 688182005}
   - component: {fileID: 688182007}
-  - component: {fileID: 688182006}
   m_Layer: 0
   m_Name: Cube.039 (20)
   m_TagString: Boites
@@ -26801,20 +26695,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &688182006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688182001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &688182007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35565,10 +35445,9 @@ GameObject:
   - component: {fileID: 945249430}
   - component: {fileID: 945249432}
   - component: {fileID: 945249434}
-  - component: {fileID: 945249433}
   m_Layer: 0
   m_Name: Cube.039 (12)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35666,20 +35545,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &945249433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945249428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &945249434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37417,7 +37282,6 @@ GameObject:
   - component: {fileID: 988323165}
   - component: {fileID: 988323167}
   - component: {fileID: 988323169}
-  - component: {fileID: 988323168}
   m_Layer: 0
   m_Name: Cube.039 (16)
   m_TagString: Boites
@@ -37518,20 +37382,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: -0.000015258789, y: 0, z: 0}
---- !u!114 &988323168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988323163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &988323169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37559,7 +37409,6 @@ GameObject:
   - component: {fileID: 991702518}
   - component: {fileID: 991702520}
   - component: {fileID: 991702522}
-  - component: {fileID: 991702521}
   m_Layer: 0
   m_Name: Cube.039 (36)
   m_TagString: Boites
@@ -37660,20 +37509,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &991702521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991702516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &991702522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39866,10 +39701,9 @@ GameObject:
   - component: {fileID: 1050196164}
   - component: {fileID: 1050196166}
   - component: {fileID: 1050196168}
-  - component: {fileID: 1050196167}
   m_Layer: 0
   m_Name: Cube.039 (30)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39967,20 +39801,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: 0, z: 0.00048828125}
---- !u!114 &1050196167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050196162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1050196168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40335,7 +40155,6 @@ GameObject:
   - component: {fileID: 1058949392}
   - component: {fileID: 1058949394}
   - component: {fileID: 1058949396}
-  - component: {fileID: 1058949395}
   m_Layer: 0
   m_Name: Cube.039 (1)
   m_TagString: Boites
@@ -40436,20 +40255,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: 0.000015258789, y: 0, z: 0}
---- !u!114 &1058949395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058949390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1058949396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41278,10 +41083,9 @@ GameObject:
   - component: {fileID: 1085918463}
   - component: {fileID: 1085918465}
   - component: {fileID: 1085918467}
-  - component: {fileID: 1085918466}
   m_Layer: 0
   m_Name: Cube.039 (28)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41379,20 +41183,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: -0.00048828125, z: 0}
---- !u!114 &1085918466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1085918467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45139,7 +44929,6 @@ GameObject:
   - component: {fileID: 1170660405}
   - component: {fileID: 1170660407}
   - component: {fileID: 1170660409}
-  - component: {fileID: 1170660408}
   m_Layer: 0
   m_Name: Cube.039 (29)
   m_TagString: Boites
@@ -45240,20 +45029,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: -0.00048828125, z: -0.00048828125}
---- !u!114 &1170660408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170660403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1170660409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45281,10 +45056,9 @@ GameObject:
   - component: {fileID: 1175837169}
   - component: {fileID: 1175837171}
   - component: {fileID: 1175837173}
-  - component: {fileID: 1175837172}
   m_Layer: 0
   m_Name: Cube.039 (24)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45382,20 +45156,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1175837172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175837167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1175837173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46396,7 +46156,6 @@ GameObject:
   - component: {fileID: 1212496448}
   - component: {fileID: 1212496450}
   - component: {fileID: 1212496452}
-  - component: {fileID: 1212496451}
   m_Layer: 0
   m_Name: Cube.039 (35)
   m_TagString: Boites
@@ -46497,20 +46256,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0.00048828125, z: -0.00048828125}
---- !u!114 &1212496451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212496446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1212496452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52543,7 +52288,6 @@ GameObject:
   - component: {fileID: 1382039652}
   - component: {fileID: 1382039654}
   - component: {fileID: 1382039656}
-  - component: {fileID: 1382039655}
   m_Layer: 0
   m_Name: Cube.039 (19)
   m_TagString: Boites
@@ -52644,20 +52388,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: -0.000015258789, y: 0, z: 0}
---- !u!114 &1382039655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382039650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1382039656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53819,10 +53549,9 @@ GameObject:
   - component: {fileID: 1408888901}
   - component: {fileID: 1408888903}
   - component: {fileID: 1408888905}
-  - component: {fileID: 1408888904}
   m_Layer: 0
   m_Name: Cube.039 (15)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53920,20 +53649,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 200.00003, z: 200.00003}
   m_Center: {x: 0.000015258789, y: 0.00048828125, z: 0}
---- !u!114 &1408888904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408888899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1408888905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55841,7 +55556,6 @@ GameObject:
   - component: {fileID: 1478621925}
   - component: {fileID: 1478621927}
   - component: {fileID: 1478621929}
-  - component: {fileID: 1478621928}
   m_Layer: 0
   m_Name: Cube.039 (26)
   m_TagString: Boites
@@ -55942,20 +55656,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0}
---- !u!114 &1478621928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478621923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1478621929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57386,7 +57086,6 @@ GameObject:
   - component: {fileID: 1523304599}
   - component: {fileID: 1523304601}
   - component: {fileID: 1523304603}
-  - component: {fileID: 1523304602}
   m_Layer: 0
   m_Name: Cube.039 (14)
   m_TagString: Boites
@@ -57487,20 +57186,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00024414062, z: 0.00048828125}
---- !u!114 &1523304602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523304597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1523304603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62232,7 +61917,6 @@ GameObject:
   - component: {fileID: 1740872593}
   - component: {fileID: 1740872595}
   - component: {fileID: 1740872597}
-  - component: {fileID: 1740872596}
   m_Layer: 0
   m_Name: Cube.039 (21)
   m_TagString: Dangereux
@@ -62333,20 +62017,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1740872596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740872591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1740872597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63813,10 +63483,9 @@ GameObject:
   - component: {fileID: 1784394532}
   - component: {fileID: 1784394534}
   - component: {fileID: 1784394536}
-  - component: {fileID: 1784394535}
   m_Layer: 0
   m_Name: Cube.039 (34)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63914,20 +63583,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.0001, y: 200.00009, z: 200.00009}
   m_Center: {x: 0, y: 0, z: -0.00048828125}
---- !u!114 &1784394535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784394530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1784394536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65211,10 +64866,9 @@ GameObject:
   - component: {fileID: 1825269459}
   - component: {fileID: 1825269461}
   - component: {fileID: 1825269463}
-  - component: {fileID: 1825269462}
   m_Layer: 0
   m_Name: Cube.039 (31)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65312,20 +64966,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1825269462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825269457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &1825269463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71753,10 +71393,9 @@ GameObject:
   - component: {fileID: 2006863989}
   - component: {fileID: 2006863991}
   - component: {fileID: 2006863993}
-  - component: {fileID: 2006863992}
   m_Layer: 0
   m_Name: Cube.039 (22)
-  m_TagString: Boites
+  m_TagString: Dangereux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71854,20 +71493,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200.00005, y: 200.00005, z: 200}
   m_Center: {x: 0, y: -0.00048828125, z: 0.00048828125}
---- !u!114 &2006863992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006863987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a827f1a7e563e4a93025a595560256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartonRamassable
-  messageRamasser: Ramasser le carton
-  distanceRamassage: 3.5
 --- !u!114 &2006863993
 MonoBehaviour:
   m_ObjectHideFlags: 0

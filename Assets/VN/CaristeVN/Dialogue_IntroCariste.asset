@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue_IntroCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "Bonjour et bienvenue parmis nous. Vous allez bient\xF4t commencer votre premiere
+  - "Bonjour et bienvenue parmis nous. Vous allez bient\xF4t commencer votre premi\xE8re
     journ\xE9e a nos c\xF4t\xE9."
   - "C'est pourquoi nous allons ensemble observer de quoi se compose une journ\xE9e
     classique chez nous."
