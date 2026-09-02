@@ -77,9 +77,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1200, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -110,6 +110,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1572421513040302489}
     m_Modifications:
+    - target: {fileID: 809221139207104432, guid: f81f51f8ea6eff54c88dd89412d61d9f, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5136770804661497305, guid: f81f51f8ea6eff54c88dd89412d61d9f, type: 3}
       propertyPath: m_Name
       value: ButtonToTruck Variant
