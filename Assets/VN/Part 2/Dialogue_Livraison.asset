@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Dialogue_Livraison
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   lignes:
-  - "Nous voila arriv\xE9, les employ\xE9s d'ici devraient venir vider le camion."
+  - "Nous voil\xE0 arriv\xE9s, les employ\xE9s d'ici devraient venir vider le camion."
   - Parfois ils auront besoin d'un peu d'aide donc pour ne pas perdre de temps vous
-    pourez les assister.
+    pourrez les assister.
   - "N\xE9anmoins, ce n'est pas le cas aujourd'hui. Une fois qu'ils auront termin\xE9
     nous devrions y aller."
-  - "Une journ\xE9e typique se construit alors en succession de trajet suivant votre
-    planning avec parfois certaines demande speciale tel que la v\xE9rification des
-    palettes europe et les ramasses indiqu\xE9s."
-  - "Votre planning donne toute les informations n\xE9cessaires il est donc important
+  - "Une journ\xE9e typique se construit alors en succession de trajets suivant votre
+    planning avec parfois certaines demandes sp\xE9ciales tel que la v\xE9rification
+    des palettes europe et les ramasses indiqu\xE9es."
+  - "Votre planning donne toutes les informations n\xE9cessaires il est donc important
     de le v\xE9rifier rigoureusement. "
   - "Maintenant que vous avez compris vos t\xE2ches retournont \xE0 la base."
   choices: []
