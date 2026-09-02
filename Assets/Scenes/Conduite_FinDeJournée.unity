@@ -3258,7 +3258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous avez fini votre journ\xE9e ! \nVeuillez retournez \xE0 l'entrep\xF4t
+  m_text: "Vous avez fini votre journ\xE9e ! \nVeuillez retourner \xE0 l'entrep\xF4t
     de Comaldis."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1015,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413331209002451689, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_text
-      value: "Infos : \n\nJuste des informations de bases sur votre vehicule affect\xE9e
+      value: "Infos : \n\nJuste des informations de bases sur votre vehicule affect\xE9
         cette journ\xE9e."
       objectReference: {fileID: 0}
     - target: {fileID: 494316659306198187, guid: 761789d94491d2041a0ea2720442c017, type: 3}
@@ -1238,8 +1238,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4122059301295326541, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_text
-      value: "Infos : \n\nInfo sur la tourn\xE9e, l'heure ou vous devez arriv\xE9s
-        \xE0 Comaldis.\nEt informations sp\xE9cifiques relative \xE0 la tourn\xE9e
+      value: "Infos : \n\nInfo sur la tourn\xE9e, l'heure ou vous devez arriver \n\xE0
+        Comaldis.\nEt des informations sp\xE9cifiques relatives \xE0 la tourn\xE9e
         : \nex : le vehicule affect\xE9 n'est pas celui du bordereau de groupage
         mais le KP1 avec une remorque bach\xE9e.\nVous pouvez avoir des commentaires
         \xE9galement mais \xE7a ne sera pas toujours le cas.\n"
@@ -1334,9 +1334,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6634590357651477411, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_text
-      value: "Infos : \n\nSi la ligne est gris\xE9, il s'agit d'une ramasse.\nLa
-        colone livraison sert donc \xE0 indiqu\xE9 o\xF9 vous aller pour faire la
-        ramasse."
+      value: "Infos : \n\nSi la ligne est gris\xE9e, il s'agit d'une ramasse.\nLa
+        colone livraison sert donc \xE0 indiquer o\xF9 vous allez pour faire la ramasse."
       objectReference: {fileID: 0}
     - target: {fileID: 7451059853860643814, guid: 761789d94491d2041a0ea2720442c017, type: 3}
       propertyPath: m_text
