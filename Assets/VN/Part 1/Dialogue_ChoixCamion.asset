@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
   - "Maintenant avant de commencer \xE0 travailler deux choses importantes s'impose."
-  - "Premierement assurons nous que vous avez compris votre tourn\xE9e."
+  - "Premi\xE8rement assurons nous que vous avez compris votre tourn\xE9e."
   choices:
   - texte: Voir le planning
     nextDialogue: {fileID: 0}
