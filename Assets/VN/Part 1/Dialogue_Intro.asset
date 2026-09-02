@@ -14,17 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
   - "Bonjour et bienvenue parmis nous. Vous allez bient\xF4t commencer votre premi\xE8re
-<<<<<<< Updated upstream
-    journ\xE9e a nos c\xF4t\xE9."
-  - C'est pourquoi nous allons ensemble observer de quoi se compose une journee classique
-    chez nous.
-  - Tout d'abord, dirigeons nous vers notre camions. (Cliquez sur la zone vers laquelle
-=======
     journ\xE9e \xE0 nos c\xF4t\xE9s."
   - "C'est pourquoi nous allons ensemble observer de quoi se compose une journ\xE9e
     classique chez nous."
   - Tout d'abord, dirigeons nous vers notre camion. (Cliquez sur la zone vers laquelle
->>>>>>> Stashed changes
     vous souhaitez vous diriger)
   choices:
   - texte: 
