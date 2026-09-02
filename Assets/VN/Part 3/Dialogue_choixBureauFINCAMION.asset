@@ -15,7 +15,7 @@ MonoBehaviour:
   lignes:
   - "A votre gauche se trouvent vos responsables, si vous avez des retours ou des
     probl\xE8mes ils seront l\xE0 pour vous assister."
-  - "Toutefois ce n'est pas ce qui nous amene ici, l'ordinateur se trouve au fond
+  - "Toutefois ce n'est pas ce qui nous am\xE8ne ici, l'ordinateur se trouve au fond
     \xE0 gauche."
   choices:
   - texte: 

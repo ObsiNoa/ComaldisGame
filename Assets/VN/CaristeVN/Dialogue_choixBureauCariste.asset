@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Dialogue_choixBureauCariste
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   lignes:
-  - "Voici o\xF9 toute la paperasse ce fait. Bien qu'elles soient intimidantes vos
-    coll\xE8gues stationn\xE9es ici se feront un plaisir de vous assister en cas
-    de probl\xE8mes."
-  - "Si jamais vous avez une r\xE9clamation ou une question que vous jugez urgentes
+  - "Voici o\xF9 toute la paperasse se fait. Bien qu'ils soient intimidants vos coll\xE8gues
+    stationn\xE9s ici se feront un plaisir de vous assister en cas de probl\xE8mes."
+  - "Si jamais vous avez une r\xE9clamation ou une question que vous jugez urgente
     vous pouvez donc aller les voir ou les appeler sans crainte."
   - "N\xE9anmoins, nous n'avons pas besoin d'\xEAtre ici pour le moment. Retournons
     donc dehors."
